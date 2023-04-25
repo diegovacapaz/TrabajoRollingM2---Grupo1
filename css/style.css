@@ -1,0 +1,10 @@
+/*Configuracion General*/
+* {
+    --negro: #000000;
+    --azulOscuro: #0B2447;
+    --azul: #19376D;
+    --azulClaro: #576CBC;
+    --celeste: #A5D7E8;
+    --blanco: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
