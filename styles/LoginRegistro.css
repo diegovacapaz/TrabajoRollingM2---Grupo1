@@ -8,7 +8,10 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Poppins', sans-serif;
-	background: linear-gradient(to bottom, #0B2447, #19376D);
+	background-image: url(../img/2.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	animation: rotar 8s infinite alternate linear;
 }
 
 .principal {
@@ -16,7 +19,7 @@ body{
 	height: 500px;
 	background: red;
 	overflow: hidden;
-	background: url(../img/1.png) no-repeat center / cover;
+	background: linear-gradient(to bottom, #0B2447, #19376D,#0B2447);
 	border-radius: 10px;
 	box-shadow: 5px 20px 50px #000;
 }
@@ -61,8 +64,8 @@ button {
 	margin: 10px auto;
 	justify-content: center;
 	display: block;
-	color: #fff;
-	background: #19376D;
+	color: #19376D;
+	background: #fff;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -74,7 +77,7 @@ button {
 }
 
 button:hover{
-	background: #576CBC;
+	background: #19376D;
 	color: #fff;
 }
 
@@ -101,4 +104,10 @@ button:hover{
 
 #chk:checked ~ .registro label {
 	transform: scale(.6);
+}
+
+@keyframes rotar {
+	100% {
+		background-position: 15% 50%;
+	}
 }
