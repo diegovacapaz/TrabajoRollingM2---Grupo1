@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 body{
 	margin: 0;
 	padding: 0;
@@ -5,7 +7,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	font-family: 'Jost', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	background: linear-gradient(to bottom, #0B2447, #19376D);
 }
 
