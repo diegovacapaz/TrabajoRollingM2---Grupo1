@@ -11,10 +11,7 @@
 
 /*Página error404*/
 .bg-error404{
-    /*background-color: var(--azulOscuro);*/
-    background-image: url(../123382.jpg);
-    background-size: cover;
-    background-position: top;
+
 }
 .bg-error404 main{
     height: 100vh;
