@@ -10,25 +10,11 @@
 }
 
 /*Página error404*/
-.btn-outline-azulOscuro {
-    --bs-btn-color:#0B2447;
-    --bs-btn-border-color:#0B2447;
-    --bs-btn-hover-color:#fff;
-    --bs-btn-hover-bg:#0B2447;
-    --bs-btn-hover-border-color:#0B2447;
-    --bs-btn-focus-shadow-rgb:33,37,41;
-    --bs-btn-active-color:#fff;
-    --bs-btn-active-bg:#0B2447;
-    --bs-btn-active-border-color:#0B2447;
-    --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color:#0B2447;
-    --bs-btn-disabled-bg:transparent;
-    --bs-btn-disabled-border-color:#0B2447;
-    --bs-gradient:none
-}
-
 .bg-error404{
-    background-color: var(--azulOscuro);
+    /*background-color: var(--azulOscuro);*/
+    background-image: url(../123382.jpg);
+    background-size: cover;
+    background-position: top;
 }
 .bg-error404 main{
     height: 100vh;
@@ -38,10 +24,18 @@
     font-size: calc(2rem + 1.5vw);
 }
 
+.errorBotonTamaño{
+    width: 100%;
+}
+
 /*Responsive*/
 @media all and (min-width: 768px) {
-
+    .errorBotonTamaño{
+        width: 50%;
+    }
 }
 @media all and (min-width: 992px) {
-
+    .errorBotonTamaño{
+        width: 25%;
+    }
 }
