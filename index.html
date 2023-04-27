@@ -1,15 +1,268 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Grupo1 - comision46i"> 
+    <meta name="author" content="Grupo1 - comision46i">
     <meta name="description" content="Proyecto de marketplace">
     <meta name="keywords" content="Productos, venta">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Proyecto Rolling Code</title>
 </head>
+
 <body>
-    
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo"><img src="img/logo.svg" alt=""></a>
+            <input type="checkbox" id="menu">
+            <label for="menu">
+                <img src="img/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Reservaciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <span>Descubre los mejores juegos</span>
+                <h1>Escoge tu juego <br>favorito y disfrútalo</h1>
+                <a href="#" class="btn-1">¡Catalogo de Juegos!</a>
+            </div>
+            <div class="header-img">
+                <img src="img/right.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <section class="juegos container-swiper">
+        <h2>Los juegos mas vendidos</h2>
+        <div class="swiper miSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="img/g1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g4.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g5.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g6.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g4.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g5.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g6.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="img/g3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="games container">
+        <img class="ba" src="img/ba.png" alt="">
+        <div class="txt">
+            <h2>Los juegos mas populares</h2>
+            <a href="#" class="btn-2">Ver mas</a>
+        </div>
+        <div class="games-content">
+            <div class="game">
+                <img src="img/g1.jpg" alt="">
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+            <div class="game">
+                <img src="img/g2.jpg" alt="">
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+            <div class="game">
+                <img src="img/g3.jpg" alt="">
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+            <div class="game">
+                <img src="img/g4.jpg" alt="">
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+            <div class="game">
+                <img src="img/g5.jpg" alt="">
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+            <div class="game">
+                <img src="img/g6.jpg" alt="">
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about container">
+        <div class="txt">
+            <h2>Juegos recomendados</h2>
+            <a href="#" class="btn-2">Ver mas</a>
+        </div>
+        <div class="about-content">
+            <div class="about-1">
+                <img src="img/b1.jpg" alt="">
+                <h3>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto dolorem dolor reprehenderit reiciendis laborum, impedit cupiditate cumque voluptatum expedita earum illo rem amet at repellendus nisi, quibusdam aut consequuntur a?
+                </h3>
+            </div>
+            <div class="about-2">
+                <div class="about-in1">
+                    <img src="img/b2.jpg" alt="">
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellendus, impedit iusto quis nulla pariatur optio ratione a, maiores eos est, tempore veniam porro suscipit? Reiciendis sint alias corporis quas.
+                    </h3>
+                </div>
+                <div class="about-in2">
+                    <img src="img/b3.jpg" alt="">
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur repellendus, impedit iusto quis nulla pariatur optio ratione a, maiores eos est, tempore veniam porro suscipit? Reiciendis sint alias corporis quas.
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about container">
+        <h1 class="header-txt">Aquí irían los juegos/items añadidos desde JS</h1>
+    </section>
+
+    <section class="news container">
+        <div class="txt">
+            <h2>Enterate todo sobre los ultimos juegos</h2>
+            <a href="#" class="btn-2">Ver mas</a>
+        </div>
+        <div class="news-content">
+            <div class="news-txt">
+                <div class="news-1">
+                    <img src="img/n1.jpg" alt="">
+                    <div class="news-right">
+                        <h3>sit amet consectetur adipisicing</h3>
+                        <p>
+                            maiores eos est, tempore veniam porro suscipit? Reiciendis sint alias corporis quas.
+                        </p>
+                        <a href="#" class="btn-3">Mas</a>
+                    </div>
+                </div>
+                <div class="news-1">
+                    <img src="img/n2.jpg" alt="">
+                    <div class="news-right">
+                        <h3>sit amet consectetur adipisicing</h3>
+                        <p>
+                            maiores eos est, tempore veniam porro suscipit? Reiciendis sint alias corporis quas.
+                        </p>
+                        <a href="#" class="btn-3">Mas</a>
+                    </div>
+                </div>
+                <div class="news-1">
+                    <img src="img/n3.jpg" alt="">
+                    <div class="news-right">
+                        <h3>sit amet consectetur adipisicing</h3>
+                        <p>
+                            maiores eos est, tempore veniam porro suscipit? Reiciendis sint alias corporis quas.
+                        </p>
+                        <a href="#" class="btn-3">Mas</a>
+                    </div>
+                </div>
+                <div class="news-1">
+                    <img src="img/n4.jpg" alt="">
+                    <div class="news-right">
+                        <h3>sit amet consectetur adipisicing</h3>
+                        <p>
+                            maiores eos est, tempore veniam porro suscipit? Reiciendis sint alias corporis quas.
+                        </p>
+                        <a href="#" class="btn-3">Mas</a>
+                    </div>
+                </div>
+                <div class="news-1">
+                    <img src="img/n5.jpg" alt="">
+                    <div class="news-right">
+                        <h3>sit amet consectetur adipisicing</h3>
+                        <p>
+                            maiores eos est, tempore veniam porro suscipit? Reiciendis sint alias corporis quas.
+                        </p>
+                        <a href="#" class="btn-3">Mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="news-form">
+                <h3>Suscribete</h3>
+                <p>
+                    maiores eos est, tempore veniam porro suscipit?
+                </p>
+                <form>
+                    <input type="email" placeholder="Correo">
+                    <a href="#" class="btn-1">Enviar</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <footer class="footer container">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+            <li><a href="#">lorem</a></li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="sliderScript.js"></script>
 </body>
+
 </html>
