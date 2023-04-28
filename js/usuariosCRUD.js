@@ -34,6 +34,7 @@ class Cuenta{
 // CRUD USUARIOS
 let cuentas = [];
 const cuentaAdmin = new Cuenta("admin","admin@admin.com","1234",true);
+let cuentaActiva = null;
 cuentas.push(cuentaAdmin);
 
 // ALTA USUARIOS
@@ -66,7 +67,6 @@ const registro = (usuario,correo,clave) => {
     cuentas.push(nuevoUsuario);
     return "Se ha registrado con éxito";
 }
-// MODIFICAR LISTA
 // BUSCAR USUARIOS
 const buscarCuentaCorreo = (correo) => {
     correo = correo.toLowerCase();
@@ -91,9 +91,13 @@ const iniciarSesion = (correo, clave) => {
     if(correo === null || correo === undefined || clave === null || clave === undefined){
         return null;
     }
+    if(cuentaActiva!==null){
+        return "Ya hay una sesión activa";
+    }
     const cuenta = buscarCuentaCorreo(correo);
     if(cuenta!==null){
         if(cuenta.clave === clave){
+            cuentaActiva=cuenta;
             return "Iniciando Sesión...";
         }
         else{
@@ -120,12 +124,24 @@ const eliminarCuenta = (cuenta) => {
     }
     return "La cuenta seleccionada no existe";
 }
+// MODIFICAR LISTA
+// CERRAR SESION
+const cerrarSesion = () => {
+    if(cuentaActiva===null){
+        return "Error, no había ninguna sesión activa";
+    }
+    cuentaActiva = null;
+    return "Cerrando Sesión...";
+}
+// CUENTA ACTIVA
 
-// console.log(registro("diego","diego@","1234"));
-// console.log(registro("alan","alan@","1234"));
-// console.log(registro("felipe","felipe@","1234"));
-// console.log(registro("robby","robby@","1234"));
-// console.log(registro("ana","ana@","1234"));
+
+
+//  console.log(registro("diego","diego@","1234"));
+//  console.log(registro("alan","alan@","1234"));
+//  console.log(registro("felipe","felipe@","1234"));
+//  console.log(registro("robby","robby@","1234"));
+//  console.log(registro("ana","ana@","1234"));
 // console.log(...cuentas);
 // console.log(eliminarCuenta(buscarCuentaCorreo("robby@")));
 // console.log(...cuentas);
@@ -134,3 +150,6 @@ const eliminarCuenta = (cuenta) => {
 // console.log(iniciarSesion("diego@","1234"));
 // console.log(iniciarSesion("diegi@","1234"));
 // console.log(iniciarSesion("diego@","a43"));
+// console.log(cuentaActiva);
+// console.log(cerrarSesion());
+// console.log(cuentaActiva);
