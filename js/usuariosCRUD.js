@@ -66,14 +66,71 @@ const registro = (usuario,correo,clave) => {
     cuentas.push(nuevoUsuario);
     return "Se ha registrado con éxito";
 }
-
-// console.log(cuentaAdmin);
-console.log(...cuentas);
-console.log(registro("diegovaca","diego@diego.com","123123"));
-console.log(...cuentas);
-console.log(registro("diegovaca","diego@diego.cosm","123123"));
-console.log(...cuentas);
-console.log(registro("diegovacas","diego@diego.comss","123123"));
-console.log(...cuentas);
 // MODIFICAR LISTA
+// BUSCAR USUARIOS
+const buscarCuentaCorreo = (correo) => {
+    correo = correo.toLowerCase();
+    for(let i = 0; i < cuentas.length; i++){
+        if(cuentas[i].correo.toLowerCase() === correo){
+            return cuentas[i];
+        }
+    }
+    return null;
+}
+const buscarCuentaUsuario = (usuario) => {
+    usuario = usuario.toLowerCase();
+    for(let i = 0; i < cuentas.length; i++){
+        if(cuentas[i].usuario.toLowerCase() === usuario){
+            return cuentas[i];
+        }
+    }
+    return null;
+}
+// LOGUEARSE
+const iniciarSesion = (correo, clave) => {
+    if(correo === null || correo === undefined || clave === null || clave === undefined){
+        return null;
+    }
+    const cuenta = buscarCuentaCorreo(correo);
+    if(cuenta!==null){
+        if(cuenta.clave === clave){
+            return "Iniciando Sesión...";
+        }
+        else{
+            return "Contraseña incorrecta";
+        }
+    }
+    else{
+        return "Revisa si ingresaste el correo correctamente";
+    }
+}
 // ELIMINAR USUARIOS
+const eliminarCuenta = (cuenta) => {
+    if(cuenta===null||cuenta===undefined){
+        return "Ha ocurrido un error";
+    }
+    if(cuenta.usuario==="admin" && cuenta.correo==="admin@admin.com"){
+        return "No puede eliminar la cuenta administrador";
+    }
+    for(let i = 1; i < cuentas.length; i++){
+        if(cuenta.usuario.toLowerCase()===cuentas[i].usuario.toLowerCase() && cuenta.correo.toLowerCase()===cuentas[i].correo.toLowerCase()){
+            cuentas.splice(i,1);
+            return "La cuenta se eliminó correctamente";
+        }
+    }
+    return "La cuenta seleccionada no existe";
+}
+
+// console.log(registro("diego","diego@","1234"));
+// console.log(registro("alan","alan@","1234"));
+// console.log(registro("felipe","felipe@","1234"));
+// console.log(registro("robby","robby@","1234"));
+// console.log(registro("ana","ana@","1234"));
+// console.log(...cuentas);
+// console.log(eliminarCuenta(buscarCuentaCorreo("robby@")));
+// console.log(...cuentas);
+// console.log(eliminarCuenta(buscarCuentaUsuario("admin")));
+// console.log(...cuentas);
+// console.log(iniciarSesion("diego@","1234"));
+// console.log(iniciarSesion("diegi@","1234"));
+// console.log(iniciarSesion("diego@","a43"));
