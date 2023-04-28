@@ -32,10 +32,21 @@ class Cuenta{
 }
 
 // CRUD USUARIOS
-let cuentas = [];
-const cuentaAdmin = new Cuenta("admin","admin@admin.com","1234",true);
-let cuentaActiva = null;
-cuentas.push(cuentaAdmin);
+
+let cuentas = localStorage.getItem("cuentas");
+if(cuentas === null){
+    cuentas = [];
+    const cuentaAdmin = new Cuenta("admin","admin@admin.com","1234",true);
+    cuentas.push(cuentaAdmin);
+}
+else{
+    cuentas = JSON.parse(cuentas);
+}
+let cuentaActiva = localStorage.getItem("cuentaActiva");
+if(cuentaActiva !== null){
+    cuentaActiva = JSON.parse(cuentaActiva);
+}
+
 
 // ALTA USUARIOS
 const registro = (usuario,correo,clave) => {
@@ -65,6 +76,7 @@ const registro = (usuario,correo,clave) => {
     }
     let nuevoUsuario = new Cuenta(usuario, correo, clave, false);
     cuentas.push(nuevoUsuario);
+    localStorage.setItem("cuentas",JSON.stringify(cuentas));
     return "Se ha registrado con éxito";
 }
 // BUSCAR USUARIOS
@@ -98,6 +110,7 @@ const iniciarSesion = (correo, clave) => {
     if(cuenta!==null){
         if(cuenta.clave === clave){
             cuentaActiva=cuenta;
+            localStorage.setItem("cuentaActiva", JSON.stringify(cuentaActiva));
             return "Iniciando Sesión...";
         }
         else{
@@ -119,6 +132,7 @@ const eliminarCuenta = (cuenta) => {
     for(let i = 1; i < cuentas.length; i++){
         if(cuenta.usuario.toLowerCase()===cuentas[i].usuario.toLowerCase() && cuenta.correo.toLowerCase()===cuentas[i].correo.toLowerCase()){
             cuentas.splice(i,1);
+            localStorage.setItem("cuentas", JSON.stringify(cuentas));
             return "La cuenta se eliminó correctamente";
         }
     }
@@ -131,15 +145,16 @@ const cerrarSesion = () => {
         return "Error, no había ninguna sesión activa";
     }
     cuentaActiva = null;
+    localStorage.setItem("cuentaActiva", JSON.stringify(cuentaActiva));
     return "Cerrando Sesión...";
 }
 
 
-//  console.log(registro("diego","diego@","1234"));
-//  console.log(registro("alan","alan@","1234"));
-//  console.log(registro("felipe","felipe@","1234"));
-//  console.log(registro("robby","robby@","1234"));
-//  console.log(registro("ana","ana@","1234"));
+// console.log(registro("diego","diego@","1234"));
+// console.log(registro("alan","alan@","1234"));
+// console.log(registro("felipe","felipe@","1234"));
+// console.log(registro("robby","robby@","1234"));
+// console.log(registro("ana","ana@","1234"));
 // console.log(...cuentas);
 // console.log(eliminarCuenta(buscarCuentaCorreo("robby@")));
 // console.log(...cuentas);
