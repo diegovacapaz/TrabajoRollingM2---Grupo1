@@ -133,8 +133,6 @@ const cerrarSesion = () => {
     cuentaActiva = null;
     return "Cerrando Sesión...";
 }
-// CUENTA ACTIVA
-
 
 
 //  console.log(registro("diego","diego@","1234"));
