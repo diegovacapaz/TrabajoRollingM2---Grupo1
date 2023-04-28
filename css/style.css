@@ -14,5 +14,9 @@
 }
 
 .avatar{
-    width: 40%;
+    width: 20%;
+}
+
+.fs-0 {
+    font-size: calc(2rem + 1.5vw);
 }
