@@ -558,7 +558,8 @@ hr {
 	}
 
 	.btn-2 {
-		width: 110px;
+		width: 120px;
+		margin-left: 10px ;
 	}
 
 	.about {
