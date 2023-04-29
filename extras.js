@@ -1,3 +1,4 @@
+//Animacion del slider/carrousel de la pagina principal
 let swiper = new Swiper(".miSwiper", {
 	effect: "coverflow",
 	grabCursor: true,
@@ -13,6 +14,8 @@ let swiper = new Swiper(".miSwiper", {
 	loop: true,
 });
 
+
+//Animacion de las estrellas de la pagina principal
 let index = 0,
 	interval = 1000;
 
