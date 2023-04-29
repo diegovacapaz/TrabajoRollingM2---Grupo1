@@ -1,48 +1,50 @@
 class Cuenta{
     constructor(usuario,correo,clave,admin){
-        this._usuario = usuario;
-        this._correo = correo;
-        this._clave = clave;
-        this._admin = admin;
+        this.usuario = usuario;
+        this.correo = correo;
+        this.clave = clave;
+        this.admin = admin;
     }
-    get usuario(){
-        return this._usuario;
-    }
-    get correo(){
-        return this._correo;
-    }
-    get clave(){
-        return this._clave;
-    }
-    get admin(){
-        return this._admin;
-    }
-    set usuario(usuario){
-        this._usuario = usuario;
-    }
-    set correo(correo){
-        this._correo = correo;
-    }
-    set clave(clave){
-        this._clave = clave;
-    }
+    // get usuario(){
+    //     return this._usuario;
+    // }
+    // get correo(){
+    //     return this._correo;
+    // }
+    // get clave(){
+    //     return this._clave;
+    // }
+    // get admin(){
+    //     return this._admin;
+    // }
+    // set usuario(usuario){
+    //     this._usuario = usuario;
+    // }
+    // set correo(correo){
+    //     this._correo = correo;
+    // }
+    // set clave(clave){
+    //     this._clave = clave;
+    // }
     toString(){
         return `Usuario: ${this.usuario}, Correo: ${this.correo}, Clave: ${this.clave}, Admin: ${this.admin}`;
     }
 }
 
 // CRUD USUARIOS
-
-let cuentas = localStorage.getItem("cuentas");
+const lsCuentasId = "cuentas";
+const lsActivaId = "cuentaActiva";
+let cuentas = localStorage.getItem(lsCuentasId);
 if(cuentas === null){
     cuentas = [];
     const cuentaAdmin = new Cuenta("admin","admin@admin.com","1234",true);
     cuentas.push(cuentaAdmin);
+    localStorage.setItem(lsCuentasId,JSON.stringify(cuentas));
 }
 else{
     cuentas = JSON.parse(cuentas);
 }
-let cuentaActiva = localStorage.getItem("cuentaActiva");
+let cuentaActiva = localStorage.getItem(lsActivaId);
 if(cuentaActiva !== null){
     cuentaActiva = JSON.parse(cuentaActiva);
 }
@@ -76,7 +78,7 @@ const registro = (usuario,correo,clave) => {
     }
     let nuevoUsuario = new Cuenta(usuario, correo, clave, false);
     cuentas.push(nuevoUsuario);
-    localStorage.setItem("cuentas",JSON.stringify(cuentas));
+    localStorage.setItem(lsCuentasId,JSON.stringify(cuentas));
     return "Se ha registrado con éxito";
 }
 // BUSCAR USUARIOS
@@ -110,7 +112,7 @@ const iniciarSesion = (correo, clave) => {
     if(cuenta!==null){
         if(cuenta.clave === clave){
             cuentaActiva=cuenta;
-            localStorage.setItem("cuentaActiva", JSON.stringify(cuentaActiva));
+            localStorage.setItem(lsActivaId, JSON.stringify(cuentaActiva));
             return "Iniciando Sesión...";
         }
         else{
@@ -132,11 +134,11 @@ const eliminarCuenta = (cuenta) => {
     for(let i = 1; i < cuentas.length; i++){
         if(cuenta.usuario.toLowerCase()===cuentas[i].usuario.toLowerCase() && cuenta.correo.toLowerCase()===cuentas[i].correo.toLowerCase()){
             cuentas.splice(i,1);
-            localStorage.setItem("cuentas", JSON.stringify(cuentas));
+            localStorage.setItem(lsCuentasId, JSON.stringify(cuentas));
             return "La cuenta se eliminó correctamente";
         }
     }
-    return "La cuenta seleccionada no existe";
+    return "La cuenta seleccionada no existe"; //No entra nunca
 }
 // MODIFICAR LISTA
 // CERRAR SESION
@@ -145,7 +147,7 @@ const cerrarSesion = () => {
         return "Error, no había ninguna sesión activa";
     }
     cuentaActiva = null;
-    localStorage.setItem("cuentaActiva", JSON.stringify(cuentaActiva));
+    localStorage.removeItem(lsActivaId);
     return "Cerrando Sesión...";
 }
 
