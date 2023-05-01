@@ -17,15 +17,20 @@ const actualizarTabla = () => {
             tdUsuario = trUsuario.insertCell();
             tdUsuario.innerText = Object.values(cuentas[i])[j];
         }
+        tdUsuario = trUsuario.insertCell();
+        tdUsuario.appendChild(crearBotonEliminar());
+        tdUsuario.setAttribute("class","text-center");
     }
 }
 const crearBotonEliminar = () => {
-    let boton = document.createElement("button");
-    boton.setAttribute("class", "btn btn-danger");
+    let borrar = document.createElement("i");
+    borrar.setAttribute("class","bi bi-x-circle-fill btn-borrar");
+    borrar.setAttribute("id","botonBorrar");
+    return borrar;
 }
 
 //CONTROLADORES DE EVENTOS
 
-
 //CODIGO A EJECUTAR
 actualizarTabla();
+crearBotonEliminar();
