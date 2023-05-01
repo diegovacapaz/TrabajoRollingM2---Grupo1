@@ -1,8 +1,10 @@
 //IMPORTACIÓN DEL MODELO
 import {cuentas, cuentaActiva, registro, buscarCuentaCorreo, buscarCuentaUsuario, iniciarSesion, eliminarCuenta, cerrarSesion} from "./modeloUsuariosCRUD.js";
 
+//DECLARACION DE VARIABLES GLOBALES
 const tablaUsuarios = document.getElementById("tablaUsuarios");
 
+//FUNCIONES INTERMEDIAS
 const actualizarTabla = () => {
     tablaUsuarios.tBodies[0].innerHTML = "";
     let trUsuario;
@@ -17,7 +19,5 @@ const actualizarTabla = () => {
         }
     }
 }
-registro("diego","asdasd","asdasd");
-actualizarTabla();
-eliminarCuenta(buscarCuentaUsuario("diego"));
-actualizarTabla();
+
+//CONTROLADORES DE EVENTOS
