@@ -49,11 +49,19 @@
 }
 
 .btn-borrar{
-    color: rgb(255, 25, 0);
+    color: rgb(151, 15, 0);
 }
 
 .btn-borrar:hover{
-    color: rgb(151, 15, 0);
+    color: rgb(255, 25, 0);
+}
+
+.btn-ver{
+    color: var(--azulOscuro);
+}
+
+.btn-ver:hover{
+    color: var(--azulClaro);
 }
 
 /*Responsive*/
