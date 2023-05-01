@@ -31,6 +31,7 @@ const actualizarTabla = () => {
         }
         tdUsuario = trUsuario.insertCell();
         tdUsuario.appendChild(crearBotonVer());
+        tdUsuario.setAttribute("class","text-center");
     }
     asignarListenersBorrar();
     asignarListenersVer();
