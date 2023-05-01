@@ -3,6 +3,7 @@ import {cuentas, cuentaActiva, registro, buscarCuentaCorreo, buscarCuentaUsuario
 
 //DECLARACION DE VARIABLES GLOBALES
 const tablaUsuarios = document.getElementById("tablaUsuarios");
+let botonesBorrar = document.getElementsByClassName("btn-borrar");
 
 //FUNCIONES INTERMEDIAS
 const actualizarTabla = () => {
@@ -18,19 +19,35 @@ const actualizarTabla = () => {
             tdUsuario.innerText = Object.values(cuentas[i])[j];
         }
         tdUsuario = trUsuario.insertCell();
-        tdUsuario.appendChild(crearBotonEliminar());
-        tdUsuario.setAttribute("class","text-center");
+        if(i>0){
+            tdUsuario.appendChild(crearBotonBorrar());
+            tdUsuario.setAttribute("class","text-center");
+        }
     }
+    asignarListenersBorrar();
 }
-const crearBotonEliminar = () => {
+const crearBotonBorrar = () => {
     let borrar = document.createElement("i");
     borrar.setAttribute("class","bi bi-x-circle-fill btn-borrar");
-    borrar.setAttribute("id","botonBorrar");
     return borrar;
+}
+const ocultarClave = (clave) => {
+    let claveOculta = "";
+    for(let i = 0; i < clave.length; i++){
+        claveOculta += "*";
+    }
+    return claveOculta;
 }
 
 //CONTROLADORES DE EVENTOS
+const asignarListenersBorrar = () => {
+    for(let i = 0; i < botonesBorrar.length; i++){
+        botonesBorrar[i].addEventListener("click", () => {
+            eliminarCuenta(cuentas[i+1]);
+            actualizarTabla();
+        });
+    }
+}
 
-//CODIGO A EJECUTAR
+//PRIMERA ACTUALIZACION
 actualizarTabla();
-crearBotonEliminar();
