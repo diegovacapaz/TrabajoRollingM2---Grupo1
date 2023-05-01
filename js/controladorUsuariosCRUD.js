@@ -19,5 +19,13 @@ const actualizarTabla = () => {
         }
     }
 }
+const crearBotonEliminar = () => {
+    let boton = document.createElement("button");
+    boton.setAttribute("class", "btn btn-danger");
+}
 
 //CONTROLADORES DE EVENTOS
+
+
+//CODIGO A EJECUTAR
+actualizarTabla();
