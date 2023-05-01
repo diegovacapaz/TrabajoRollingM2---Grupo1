@@ -1,3 +1,4 @@
+//DECLARACIÓN DE CLASE
 class Cuenta{
     constructor(usuario,correo,clave,admin){
         this.usuario = usuario;
@@ -31,7 +32,7 @@ class Cuenta{
     }
 }
 
-// CRUD USUARIOS
+// DECLARACIÓN DE VARIABLES GLOBALES
 const lsCuentasId = "cuentas";
 const lsActivaId = "cuentaActiva";
 let cuentas = localStorage.getItem(lsCuentasId);
@@ -48,7 +49,6 @@ let cuentaActiva = localStorage.getItem(lsActivaId);
 if(cuentaActiva !== null){
     cuentaActiva = JSON.parse(cuentaActiva);
 }
-
 
 // ALTA USUARIOS
 const registro = (usuario,correo,clave) => {
@@ -81,6 +81,7 @@ const registro = (usuario,correo,clave) => {
     localStorage.setItem(lsCuentasId,JSON.stringify(cuentas));
     return "Se ha registrado con éxito";
 }
+
 // BUSCAR USUARIOS
 const buscarCuentaCorreo = (correo) => {
     correo = correo.toLowerCase();
@@ -100,6 +101,7 @@ const buscarCuentaUsuario = (usuario) => {
     }
     return null;
 }
+
 // LOGUEARSE
 const iniciarSesion = (correo, clave) => {
     if(correo === null || correo === undefined || clave === null || clave === undefined){
@@ -123,6 +125,7 @@ const iniciarSesion = (correo, clave) => {
         return "Revisa si ingresaste el correo correctamente";
     }
 }
+
 // ELIMINAR USUARIOS
 const eliminarCuenta = (cuenta) => {
     if(cuenta===null||cuenta===undefined){
@@ -140,7 +143,9 @@ const eliminarCuenta = (cuenta) => {
     }
     return "La cuenta seleccionada no existe"; //No entra nunca
 }
+
 // MODIFICAR LISTA
+
 // CERRAR SESION
 const cerrarSesion = () => {
     if(cuentaActiva===null){
@@ -150,21 +155,3 @@ const cerrarSesion = () => {
     localStorage.removeItem(lsActivaId);
     return "Cerrando Sesión...";
 }
-
-
-// console.log(registro("diego","diego@","1234"));
-// console.log(registro("alan","alan@","1234"));
-// console.log(registro("felipe","felipe@","1234"));
-// console.log(registro("robby","robby@","1234"));
-// console.log(registro("ana","ana@","1234"));
-// console.log(...cuentas);
-// console.log(eliminarCuenta(buscarCuentaCorreo("robby@")));
-// console.log(...cuentas);
-// console.log(eliminarCuenta(buscarCuentaUsuario("admin")));
-// console.log(...cuentas);
-// console.log(iniciarSesion("diego@","1234"));
-// console.log(iniciarSesion("diegi@","1234"));
-// console.log(iniciarSesion("diego@","a43"));
-// console.log(cuentaActiva);
-// console.log(cerrarSesion());
-// console.log(cuentaActiva);
