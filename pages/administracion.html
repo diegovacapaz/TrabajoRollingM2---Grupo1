@@ -15,7 +15,37 @@
     <title>Proyecto Rolling Code</title>
 </head>
 <body>
-    <nav></nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark navfixed">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"><img src="../img/logo.svg" alt=""></a>
+                <a class="navbar-brand" href="../index.html">RollinGames</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Soporte</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                        <li class="nav-item d-none" id="linkAdmin">
+                            <a class="nav-link" href="#">Administracion</a>
+                        </li>
+                    </ul>
+                    <a type="button" class="btn btn-dark text-white" id="userBtn" href="login.html">Ingresar</a>
+                    <button type="button" class="btn btn-dark d-none" id="exitBtn">
+                        <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
     <main class="container">
         <section class="text-center my-5">
             <h1 class="fs-0 fw-bold">Administración</h1>
@@ -136,7 +166,86 @@
             </article>
         </section>
     </main>
-    <footer></footer>
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md left">
+                <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-warning"> RollinGGames</h5>
+                    <a href="../index.html">
+                        <img src="../img/logo.svg" style="width: 100px;" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-warning">Pagos</h5>
+                    <p>
+                        <a href="#" class="text-decoration-none text-white" >Nosotros</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-decoration-none text-white">Soporte</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-decoration-none text-white">contactenos</a>
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-2 col-xl-2 mx-auto mt-3" >
+                    <h5 class="text-uppercase mb-4 text-warning">Navegación</h5>
+                    <p>
+                        <a href="#" class="text-decoration-none text-white">Nosotros</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-decoration-none text-white">Soporte</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-decoration-none text-white">contactenos</a>
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-warning">Contactos</h5>
+                    <p>
+                        <i class="fas fa-home mr-3">Argentina, Tucumán</i>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope mr-3">Rollingcode@gmail.com</i>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone mr-3">+54 3812581948</i>
+                    </p>
+                </div>
+                <hr class="mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-7 col-lg-8">
+                        <p>
+                            Copyright ©2023 <strong class="text-warning">RollinGGames</strong>
+                        </p>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="text-center text-md right">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn-floating btn-sm text-white"><i class="bi bi-facebook"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn-floating btn-sm text-white" style="font-size: 27px;">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn-floating btn-sm text-white">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="btn-floating btn-sm text-white">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
