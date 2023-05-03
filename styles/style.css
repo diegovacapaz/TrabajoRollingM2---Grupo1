@@ -478,7 +478,7 @@ hr {
 	}
 }
 
-@media(max-width:991px) {
+@media(max-width:767px) {
 	body {
 		min-height: 0vh;
 	}
@@ -558,8 +558,9 @@ hr {
 	}
 
 	.btn-2 {
-		width: 120px;
-		margin-left: 10px ;
+		width: 95px;
+		margin-left: 20px;
+		text-align: center;
 	}
 
 	.about {
@@ -605,4 +606,162 @@ hr {
 		flex-direction: column;
 	}
 
+	.news-1 h3 {
+		margin-top: 7px;
+	}
+
+	.news .txt h2,
+	.about .txt h2,
+	.games .txt h2{
+		font-size: 23px;
+	}
+
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+	body {
+		min-height: 0vh;
+	}
+
+	.menu {
+		padding: 30px;
+	}
+
+	.menu label {
+		display: initial;
+		transition: .3s ease-in-out;
+	}
+
+	.menu .navbar {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background-color: #1F1F1F;
+		display: none;
+	}
+
+	.menu .navbar ul li {
+		width: 100%;
+	}
+
+	#menu:checked~.navbar {
+		display: initial;
+	}
+
+	.juegos {
+		padding: 30px;
+	}
+
+	.header {
+		min-height: 0vh;
+	}
+
+	.header-content {
+		flex-direction: column;
+		padding: 100px 30px 30px 30px;
+	}
+
+	.header-txt {
+		width: 100%;
+		text-align: center;
+	}
+
+	.header-txt h1 {
+		margin-bottom: 15px;
+	}
+
+	.header-img {
+		width: 100%;
+	}
+
+	.header-img img {
+		width: 100%;
+		height: 300px;
+	}
+
+	.games-content {
+		flex-wrap: wrap;
+		margin-left: 55px;
+	}
+
+	.game {
+		width: calc(33.33% - 10px);
+		margin-right: 10px;
+		margin-bottom: 20px;
+	}
+
+	.game:last-child {
+		margin-right: 0;
+	}
+
+	.ba {
+		display: none;
+	}
+
+	.btn-2 {
+		width: 100px;
+		margin-left: 10px;
+	}
+
+	.games .btn-2 {
+		width: 100px;
+		margin-right: 20px;
+	}
+
+	.games .txt h2 {
+		margin-left: 30px;
+	}
+
+	.about {
+		padding: 30px;
+	}
+
+	.about-content {
+		flex-direction: column;
+		object-fit: contain;
+	}
+
+	.about-1 {
+		width: 100%;
+		margin-bottom: 10px;
+		object-fit: contain;
+	}
+
+	.about-2 {
+		width: 100%;
+		margin-left: 0;
+		object-fit: contain;
+	}
+
+	.news {
+		padding: 30px;
+	}
+
+	.news-content {
+		flex-direction: column;
+	}
+
+	.news-txt {
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.news-form {
+		width: 100%;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.news-1 {
+		flex-direction: column;
+		object-fit: contain;
+	}
+
+	.news-1 h3 {
+		margin-top: 7px;
+	}
 }
