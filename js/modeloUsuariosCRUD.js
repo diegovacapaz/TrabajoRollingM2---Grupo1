@@ -155,3 +155,6 @@ const cerrarSesion = () => {
     localStorage.removeItem(lsActivaId);
     return "Cerrando Sesión...";
 }
+
+//EXPORTACIÓN
+export {cuentas, cuentaActiva, registro, buscarCuentaCorreo, buscarCuentaUsuario, iniciarSesion, eliminarCuenta, cerrarSesion};
