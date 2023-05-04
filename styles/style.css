@@ -48,6 +48,21 @@ body {
 	margin: 0 auto;
 }
 
+.nombrePagina {
+	animation: background-pan 1s linear infinite;
+	background: linear-gradient(to right,
+			var(--purple),
+			var(--violet),
+			var(--pink),
+			var(--purple));
+	background-size: 200%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	white-space: nowrap;
+	font-size: 30px;
+	font-weight: 700;
+}
+
 #icon {
 	width: 30px;
 	cursor: pointer;
@@ -81,6 +96,7 @@ body {
 	from {
 		background-position-x: right;
 	}
+
 	to {
 		background-position-x: left;
 	}
