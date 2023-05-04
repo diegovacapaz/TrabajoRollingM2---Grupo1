@@ -20,11 +20,12 @@
 	--primary-color: #5B5BD7;
 	--text-color: #ffffffc2;
 	--input-color: #fff;
-	--text-span-color: #5B5BD7;
+	--text-span-color: #fff;
 	--gradient-color-1: rgba(103, 58, 183, 1);
 	--gradient-color-2: rgba(123, 31, 162, 1);
 	--btn-color: rgb(123, 31, 162);
-	--icon-color: invert(40%) sepia(102%) saturate(8293%) hue-rotate(250deg) brightness(102%) contrast(100%);
+	--icon-color: invert(75%) sepia(10%) saturate(8293%) hue-rotate(250deg) brightness(102%) contrast(100%);
+	--logo-color: invert(50%) sepia(28%) saturate(6800%) hue-rotate(230deg) brightness(102%) contrast(400%);
 }
 
 * {
@@ -58,17 +59,35 @@ body {
 }
 
 .themeChanger#icon {
-    filter: var(--icon-color);
+	filter: var(--icon-color);
 }
 
 .header {
-	background-image: url(/img/bg.jpg);
 	background-position: center bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: flex;
 	align-items: center;
 	min-height: 70vh;
+}
+
+.slide-in {
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-name: slide-in-animation;
+}
+
+@keyframes slide-in-animation {
+	from {
+		background-position-x: right;
+	}
+	to {
+		background-position-x: left;
+	}
+}
+
+.logo {
+	filter: var(--logo-color)
 }
 
 .menu {
@@ -151,9 +170,10 @@ body {
 }
 
 .header-img img {
-	height: 500px;
+	height: 400px;
 	width: 600px;
 	object-fit: contain;
+	opacity: 0.8;
 }
 
 .container-swiper {

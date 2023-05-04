@@ -39,13 +39,24 @@ for (const star of document.getElementsByClassName("magic-star")) {
 	}, index++ * (interval / 3))
 }
 
+// funcion para cambiar el tema de la pagina
 const icon = document.getElementById("icon");
+const header = document.querySelector(".header");
 
 icon.onclick = function () {
 	document.body.classList.toggle("light-theme");
 	if (document.body.classList.contains("light-theme")) {
 		icon.src = "img/sun.png";
+		header.style.backgroundImage = "url(./img/bg-light.png)";
 	} else {
 		icon.src = "img/moon.png";
+		header.style.backgroundImage = "url(./img/bg-dark.jpg)";
 	}
+}
+
+// Establece la imagen de fondo inicial dependiendo del tema
+if (document.body.classList.contains("light-theme")) {
+	header.style.backgroundImage = "url(./img/bg-light.png)";
+} else {
+	header.style.backgroundImage = "url(./img/bg-dark.jpg)";
 }
