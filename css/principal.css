@@ -150,6 +150,7 @@ body {
 .header-content {
 	display: flex;
 	align-items: center;
+	margin-top: 80px;
 }
 
 .header-txt {
