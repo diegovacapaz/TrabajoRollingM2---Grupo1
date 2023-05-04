@@ -19,6 +19,7 @@ function listar() {
             dataFila += "<td>"+varJuego.idJuego+"</td>";
             dataFila += "<td>"+varJuego.Nombre+"</td>";
             dataFila += "<td>"+varJuego.genero+"</td>";
+            dataFila += "<td>"+varJuego.descripcion+"</td>";
             dataFila += "<td>"+varJuego.precio+"</td>";
             dataFila += "<td>"+
                         "<button type='button' class='btn btn-warning' onclick='abrirForm("+varJuego.idJuego+")'>EDITAR</button>"+

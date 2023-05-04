@@ -31,6 +31,7 @@ function guardar() {
                     idJuego: (idForm > 0) ? idForm : (tablaJuego.length + 1),
                     Nombre: document.getElementById("txtNombre").value,
                     genero: document.getElementById("cboGenero").value,
+                    descripcion: document.getElementById("txtDescripción").value,
                     precio: document.getElementById("txtPrecio").value,
                     
                 });
@@ -75,6 +76,7 @@ function cargarPagina() {
                 document.getElementById("txtIdJuego").value = varJuego.idJuego;
                 document.getElementById("txtNombre").value = varJuego.nombre;
                 document.getElementById("cboGenero").value = varJuego.genero;
+                document.getElementById("txtDescripción").value = varJuego.descripcion;
                 document.getElementById("txtPrecio").value = varJuego.precio;
                 break;
             }
