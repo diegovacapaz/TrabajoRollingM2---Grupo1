@@ -38,3 +38,14 @@ for (const star of document.getElementsByClassName("magic-star")) {
 		setInterval(() => animate(star), 1000);
 	}, index++ * (interval / 3))
 }
+
+const icon = document.getElementById("icon");
+
+icon.onclick = function () {
+	document.body.classList.toggle("light-theme");
+	if (document.body.classList.contains("light-theme")) {
+		icon.src = "img/sun.png";
+	} else {
+		icon.src = "img/moon.png";
+	}
+}

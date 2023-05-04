@@ -4,6 +4,27 @@
 	--purple: rgb(123, 31, 162);
 	--violet: rgb(103, 58, 183);
 	--pink: rgb(244, 143, 177);
+
+	--primary-color: #14112E;
+	--text-color: #A0A3C4;
+	--input-color: #393D63;
+	--text-span-color: #5B5BD7;
+	--gradient-color-1: rgba(72, 87, 240, 1);
+	--gradient-color-2: rgba(83, 54, 164, 1);
+	--btn-color: #393D63;
+	--logo-color: #5B5BD7;
+	--icon-color: invert(34%) sepia(97%) saturate(6894%) hue-rotate(260deg) brightness(106%) contrast(103%)
+}
+
+.light-theme {
+	--primary-color: #5B5BD7;
+	--text-color: #ffffffc2;
+	--input-color: #fff;
+	--text-span-color: #5B5BD7;
+	--gradient-color-1: rgba(103, 58, 183, 1);
+	--gradient-color-2: rgba(123, 31, 162, 1);
+	--btn-color: rgb(123, 31, 162);
+	--icon-color: invert(34%) sepia(99%) saturate(8000%) hue-rotate(250deg) brightness(98%) contrast(100%);
 }
 
 * {
@@ -17,13 +38,27 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	height: 100vh;
-	background-color: #14112E;
+	background-color: var(--primary-color);
 	place-items: center;
 }
 
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
+}
+
+#icon {
+	width: 30px;
+	cursor: pointer;
+}
+
+.themeChanger {
+	position: relative;
+	top: 19px;
+}
+
+.themeChanger#icon {
+    filter: var(--icon-color);
 }
 
 .header {
@@ -54,7 +89,7 @@ body {
 .menu .navbar ul li a {
 	font-size: 18px;
 	padding: 20px;
-	color: #A0A3C4;
+	color: var(--text-color);
 	display: block;
 	font-weight: 600;
 	transition: .3s ease-in-out;
@@ -88,7 +123,7 @@ body {
 
 .header-txt span {
 	font-size: 15px;
-	color: #5B5BD7;
+	color: var(--text-span-color);
 	text-transform: capitalize;
 	font-weight: 700;
 }
@@ -106,8 +141,8 @@ body {
 	text-transform: capitalize;
 	color: #FFFFFF;
 	background: linear-gradient(90deg,
-			rgba(72, 87, 240, 1) 25%,
-			rgba(83, 54, 164, 1) 100%);
+			var(--gradient-color-1) 25%,
+			var(--gradient-color-2) 100%);
 	border-radius: 15px;
 }
 
@@ -248,7 +283,7 @@ body {
 .btn-2 {
 	display: inline-block;
 	padding: 10px 20px;
-	background-color: #393D63;
+	background-color: var(--btn-color);
 	color: #FFFFFF;
 	font-size: 14px;
 	text-transform: capitalize;
@@ -380,7 +415,7 @@ body {
 
 .news-right p {
 	font-size: 16px;
-	color: #A0A3C4;
+	color: var(--text-color);
 	margin-bottom: 20px;
 }
 
@@ -388,7 +423,7 @@ body {
 	display: inline-block;
 	padding: 10px 15px;
 	color: #FFFFFF;
-	background-color: #393D63;
+	background-color: var(--btn-color);
 	border-radius: 10px;
 }
 
@@ -399,14 +434,14 @@ body {
 
 .news-form p {
 	font-size: 16px;
-	color: #A0A3C4;
+	color: var(--text-color);
 	margin-bottom: 20px;
 }
 
 input {
 	padding: 13px 10px;
 	outline: none;
-	background-color: #393D63;
+	background-color: var(--input-color);
 	border: none;
 	border-radius: 10px;
 	margin-bottom: 15px;
@@ -436,7 +471,7 @@ hr {
 }
 
 .footer a {
-	color: #A0A3C4;
+	color: var(--text-color);
 	text-transform: capitalize;
 	margin-right: 10px;
 	transition: .3s ease-in-out;
@@ -481,6 +516,12 @@ hr {
 @media(max-width:767px) {
 	body {
 		min-height: 0vh;
+	}
+
+	.themeChanger {
+		top: -8px;
+		height: 30px;
+		left: 170px;
 	}
 
 	.menu {
@@ -612,7 +653,7 @@ hr {
 
 	.news .txt h2,
 	.about .txt h2,
-	.games .txt h2{
+	.games .txt h2 {
 		font-size: 23px;
 	}
 
@@ -626,6 +667,12 @@ hr {
 
 	.menu {
 		padding: 30px;
+	}
+
+	.themeChanger {
+		top: -8px;
+		height: 30px;
+		left: 501px;
 	}
 
 	.menu label {
