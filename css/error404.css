@@ -1,0 +1,59 @@
+/*Configuracion General*/
+* {
+    --negro: #000000;
+    --azulOscuro: #0B2447;
+    --azul: #19376D;
+    --azulClaro: #576CBC;
+    --celeste: #A5D7E8;
+    --blanco: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
+
+/*Página error404*/
+.bg-error404 {
+    background-image: url(../img/error404.png);
+    background-size:cover;
+    -webkit-animation: slidein 100s;
+    animation: slidein 100s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;              
+}
+
+@-webkit-keyframes slidein {
+from {background-position: top; background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+}
+
+@keyframes slidein {
+from {background-position: top;background-size:3000px; }
+to {background-position: -100px 0px;background-size:2750px;}
+
+}
+
+.bg-error404 main{
+    height: 100vh;
+}
+
+.fs-0 {
+    font-size: calc(2rem + 1.5vw);
+}
+
+.errorBotonTamaño{
+    width: 100%;
+}
+
+/*Responsive*/
+@media all and (min-width: 768px) {
+    .errorBotonTamaño{
+        width: 50%;
+    }
+}
+@media all and (min-width: 992px) {
+    .errorBotonTamaño{
+        width: 25%;
+    }
+}
