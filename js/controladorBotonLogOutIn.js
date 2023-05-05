@@ -40,7 +40,18 @@ const añadirEventoClickBotonLog = ()=>{
 
 //Inicialización
 actualizarCuentaActiva();
+
+
+
+//Testing
+
+// registro("diego","diego@","1234");
 // iniciarSesion("admin@admin.com","1234");
+// iniciarSesion("diego@","1234");
+
+
+
+
 
 /*Revisar estado de cuentaActiva
 
