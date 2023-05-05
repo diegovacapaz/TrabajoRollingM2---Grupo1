@@ -15,15 +15,15 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 		<div class="registro">
-			<form>
+			<form class="formRegistro">
 				<label for="chk" aria-hidden="true">Regístrate!</label>
-				<input type="text" name="txt" placeholder="Nombre de Usuario" required minlength="3" maxlength="30"
+				<input id="nombreForm" type="text" name="txt" placeholder="Nombre de Usuario" required minlength="3" maxlength="30"
 					pattern="^[a-zA-Z0-9ñ]{3,30}$">
-				<input type="email" name="email" placeholder="Correo Electrónico" required
+				<input id="mailForm" type="email" name="email" placeholder="Correo Electrónico" required
 					pattern="^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$" maxlength="50">
-				<input type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16"
+				<input id="contraseniaForm" type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16"
 					pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_+-])[a-zA-Z0-9ñ!@#$%^&*_+-]{4,16}$">
-				<button class="botreg">Registrarse</button>
+				<button id="btnRegistro" class="botreg">Registrarse</button>
 			</form>
 
 		</div>
@@ -40,7 +40,7 @@
 		</div>
 
 	</div>
-
+	<script src="../js/registro.js"></script>
 </body>
 
 </html>
