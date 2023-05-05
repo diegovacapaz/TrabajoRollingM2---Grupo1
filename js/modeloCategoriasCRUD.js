@@ -2,14 +2,15 @@
 let categorias = [];
 
 //Crear categorias
-const crearCategoria = () => {
-
+const crearCategoria = (categoria) => {
+    categoria = categoria.toLowerCase();
+    if(!categorias.includes(categoria)){
+        categorias.push(categoria);
+        return "categoria creada con éxito";
+    }
+    return "La categoría ya existe";
 }
 //Eliminar categorias
-const borrarCategoria = () => {
+const borrarCategoria = (categoria) => {
 
-}
-//Buscar categorias
-const buscarCategoria = () => {
-    
 }
