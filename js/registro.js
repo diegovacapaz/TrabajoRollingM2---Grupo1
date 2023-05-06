@@ -1,5 +1,0 @@
-const formRegistro = document.getElementById('formRegistro')
-const nombreForm = document.getElementById('nombreForm')
-const mailForm = document.getElementById('mailForm')
-const contraseniaForm = document.getElementById('contraseniaForm')
-const btnRegistro = document.getElementById('btnRegistro')
