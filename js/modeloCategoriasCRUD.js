@@ -1,5 +1,15 @@
 //Crud categorias
-let categorias = [];
+const lsCategoriasId = "categorias";
+
+let categorias;
+if(localStorage.getItem(lsCategoriasId) === null){
+    categorias = [];
+    localStorage.setItem(lsCategoriasId,JSON.stringify(categorias));
+}
+else{
+    categorias = localStorage.getItem(lsCategoriasId);
+    categorias = JSON.parse(categorias);
+}
 
 //Crear categorias
 const crearCategoria = (categoria) => {
@@ -30,3 +40,6 @@ console.log(categorias);
 console.log(borrarCategoria("Drama"));
 console.log(borrarCategoria("   aventura "));
 console.log(categorias);
+
+//EXPORTACIÓN
+//export {categorias, crearCategoria, borrarCategoria};
