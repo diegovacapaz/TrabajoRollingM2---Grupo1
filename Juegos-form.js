@@ -14,7 +14,7 @@ if (idForm == null) {
 cargarPagina();
 
 function guardar() {
-
+    
 
     Swal.fire({
         title: 'GUARDAR',
@@ -31,10 +31,15 @@ function guardar() {
                     idJuego: (idForm > 0) ? idForm : (tablaJuego.length + 1),
                     Nombre: document.getElementById("txtNombre").value,
                     genero: document.getElementById("cboGenero").value,
-                    descripcion: document.getElementById("txtDescripción").value,
+                    descripcion: document.getElementById("txtDescripcion").value,
                     precio: document.getElementById("txtPrecio").value,
+                    url: document.getElementById("txtUrl").value,
+                    
                     
                 });
+                let url = $('#txtUrl').val();
+                $('#imgMiniatura').attr('src', url).show();
+
                 console.log(objJuego);
                 //EDITAR
                 if (idForm > 0) {
@@ -64,6 +69,7 @@ function guardar() {
             }
         }
     );
+    
 
 }
 
@@ -76,8 +82,9 @@ function cargarPagina() {
                 document.getElementById("txtIdJuego").value = varJuego.idJuego;
                 document.getElementById("txtNombre").value = varJuego.nombre;
                 document.getElementById("cboGenero").value = varJuego.genero;
-                document.getElementById("txtDescripción").value = varJuego.descripcion;
+                document.getElementById("txtDescripcion").value = varJuego.descripcion;
                 document.getElementById("txtPrecio").value = varJuego.precio;
+                document.getElementById("txtUrl").value = varJuego.url;
                 break;
             }
         }
