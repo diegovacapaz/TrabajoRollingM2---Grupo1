@@ -15,26 +15,25 @@
 		<input type="checkbox" id="chk" aria-hidden="true">
 
 		<div class="registro">
-			<form class="formRegistro">
+			<form id="formReg" class="formRegistro">
 				<label for="chk" aria-hidden="true">Regístrate!</label>
-				<input id="nombreRegistro" type="text" name="txt" placeholder="Nombre de Usuario" required minlength="3" maxlength="30"
+				<input id="nombreRegistro" type="text" name="txt" placeholder="Nombre de Usuario" required minlength="3" maxlength="30" title="El nombre puede contener letras o numeros"
 					pattern="^[a-zA-Z0-9ñ]{3,30}$">
 				<input id="mailRegistro" type="email" name="email" placeholder="Correo Electrónico" required
 					pattern="^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$" maxlength="50">
-				<input id="contraseniaRegistro" type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16"
+				<input id="contraseniaRegistro" type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16" title="La contraseña debe contener al menos una letra mayuscula, un numero y un caracter especial"
 					pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_+-])[a-zA-Z0-9ñ!@#$%^&*_+-]{4,16}$">
-				<button id="btnRegistro" type="sumbit" class="botreg">Registrarse</button>
+				<button id="btnRegistro" type="submit" class="botreg">Registrarse</button>
 			</form>
 
 		</div>
 
 		<div class="ingresar">
-			<form class="formIngresar">
+			<form id="formIng" class="formIngresar">
 				<label for="chk" aria-hidden="true">Ingresar</label>
-				<input type="email" name="email" placeholder="Correo Electrónico" required pattern="^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$" maxlength="50">
-				<input type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16"
-				pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_+-])[a-zA-Z0-9ñ!@#$%^&*_+-]{4,16}$">
-				<button class="boting">Ingresar</button>
+				<input id="mailIngresar" type="email" name="email" placeholder="Correo Electrónico" required pattern="^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$" maxlength="50">
+				<input id="contraseniaIngresar" type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16">
+				<button id="btnIngresar" type="submit" class="boting">Ingresar</button>
 			</form>
 
 		</div>
