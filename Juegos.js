@@ -21,13 +21,17 @@ function listar() {
             dataFila += "<td>"+varJuego.genero+"</td>";
             dataFila += "<td>"+varJuego.descripcion+"</td>";
             dataFila += "<td>"+varJuego.precio+"</td>";
+            dataFila += "<td><img src='" + varJuego.url + "' alt='" + varJuego.Nombre + " thumbnail' width='60' height='50' ></td>";
             dataFila += "<td>"+
                         "<button type='button' class='btn btn-warning' onclick='abrirForm("+varJuego.idJuego+")'>EDITAR</button>"+
                         "<button type='button' class='btn btn-info' onclick='eliminarItem("+varJuego.idJuego+")'>ELIMINAR</button>"+
                         "</td>";
             dataFila += "</tr>";
 
+            
+
         }
+        
         document.getElementById("dataJuego").innerHTML = dataFila;
     }
     else{
