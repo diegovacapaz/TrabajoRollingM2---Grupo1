@@ -1,14 +1,14 @@
 let tablaJuego = localStorage.getItem("tablaJuegoStorage");
 tablaJuego = JSON.parse(tablaJuego);
 if (tablaJuego == null) {
-    let tablaJuego = [];
+    tablaJuego = [];
 }
 
 
 let idForm = localStorage.getItem("idForm");
 idForm = JSON.parse(idForm);
 if (idForm == null) {
-    let idForm = 0;
+    idForm = 0;
 }
 
 cargarPagina();
@@ -28,7 +28,7 @@ function guardar() {
 
                 console.log("PRESIONO GUARDAR...");
                 let objJuego = JSON.stringify({
-                    idJuego: (idForm > 0) ? idForm : (tablaJuego.length + 1),
+                    idJuego: (idForm >= 0) ? idForm : (tablaJuego.length + 1),
                     Nombre: document.getElementById("txtNombre").value,
                     genero: document.getElementById("cboGenero").value,
                     descripcion: document.getElementById("txtDescripcion").value,
