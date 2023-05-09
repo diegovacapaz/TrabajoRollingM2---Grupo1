@@ -57,6 +57,8 @@ formIng.addEventListener('submit', (e)=>{
   }else{
   alert(`Bienvenido ${validacionUsuario.nombre}`)
   window.location.href = 'http://127.0.0.1:5500/index.html'
+
+  const usuarioLogeado = localStorage.setItem('usuarioLogeado' , JSON.stringify(validacionUsuario))
   }
 })
 
