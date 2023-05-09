@@ -28,7 +28,7 @@ function guardar() {
 
                 console.log("PRESIONO GUARDAR...");
                 let objJuego = JSON.stringify({
-                    idJuego: (idForm >= 0) ? idForm : (tablaJuego.length + 1),
+                    idJuego: (idForm > 0) ? idForm : (tablaJuego.length + 1),
                     Nombre: document.getElementById("txtNombre").value,
                     genero: document.getElementById("cboGenero").value,
                     descripcion: document.getElementById("txtDescripcion").value,
