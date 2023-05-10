@@ -14,7 +14,16 @@ if (idForm == null) {
 cargarPagina();
 
 function guardar() {
-    
+    let nombre = document.getElementById("txtNombre").value;
+    let genero = document.getElementById("cboGenero").value;
+    let descripcion = document.getElementById("txtDescripcion").value;
+    let precio = document.getElementById("txtPrecio").value;
+    let url = document.getElementById("txtUrl").value;
+
+    if (!nombre || !genero || !descripcion || !precio || !url) {
+        Swal.fire('ERROR','Debe completar todos los campos', 'error');
+        return;
+    }
 
     Swal.fire({
         title: 'GUARDAR',
