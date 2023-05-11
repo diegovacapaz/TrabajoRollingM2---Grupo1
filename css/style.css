@@ -64,14 +64,6 @@
     color: var(--azulClaro);
 }
 
-.crucetaLogout{
-    color: #ffffff;
-}
-
-.crucetaLogout:hover{
-    color: red;
-}
-
 /*Responsive*/
 @media all and (min-width: 768px) {
     .adminBotonTamaño{
