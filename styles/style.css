@@ -32,18 +32,18 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	text-decoration: none;
-	list-style: none;
+	text-decoration: none !important;
+	list-style: none !important;
 }
 
 body {
 	font-family: 'Poppins', sans-serif;
 	height: 100vh;
-	background-color: var(--primary-color);
+	background-color: var(--primary-color) !important;
 	place-items: center;
 }
 
-.container {
+.container1 {
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -275,7 +275,7 @@ body {
 	width: 250px;
 	height: 200px;
 	position: absolute;
-	left: -250px;
+	left: -240px;
 	z-index: -1;
 }
 
