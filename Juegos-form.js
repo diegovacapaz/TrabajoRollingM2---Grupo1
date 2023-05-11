@@ -99,3 +99,25 @@ function cargarPagina() {
         }
     }
 }
+
+const inputUrl = document.getElementById("txtUrl");
+
+// Agregar un evento al cambiar el valor del input URL
+inputUrl.addEventListener("input", () => {
+  const url = inputUrl.value.toLowerCase();
+  // Verificar si la URL termina con ".jpg" o ".png"
+  if (url.endsWith(".jpg") || url.endsWith(".png")) {
+    // Mostrar la imagen miniatura
+    document.getElementById("imgMiniatura").src = url;
+    document.getElementById("imgMiniatura").style.display = "block";
+  } else {
+    // Ocultar la imagen miniatura y mostrar un mensaje de error
+    document.getElementById("imgMiniatura").style.display = "none";
+    swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "La URL debe ser de una imagen JPG o PNG",
+      confirmButtonText: "Aceptar",
+    });
+  }
+});
