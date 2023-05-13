@@ -16,15 +16,15 @@ function listar() {
         for(const i in tablaJuego){
             let letJuego = JSON.parse(tablaJuego[i]);
             dataFila += "<tr>";
-            dataFila += "<td>"+letJuego.idJuego+"</td>";
+            dataFila += "<td>"+letJuego.IdJuego+"</td>";
             dataFila += "<td>"+letJuego.nombre+"</td>";
             dataFila += "<td>"+letJuego.genero+"</td>";
             dataFila += "<td>"+letJuego.descripcion+"</td>";
             dataFila += "<td>"+letJuego.precio+"</td>";
-            dataFila += "<td><img src='" + letJuego.url + "' alt='" + letJuego.Nombre + " thumbnail' width='60' height='50' ></td>";
+            dataFila += "<td><img src='" + letJuego.url + "' alt='" + letJuego.nombre + " thumbnail' width='60' height='50' ></td>";
             dataFila += "<td>"+
-                        "<button type='button' class='btn btn-warning' onclick='abrirForm("+letJuego.idJuego+")'>EDITAR</button>"+
-                        "<button type='button' class='btn btn-info' onclick='eliminarItem("+letJuego.idJuego+")'>ELIMINAR</button>"+
+                        "<button type='button' class='btn btn-warning' onclick='abrirForm("+letJuego.IdJuego+")'>EDITAR</button>"+
+                        "<button type='button' class='btn btn-info' onclick='eliminarItem("+letJuego.IdJuego+")'>ELIMINAR</button>"+
                         "</td>";
             dataFila += "</tr>";
 
@@ -46,8 +46,8 @@ function abrirForm(idForm){
 
 function eliminarItem(idItem){
     for(const i in tablaJuego){
-        let varJuego = JSON.parse(tablaJuego[i]);
-        if(varJuego.idJuego == idItem){
+        let letJuego = JSON.parse(tablaJuego[i]);
+        if(letJuego.IdJuego == idItem){
             tablaJuego.splice(i,1);
             localStorage.setItem("tablaJuegoStorage", JSON.stringify(tablaJuego));
         }
