@@ -5,6 +5,20 @@
     --azulClaro: #576CBC;
     --celeste: #A5D7E8;
     --blanco: #ffffff;
+
+    --purple: rgb(123, 31, 162);
+	--violet: rgb(103, 58, 183);
+	--pink: rgb(244, 143, 177);
+
+	--primary-color: #14112E;
+	--text-color: #A0A3C4;
+	--input-color: #393D63;
+	--text-span-color: #5B5BD7;
+	--gradient-color-1: rgba(72, 87, 240, 1);
+	--gradient-color-2: rgba(83, 54, 164, 1);
+	--btn-color: #393D63;
+	--logo-color: #5B5BD7;
+	--icon-color: invert(34%) sepia(97%) saturate(6894%) hue-rotate(260deg) brightness(106%) contrast(103%);
     font-family: 'Lato', sans-serif;
 }
 
