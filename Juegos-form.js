@@ -13,7 +13,17 @@ if (idForm == null) {
 
 cargarPagina();
 
+function generarID() {
+    let id = Math.floor(Math.random() * 90000) + 10000;
+    while (tablaJuego.find(juego => juego.idJuego === id)) {
+        id = Math.floor(Math.random() * 90000) + 10000;
+    }
+    document.getElementById("txtIdJuego").value = id;
+}
+
+
 function guardar() {
+    let IdJuego = document.getElementById("txtIdJuego").value;
     let nombre = document.getElementById("txtNombre").value;
     let genero = document.getElementById("cboGenero").value;
     let descripcion = document.getElementById("txtDescripcion").value;
@@ -37,8 +47,9 @@ function guardar() {
 
                 console.log("PRESIONO GUARDAR...");
                 let objJuego = JSON.stringify({
-                    idJuego: (idForm > 0) ? idForm : (tablaJuego.length + 1),
-                    Nombre: document.getElementById("txtNombre").value,
+                    
+                    IdJuego: document.getElementById("txtIdJuego").value,
+                    nombre: document.getElementById("txtNombre").value,
                     genero: document.getElementById("cboGenero").value,
                     descripcion: document.getElementById("txtDescripcion").value,
                     precio: document.getElementById("txtPrecio").value,
@@ -53,8 +64,8 @@ function guardar() {
                 //EDITAR
                 if (idForm > 0) {
                     for (const i in tablaJuego) {
-                        let varJuego = JSON.parse(tablaJuego[i]);
-                        if (varJuego.idJuego == idForm) {
+                        let letJuego = JSON.parse(tablaJuego[i]);
+                        if (letJuego.IdJuego == idForm) {
                             tablaJuego[i] = objJuego;
                             break;
                         }
@@ -86,14 +97,14 @@ function cargarPagina() {
     if (idForm > 0) {
         // SACAR DATOS DE LA FILA DE LA TABLA Y PONERLO EN EL FORMULARIO
         for (const i in tablaJuego) {
-            let varJuego = JSON.parse(tablaJuego[i]);
-            if (varJuego.idJuego == idForm) {
-                document.getElementById("txtIdJuego").value = varJuego.idJuego;
-                document.getElementById("txtNombre").value = varJuego.nombre;
-                document.getElementById("cboGenero").value = varJuego.genero;
-                document.getElementById("txtDescripcion").value = varJuego.descripcion;
-                document.getElementById("txtPrecio").value = varJuego.precio;
-                document.getElementById("txtUrl").value = varJuego.url;
+            let letJuego = JSON.parse(tablaJuego[i]);
+            if (letJuego.IdJuego == idForm) {
+                document.getElementById("txtIdJuego").value = letJuego.IdJuego;
+                document.getElementById("txtNombre").value = letJuego.nombre;
+                document.getElementById("cboGenero").value = letJuego.genero;
+                document.getElementById("txtDescripcion").value = letJuego.descripcion;
+                document.getElementById("txtPrecio").value = letJuego.precio;
+                document.getElementById("txtUrl").value = letJuego.url;
                 break;
             }
         }
