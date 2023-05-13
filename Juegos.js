@@ -10,21 +10,21 @@ listar();
 function listar() {
     console.log("INGRESANDO A LISTAR...");
 
-    var dataFila = '';
+    let dataFila = '';
 
     if(tablaJuego.length > 0){
         for(const i in tablaJuego){
-            let varJuego = JSON.parse(tablaJuego[i]);
+            let letJuego = JSON.parse(tablaJuego[i]);
             dataFila += "<tr>";
-            dataFila += "<td>"+varJuego.idJuego+"</td>";
-            dataFila += "<td>"+varJuego.Nombre+"</td>";
-            dataFila += "<td>"+varJuego.genero+"</td>";
-            dataFila += "<td>"+varJuego.descripcion+"</td>";
-            dataFila += "<td>"+varJuego.precio+"</td>";
-            dataFila += "<td><img src='" + varJuego.url + "' alt='" + varJuego.Nombre + " thumbnail' width='60' height='50' ></td>";
+            dataFila += "<td>"+letJuego.idJuego+"</td>";
+            dataFila += "<td>"+letJuego.nombre+"</td>";
+            dataFila += "<td>"+letJuego.genero+"</td>";
+            dataFila += "<td>"+letJuego.descripcion+"</td>";
+            dataFila += "<td>"+letJuego.precio+"</td>";
+            dataFila += "<td><img src='" + letJuego.url + "' alt='" + letJuego.Nombre + " thumbnail' width='60' height='50' ></td>";
             dataFila += "<td>"+
-                        "<button type='button' class='btn btn-warning' onclick='abrirForm("+varJuego.idJuego+")'>EDITAR</button>"+
-                        "<button type='button' class='btn btn-info' onclick='eliminarItem("+varJuego.idJuego+")'>ELIMINAR</button>"+
+                        "<button type='button' class='btn btn-warning' onclick='abrirForm("+letJuego.idJuego+")'>EDITAR</button>"+
+                        "<button type='button' class='btn btn-info' onclick='eliminarItem("+letJuego.idJuego+")'>ELIMINAR</button>"+
                         "</td>";
             dataFila += "</tr>";
 
