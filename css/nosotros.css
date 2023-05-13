@@ -23,6 +23,14 @@
 }
 
 /*Acerca de Nosotros*/
+body {
+    background-color: var(--primary-color);
+}
+
+header{
+    background-color: var(--primary-color);
+}
+
 .circleBorder{
     border-radius: 100%;
 }
@@ -34,3 +42,5 @@
 .fs-0 {
     font-size: calc(2rem + 1.5vw);
 }
+
+.name-brand
