@@ -44,4 +44,4 @@ const borrarCategoria = (categoria) => {
 // console.log(categorias);
 
 //EXPORTACIÓN
-//export {categorias, crearCategoria, borrarCategoria}; ESTA LINEA SE DEBE DESCOMENTAR LUEGO DE TESTEAR, PARA PODER UTILIZARLO COMO MODULO
+export {categorias, crearCategoria, borrarCategoria};
