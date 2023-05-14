@@ -30,7 +30,7 @@ function guardar() {
     let precio = document.getElementById("txtPrecio").value;
     let url = document.getElementById("txtUrl").value;
 
-    if (!nombre || !genero || !descripcion || !precio || !url) {
+    if (!nombre || !genero || !descripcion || !precio || !url || !IdJuego) {
         Swal.fire('ERROR','Debe completar todos los campos', 'error');
         return;
     }
