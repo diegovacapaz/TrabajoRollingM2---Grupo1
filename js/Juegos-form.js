@@ -132,3 +132,13 @@ inputUrl.addEventListener("input", () => {
     });
   }
 });
+
+// const cargarCategorias = () => {
+//     let dropBox = document.getElementById("cboGenero");
+//     let opcion;
+//     for(let i = 0; i < categorias.length; i++) {
+//         opcion = document.createElement("option");
+//         opcion.innerText = categorias[i];
+//         dropBox.appendChild(opcion);
+//     }
+// }
