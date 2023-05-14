@@ -22,11 +22,17 @@ function listar() {
             dataFila += "<td>"+letJuego.descripcion+"</td>";
             dataFila += "<td>"+letJuego.precio+"</td>";
             dataFila += "<td><img src='" + letJuego.url + "' alt='" + letJuego.nombre + " thumbnail' width='60' height='50' ></td>";
+            // dataFila += "<td>"+
+            //             "<button type='button' class='btn btn-warning' onclick='abrirForm("+letJuego.IdJuego+")'>EDITAR</button>"+
+            //             "</td>";
             dataFila += "<td>"+
-                        "<button type='button' class='btn btn-warning' onclick='abrirForm("+letJuego.IdJuego+")'>EDITAR</button>"+
+                        "<i class='bi bi-x-circle-fill btn-borrarJuego' onclick='eliminarItem("+letJuego.IdJuego+")'></i>"+
                         "</td>";
+            // dataFila += "<td>"+
+            //             "<button type='button' class='btn btn-info' onclick='eliminarItem("+letJuego.IdJuego+")'>ELIMINAR</button>"+
+            //             "</td>";
             dataFila += "<td>"+
-                        "<button type='button' class='btn btn-info' onclick='eliminarItem("+letJuego.IdJuego+")'>ELIMINAR</button>"+
+                        "<i class='bi bi-pencil-fill btn-editar' onclick='eliminarItem("+letJuego.IdJuego+")'></i>"+
                         "</td>";
             dataFila += "</tr>";
 
@@ -55,15 +61,4 @@ function eliminarItem(idItem){
         }
     }
     listar()
-}
-
-const crearBotonBorrar = () => {
-    let borrar = document.createElement("i");
-    borrar.setAttribute("class","bi bi-x-circle-fill btn-borrar");
-    return borrar;
-}
-const crearBotonEditar = () => {
-    let borrar = document.createElement("i");
-    borrar.setAttribute("class","bi bi-pencil-fill btn-editar");
-    return borrar;
 }
