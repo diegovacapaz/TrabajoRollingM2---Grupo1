@@ -81,7 +81,7 @@ function guardar() {
 
                 Swal.fire('CAMBIOS  GUARDADOS','','success').then(
                     (result)=>{
-                        window.location.replace("Juegos.html");
+                        window.location.replace("./Juegos.html");
                     }
                 );
             }else if (result.isDenied){

@@ -41,7 +41,7 @@ function listar() {
 
 function abrirForm(idForm){
     localStorage.setItem("idForm", JSON.stringify(idForm));
-    window.location.replace("Juegos-form.html");
+    window.location.replace("./Juegos-form.html");
 }
 
 function eliminarItem(idItem){
