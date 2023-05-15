@@ -25,6 +25,7 @@ btnNuevaCat.addEventListener("click", (e) => {
         mensajeCat.innerText = crearCategoria(nombreCat);
         nuevaCategoria.value = "";
         actualizarTablaCat();
+        defaulOption();
     }
 });
 
