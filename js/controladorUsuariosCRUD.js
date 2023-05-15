@@ -1,5 +1,5 @@
 //IMPORTACIÓN DEL MODELO
-import {cuentas, cuentaActiva, registro, buscarCuentaCorreo, buscarCuentaUsuario, iniciarSesion, eliminarCuenta, cerrarSesion} from "./modeloUsuariosCRUD.js";
+import {cuentas,eliminarCuenta} from "./modeloUsuariosCRUD.js";
 
 //DECLARACION DE VARIABLES GLOBALES
 const tablaUsuarios = document.getElementById("tablaUsuarios");
