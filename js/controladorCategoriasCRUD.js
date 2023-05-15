@@ -12,6 +12,7 @@ btnNuevaCat.addEventListener("click", (e) => {
     if(nombreCat){
         mensajeCat.innerText = crearCategoria(nombreCat);
         nuevaCategoria.value = "";
+        actualizarTablaCat();
     }
 });
 
