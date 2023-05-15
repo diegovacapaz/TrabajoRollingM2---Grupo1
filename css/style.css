@@ -48,6 +48,22 @@
     width: 100%;
 }
 
+.btn-borrar{
+    color: rgb(151, 15, 0);
+}
+
+.btn-borrar:hover{
+    color: rgb(255, 25, 0);
+}
+
+.btn-ver{
+    color: var(--azulOscuro);
+}
+
+.btn-ver:hover{
+    color: var(--azulClaro);
+}
+
 /*Responsive*/
 @media all and (min-width: 768px) {
     .adminBotonTamaño{
