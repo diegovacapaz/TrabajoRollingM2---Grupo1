@@ -61,6 +61,7 @@ const crearBotonBorrarCat = () => {
 
 const cargarCategorias = () => {
     let boxCat = document.getElementById("cboGenero");
+    boxCat.innerHTML="";
     let option;
     for(let i=0; i < categorias.length; i++) {
         option = document.createElement("option");
