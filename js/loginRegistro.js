@@ -37,7 +37,6 @@ const validarFormulario = (e)=>{
       validarContrasenia()
     break
     case "clave2":
-      validarCampo(expresiones.contrasenia, e.target, 'contrasenia2')
       validarContrasenia()
     break
   }
@@ -89,49 +88,58 @@ inputs.forEach((input)=>{
 })
 
 
-//verificar si el nombre ya esta en uso (arreglar)
-const nombreEnUso = cuentas.find(usuario => usuario.usuario === nombreRegistro.value)
-if (nombreEnUso){
-  nombreRegistro.title = 'Este nombre ya esta en uso'
-}
 
 
 //boton enviar registro
 formReg.addEventListener('submit', (e) =>{
   e.preventDefault()
 
+  const nombreRegistrado = cuentas.find(usuario=> usuario.usuario === nombreRegistro.value)
+  const correoRegistrado = cuentas.find(usuario => usuario.correo === mailRegistro.value)
+  if(correoRegistrado){
+      return alert('Ya existe una cuenta registrada con este mail')
+    }else if (nombreRegistrado){
+      return alert('El nombre que elegiste ya esta en uso')
+    }
+  
   // verificacion si todos los campos son correctos
-  if(campos.usuario && campos.nombre && campos.contrasenia && campos.correo && campos.telefono && terminos.checked ){
-    formulario.reset()
+  if(campos.nombre && campos.contrasenia && campos.email){
+    // formReg.reset()
     //Reseteamos o borramos los iconos de tilde en los campos
-    document.querySelectorAll('.formulario__grupo-coreecto').forEach((icono)=>{
-      icono.classList.remove('formulario__grupo-coreecto')
+    document.querySelectorAll('.formulario-grupo-correcto').forEach((icono)=>{
+      icono.classList.remove('formulario-grupo-correcto')
     })
+    registro(nombreRegistro.value, mailRegistro.value, contraseniaRegistro.value)
+    formReg.reset()
+    //agregar mensaje de usuario registrado correctamente
   }else{
-    document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo')
+    document.getElementById('formulario-mensaje').classList.add('formulario-mensaje-activo')
     setTimeout(()=>{
-      document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo')
+      document.getElementById('formulario-mensaje').classList.remove('formulario-mensaje-activo')
     }, 5000)
   } 
     
 
-  const nombreRegistrado = cuentas.find(usuario=> usuario.usuario === nombreRegistro.value)
-  const correoRegistrado = cuentas.find(usuario => usuario.correo === mailRegistro.value)
-  if(correoRegistrado){
-    alert('Ya existe una cuenta registrada con este mail')
-  }else if (nombreRegistrado){
-    alert('El nombre que elegiste ya esta en uso')
-  } else{
-    alert('Se ha registrado correctamente')
-  }
+  
+  
 
-  registro(nombreRegistro.value, mailRegistro.value, contraseniaRegistro.value)
+  // const nombreRegistrado = cuentas.find(usuario=> usuario.usuario === nombreRegistro.value)
+  // const correoRegistrado = cuentas.find(usuario => usuario.correo === mailRegistro.value)
+  // if(correoRegistrado){
+  //   alert('Ya existe una cuenta registrada con este mail')
+  // }else if (nombreRegistrado){
+  //   alert('El nombre que elegiste ya esta en uso')
+  // } else{
+  //   alert('Se ha registrado correctamente')
+  // }
 
-  nombreRegistro.value = ''
-  mailRegistro.value = ''
-  contraseniaRegistro.value = ''
+  // registro(nombreRegistro.value, mailRegistro.value, contraseniaRegistro.value)
 
-  //agregar mensaje de usuario registrado correctamente
+  // nombreRegistro.value = ''
+  // mailRegistro.value = ''
+  // contraseniaRegistro.value = ''
+
+  
 
 
   })

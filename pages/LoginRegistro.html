@@ -22,7 +22,7 @@
 				<!-- GRUPO NOMBRE -->
 				<div class="formulario-grupo" id="grupo-nombre">
 					<div class="formulario-grupo-input">
-						<input class="formulario-input" id="nombreRegistro" type="text" name="nombre" placeholder="Nombre de Usuario" required minlength="3" maxlength="16" title="El nombre puede contener letras o numeros"
+						<input class="formulario-input" id="nombreRegistro" type="text" name="nombre" placeholder="Nombre de Usuario"  minlength="3" maxlength="16" title="El nombre puede contener letras o numeros"
 							pattern="^[a-zA-Z0-9ñ]{3,30}$">
 						<i class="formulario-validacion-estado bi bi-x-circle"></i>
 					</div>
@@ -32,7 +32,7 @@
 				<!-- GRUPO EMAIL -->
 				<div class="formulario-grupo" id="grupo-email">
 					<div class="formulario-grupo-input">
-						<input class="formulario-input" id="mailRegistro" type="email" name="email" placeholder="Correo Electrónico" required
+						<input class="formulario-input" id="mailRegistro" type="email" name="email" placeholder="Correo Electrónico" 
 							pattern="^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$" maxlength="50">
 						<i class="formulario-validacion-estado bi bi-x-circle"></i>
 					</div>
@@ -42,17 +42,17 @@
 				<!-- GRUPO CONTRASEÑA -->
 				<div class="formulario-grupo" id="grupo-contrasenia">
 					<div class="formulario-grupo-input">
-						<input class="formulario-input" id="contraseniaRegistro" type="password" name="clave" placeholder="Contraseña" required minlength="4" maxlength="16">
+						<input class="formulario-input" id="contraseniaRegistro" type="password" name="clave" placeholder="Contraseña"  minlength="4" maxlength="16">
 						<i class="formulario-validacion-estado bi bi-x-circle"></i>
 					</div>
-					<p class="formulario-input-error">La contraseña debe contener al menos una mayuscula, un numero y un caracter especial(*,!) entre 4-16.</p>
+					<p class="formulario-input-error">La contraseña debe contener al menos una mayuscula, un numero y un caracter especial(*,!,-,#,$,%) entre 4-16.</p>
 				</div>
 				
 
 				<!-- GRUPO CONTRASEÑA2 -->
 				<div class="formulario-grupo" id="grupo-contrasenia2">
-					<div>
-						<input class="formulario-input" id="contraseniaRegistro2" type="password" name="clave2" placeholder="Repetir Contraseña" required minlength="4" maxlength="16" title="La contraseña debe contener al menos una letra mayuscula, un numero y un caracter especial"
+					<div class="formulario-grupo-input">
+						<input class="formulario-input" id="contraseniaRegistro2" type="password" name="clave2" placeholder="Repetir Contraseña"  minlength="4" maxlength="16" title="La contraseña debe contener al menos una letra mayuscula, un numero y un caracter especial">
 							<i class="formulario-validacion-estado bi bi-x-circle"></i>
 					</div>
 					<p class="formulario-input-error">Las contraseñas deben coincidir</p>
