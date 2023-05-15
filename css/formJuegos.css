@@ -1,0 +1,20 @@
+.table-azulOscuro{--bs-table-color:#fff;
+    --bs-table-bg:#0B2447;
+    --bs-table-border-color:#0B2447;
+    --bs-table-striped-bg:#0B2447;
+    --bs-table-striped-color:#fff;
+    --bs-table-active-bg:#0B2447;
+    --bs-table-active-color:#fff;
+    --bs-table-hover-bg:#0B2447;
+    --bs-table-hover-color:#fff;
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+
+.btn-borrarCat{
+    color: rgb(151, 15, 0);
+}
+
+.btn-borrarCat:hover{
+    color: rgb(255, 25, 0);
+}
