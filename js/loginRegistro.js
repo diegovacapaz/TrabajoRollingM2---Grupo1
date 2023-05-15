@@ -118,30 +118,7 @@ formReg.addEventListener('submit', (e) =>{
       document.getElementById('formulario-mensaje').classList.remove('formulario-mensaje-activo')
     }, 5000)
   } 
-    
-
   
-  
-
-  // const nombreRegistrado = cuentas.find(usuario=> usuario.usuario === nombreRegistro.value)
-  // const correoRegistrado = cuentas.find(usuario => usuario.correo === mailRegistro.value)
-  // if(correoRegistrado){
-  //   alert('Ya existe una cuenta registrada con este mail')
-  // }else if (nombreRegistrado){
-  //   alert('El nombre que elegiste ya esta en uso')
-  // } else{
-  //   alert('Se ha registrado correctamente')
-  // }
-
-  // registro(nombreRegistro.value, mailRegistro.value, contraseniaRegistro.value)
-
-  // nombreRegistro.value = ''
-  // mailRegistro.value = ''
-  // contraseniaRegistro.value = ''
-
-  
-
-
   })
 
 
@@ -158,7 +135,15 @@ formIng.addEventListener('submit', (e)=>{
     return alert('La contraseña o usuario son incorrectos')
   }
 
-  iniciarSesion(mailIngresar.value, contraseniaIngresar.value)
-  window.location.href = '../index.html'
+  if(cuentaActiva){
+    return alert('Ya hay una sesion abierta, cierrela para iniciar sesion con otra cuenta')
+  }
   
+  const esAdmin = cuentas.find(admin=> admin.correo === mailIngresar.value && admin.admin === true)
+  if(esAdmin){
+    window.location.href = '../pages/administracion.html'
+  }else{
+    iniciarSesion(mailIngresar.value, contraseniaIngresar.value)
+    window.location.href = '../index.html'
+  }
 })
