@@ -48,19 +48,19 @@
     width: 100%;
 }
 
-.btn-borrar{
+.btn-borrar, .btn-borrarJuego{
     color: rgb(151, 15, 0);
 }
 
-.btn-borrar:hover{
+.btn-borrar:hover, .btn-borrarJuego:hover{
     color: rgb(255, 25, 0);
 }
 
-.btn-ver{
+.btn-ver, .btn-editar{
     color: var(--azulOscuro);
 }
 
-.btn-ver:hover{
+.btn-ver:hover, .btn-editar:hover{
     color: var(--azulClaro);
 }
 

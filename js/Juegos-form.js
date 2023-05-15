@@ -4,7 +4,6 @@ if (tablaJuego == null) {
     tablaJuego = [];
 }
 
-
 let idForm = localStorage.getItem("idForm");
 idForm = JSON.parse(idForm);
 if (idForm == null) {
@@ -81,7 +80,7 @@ function guardar() {
 
                 Swal.fire('CAMBIOS  GUARDADOS','','success').then(
                     (result)=>{
-                        window.location.replace("./Juegos.html");
+                        window.location.replace("./administracion.html");
                     }
                 );
             }else if (result.isDenied){
