@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="../css/LoginRegistro.css">
 	<title>Registro | Login</title>
 </head>
@@ -17,13 +18,59 @@
 		<div class="registro">
 			<form id="formReg" class="formRegistro">
 				<label for="chk" aria-hidden="true">Regístrate!</label>
-				<input id="nombreRegistro" type="text" name="txt" placeholder="Nombre de Usuario" required minlength="3" maxlength="15" title="El nombre puede contener letras o numeros"
-					pattern="^[a-zA-Z0-9ñ]{3,30}$">
-				<input id="mailRegistro" type="email" name="email" placeholder="Correo Electrónico" required
-					pattern="^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$" maxlength="50">
-					<input id="contraseniaRegistro" type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16" title="La contraseña debe contener al menos una letra mayuscula, un numero y un caracter especial"
-					pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_+-])[a-zA-Z0-9ñ!@#$%^&*_+-]{4,16}$"> 
-				<button id="btnRegistro" type="submit" class="botreg">Registrarse</button>
+
+				<!-- GRUPO NOMBRE -->
+				<div class="formulario-grupo" id="grupo-nombre">
+					<div class="formulario-grupo-input">
+						<input class="formulario-input" id="nombreRegistro" type="text" name="nombre" placeholder="Nombre de Usuario" required minlength="3" maxlength="16" title="El nombre puede contener letras o numeros"
+							pattern="^[a-zA-Z0-9ñ]{3,30}$">
+						<i class="formulario-validacion-estado bi bi-x-circle"></i>
+					</div>
+					<p class="formulario-input-error">El nombre tiene que ser de 3 a 16 digitos.</p>
+					</div>
+
+				<!-- GRUPO EMAIL -->
+				<div class="formulario-grupo" id="grupo-email">
+					<div class="formulario-grupo-input">
+						<input class="formulario-input" id="mailRegistro" type="email" name="email" placeholder="Correo Electrónico" required
+							pattern="^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$" maxlength="50">
+						<i class="formulario-validacion-estado bi bi-x-circle"></i>
+					</div>
+					<p class="formulario-input-error">El correo solo puede contener letras, numeros, puntos y guion bajo.</p>
+					</div>
+
+				<!-- GRUPO CONTRASEÑA -->
+				<div class="formulario-grupo" id="grupo-contrasenia">
+					<div class="formulario-grupo-input">
+						<input class="formulario-input" id="contraseniaRegistro" type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16"
+							pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_+-])[a-zA-Z0-9ñ!@#$%^&*_+-]{4,16}$"> 
+							<i class="formulario-validacion-estado bi bi-x-circle"></i>
+					</div>
+					<p class="formulario-input-error">La contraseña tiene que ser de 4 a 16 digitos.</p>
+				</div>
+				
+
+				<!-- GRUPO CONTRASEÑA2 -->
+				<div class="formulario-grupo" id="grupo-contrasenia2">
+					<div>
+						<input class="formulario-input" id="contraseniaRegistro2" type="password" name="pswd2" placeholder="Repetir Contraseña" required minlength="4" maxlength="16" title="La contraseña debe contener al menos una letra mayuscula, un numero y un caracter especial"
+							pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_+-])[a-zA-Z0-9ñ!@#$%^&*_+-]{4,16}$"> 
+							<i class="formulario-validacion-estado bi bi-x-circle"></i>
+					</div>
+					<p class="formulario-input-error">Las contraseñas deben coincidir</p>
+				</div>
+				
+
+				<!-- ERROR FORMULARIO -->
+				<div class="formulario-mensaje" id="formulario-mensaje">
+					<p><i class="bi bi-exclamation-triangle-fill"></i> <b>Error:</b> por favor rellene el formulario correctamente.</p>
+				</div>
+
+				<!-- BOTON ENVIAR -->
+				<div class="formulario-grupo formulario-grupo-btn-enviar">
+					<button class="formulario-btn" id="btnRegistro" type="submit" class="botreg">Registrarse</button>
+					<p class="formulario-mensaje-exito">Usted se registro exitosmente</p>
+				</div>
 			</form>
 
 		</div>
