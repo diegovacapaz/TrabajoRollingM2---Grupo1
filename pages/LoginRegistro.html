@@ -42,19 +42,17 @@
 				<!-- GRUPO CONTRASEÑA -->
 				<div class="formulario-grupo" id="grupo-contrasenia">
 					<div class="formulario-grupo-input">
-						<input class="formulario-input" id="contraseniaRegistro" type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16"
-							pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_+-])[a-zA-Z0-9ñ!@#$%^&*_+-]{4,16}$"> 
-							<i class="formulario-validacion-estado bi bi-x-circle"></i>
+						<input class="formulario-input" id="contraseniaRegistro" type="password" name="clave" placeholder="Contraseña" required minlength="4" maxlength="16">
+						<i class="formulario-validacion-estado bi bi-x-circle"></i>
 					</div>
-					<p class="formulario-input-error">La contraseña tiene que ser de 4 a 16 digitos.</p>
+					<p class="formulario-input-error">La contraseña debe contener al menos una mayuscula, un numero y un caracter especial(*,!) entre 4-16.</p>
 				</div>
 				
 
 				<!-- GRUPO CONTRASEÑA2 -->
 				<div class="formulario-grupo" id="grupo-contrasenia2">
 					<div>
-						<input class="formulario-input" id="contraseniaRegistro2" type="password" name="pswd2" placeholder="Repetir Contraseña" required minlength="4" maxlength="16" title="La contraseña debe contener al menos una letra mayuscula, un numero y un caracter especial"
-							pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_+-])[a-zA-Z0-9ñ!@#$%^&*_+-]{4,16}$"> 
+						<input class="formulario-input" id="contraseniaRegistro2" type="password" name="clave2" placeholder="Repetir Contraseña" required minlength="4" maxlength="16" title="La contraseña debe contener al menos una letra mayuscula, un numero y un caracter especial"
 							<i class="formulario-validacion-estado bi bi-x-circle"></i>
 					</div>
 					<p class="formulario-input-error">Las contraseñas deben coincidir</p>
@@ -69,7 +67,6 @@
 				<!-- BOTON ENVIAR -->
 				<div class="formulario-grupo formulario-grupo-btn-enviar">
 					<button class="formulario-btn" id="btnRegistro" type="submit" class="botreg">Registrarse</button>
-					<p class="formulario-mensaje-exito">Usted se registro exitosmente</p>
 				</div>
 			</form>
 
