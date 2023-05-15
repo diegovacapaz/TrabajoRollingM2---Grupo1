@@ -10,3 +10,11 @@
     color:var(--bs-table-color);
     border-color:var(--bs-table-border-color)
 }
+
+.btn-borrarCat{
+    color: rgb(151, 15, 0);
+}
+
+.btn-borrarCat:hover{
+    color: rgb(255, 25, 0);
+}
