@@ -48,6 +48,35 @@
 .pagos-icons{
 	width: 10%;
 }
+
+.fondoMorado{
+    background-color: var(--primary-color);
+}
+
+.name-brand{
+	animation: background-pan 1s linear infinite;
+	background: linear-gradient(to right,
+			var(--purple),
+			var(--violet),
+			var(--pink),
+			var(--purple));
+	background-size: 200%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	white-space: nowrap;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+@keyframes background-pan {
+	from {
+		background-position: 0% center;
+	}
+
+	to {
+		background-position: -200% center;
+	}
+}
 @media all and (min-width: 992px) {
 	.pagos-icons{
 		width: 25%;
