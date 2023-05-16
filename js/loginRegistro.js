@@ -101,7 +101,7 @@ formReg.addEventListener('submit', (e) =>{
   if(correoRegistrado){
       return alert('Ya existe una cuenta registrada con este mail')
     }else if (nombreRegistrado){
-      return alert('El nombre que elegiste ya esta en uso')
+      return alert('El nombre de usuario que elegiste ya esta en uso')
     }
   
   // verificacion si todos los campos son correctos
