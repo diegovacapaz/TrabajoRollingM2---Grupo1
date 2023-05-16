@@ -643,6 +643,11 @@ hr {
 	color: #FFFFFF !important
 }
 
+.aboutDescripcion-fold{
+	display: none;
+}
+
+
 @keyframes background-pan {
 	from {
 		background-position: 0% center;
@@ -1127,5 +1132,23 @@ hr {
 	.txt {
 		flex-direction: column;
 		margin-bottom: 20px;
+	}
+	.txt h2 {
+		text-align: center;
+	}
+	.aboutDescripcion{
+		display: none;
+	}
+	.aboutDescripcion-fold{
+		display: inline-block;
+	}
+	.about-1{
+		height: 245px;
+	}
+	.games-cards .game-card{
+		margin: 20px 0;
+	}
+	.header-txt h1{
+		font-size: 2.6rem;
 	}
 }
