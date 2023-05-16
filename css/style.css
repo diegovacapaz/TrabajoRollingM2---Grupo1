@@ -138,6 +138,19 @@
 	}
 }
 
+.text-footer{
+	color: var(--pink);
+	font-weight: 600;
+}
+
+.footer-background{
+	background-color: #000000;
+}
+
+.pagos-icons{
+	width: 10%;
+}
+
 /*Responsive*/
 @media all and (min-width: 768px) {
     .adminBotonTamaño{
@@ -148,4 +161,7 @@
     .adminBotonTamaño{
         width: 25%;
     }
+    .pagos-icons{
+		width: 25%;
+	}
 }
