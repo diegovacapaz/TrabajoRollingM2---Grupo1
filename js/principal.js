@@ -92,7 +92,7 @@ juegos.forEach(function (juego) {
 	contentBx.className = 'contentBx';
 
 	let gameName = document.createElement('h3');
-	gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span>`;
+	gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>$${juego.precio}`;
 
 	let ul = document.createElement('ul');
 	ul.className = 'sci';
@@ -139,6 +139,7 @@ juegos.forEach(function (juego) {
 });
 
 
+
 // Funcionalidad del Like
 const like = document.querySelectorAll('.like');
 like.forEach(like => {
@@ -172,4 +173,3 @@ buttons.forEach(function (btn) {
 		btn.style.setProperty('--x', `${x * 360}deg`);
 	}
 });
-
