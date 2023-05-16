@@ -16,11 +16,11 @@
 }
 
 .btn-borrarCat{
-    color: rgb(151, 15, 0);
+    color: rgb(255, 25, 0);
 }
 
 .btn-borrarCat:hover{
-    color: rgb(255, 25, 0);
+    color: rgb(151, 15, 0);
 }
 
 .text-footer{
@@ -134,6 +134,19 @@ input[type=number] {
     --bs-btn-disabled-bg:transparent;
     --bs-btn-disabled-border-color:var(--pink);
     --bs-gradient:none
+}
+
+.table-rosa{--bs-table-color:#fff;
+    --bs-table-bg:var(--violet);
+    --bs-table-border-color:var(--violet);
+    --bs-table-striped-bg:var(--violet);
+    --bs-table-striped-color:#fff;
+    --bs-table-active-bg:var(--violet);
+    --bs-table-active-color:#fff;
+    --bs-table-hover-bg:var(--violet);
+    --bs-table-hover-color:#fff;
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
 }
 
 @media all and (min-width: 992px) {

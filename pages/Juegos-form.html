@@ -97,27 +97,27 @@
                 </form>
             </div>
             <div class="card-footer bordeRosa">
-                <button type="button" class="btn btn-outline-success me-2 px-3" onclick="guardar()">
+                <button type="button" class="btn btn-outline-success me-2 px-3 text-light" onclick="guardar()">
                     Guardar
                 </button>
-                <a href="./administracion.html" class="btn btn-outline-danger px-3">Cancelar</a>
+                <a href="./administracion.html" class="btn btn-outline-danger px-3 text-light">Cancelar</a>
             </div>
         </section>
     </main>
 
     <section class="modal fade" id="modalCategoriasNueva" tabindex="-1" data-bs-backdrop="static" aria-labelledby="modalCategoriasNuevaLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title fs-5" id="modalCategoriasNuevaLabel">Crea una nueva Categoría</h3>
+            <div class="modal-content fondoMorado bordeRosa text-light">
+                <div class="modal-header bordeRosa">
+                    <h3 class="modal-title fs-5" id="modalCategoriasNuevaLabel">Crea un nuevo Categoría</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
-                        <label for="inputNuevaCat" class="form-label">Nombre</label>
-                        <input type="text" required class="form-control" minlenght="1" maxlength="30" id="inputNuevaCat" placeholder="Categoria Nueva">
+                        <label for="inputNuevaCat" class="form-label">Nombre:</label>
+                        <input type="text" required class="form-control inputOscuro" minlenght="1" maxlength="30" id="inputNuevaCat" placeholder="Categoria Nueva">
                         <p id="nuevaCatMje"></p>
-                        <button type="submit" class="btn btn-success" id="btnNuevaCat">Crear</button>
+                        <button type="submit" class="btn btn-outline-success text-light" id="btnNuevaCat">Crear</button>
                     </form>
                 </div>
             </div>
@@ -126,14 +126,14 @@
 
     <section class="modal fade" id="modalCategoriasBorrar" tabindex="-1" data-bs-backdrop="static" aria-labelledby="modalCategoriasBorrarLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
+            <div class="modal-content fondoMorado bordeRosa text-light">
+                <div class="modal-header bordeRosa">
                     <h3 class="modal-title fs-5" id="modalCategoriasBorrarLabel">Crea una nueva Categoría</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-striped" id="tablaCategorias">
-                        <thead class="table-azulOscuro">
+                    <table class="table text-light" id="tablaCategorias">
+                        <thead class="table-rosa">
                             <tr>
                                 <th scope="col">Categoría</th>
                                 <th scope="col" class="text-center">
