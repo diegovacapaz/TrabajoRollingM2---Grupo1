@@ -681,9 +681,9 @@ hr {
 	}
 
 	.themeChanger {
-		top: -8px;
-		height: 30px;
-		left: 170px;
+		top:0;
+		left:10px;
+		margin-bottom: 5px;
 	}
 
 	.menu {
@@ -700,7 +700,7 @@ hr {
 		top: 100%;
 		left: 0;
 		right: 0;
-		background-color: #1F1F1F;
+		background-color: var(--primary-color);
 		display: none;
 	}
 
@@ -839,9 +839,9 @@ hr {
 	}
 
 	.themeChanger {
-		top: -8px;
-		height: 30px;
-		left: 501px;
+		top:0;
+		left:10px;
+		margin-bottom: 5px;
 	}
 
 	.menu label {
@@ -854,7 +854,7 @@ hr {
 		top: 100%;
 		left: 0;
 		right: 0;
-		background-color: #1F1F1F;
+		background-color: var(--primary-color);
 		display: none;
 	}
 
