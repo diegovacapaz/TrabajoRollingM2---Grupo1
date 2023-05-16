@@ -61,19 +61,115 @@ if (document.body.classList.contains("light-theme")) {
 	header.style.backgroundImage = "url(./img/bg-dark.jpg)";
 }
 
+// ------------------- Mostrar juegos desde local storage ------------------- //
+
+//  Obtener la cadena JSON de juegos desde el localStorage
+let juegosString = localStorage.getItem('tablaJuegoStorage');
+
+// Convertir la cadena en un objeto
+let juegos = JSON.parse(juegosString);
+
+// Obtener el elemento contenedor del catálogo
+let catalogo = document.getElementById('catalogue');
+
+// Recorrer el array de juegos
+juegos.forEach(function (juego) {
+	juego = JSON.parse(juego);
+	// Crear los elementos HTML necesarios
+	let gameCard = document.createElement('div');
+	gameCard.className = 'game-card';
+
+	let contentGameCard = document.createElement('div');
+	contentGameCard.className = 'content-game-card';
+
+	let imgBx = document.createElement('div');
+	imgBx.className = 'imgBx';
+
+	let gameImg = document.createElement('img');
+	gameImg.src = juego.url;
+
+	let contentBx = document.createElement('div');
+	contentBx.className = 'contentBx';
+
+	let gameName = document.createElement('h3');
+	gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>$${juego.precio}`;
+
+	let ul = document.createElement('ul');
+	ul.className = 'sci';
+
+	let liCart = document.createElement('li');
+	liCart.style = '--i:1';
+
+	let aCart = document.createElement('a');
+
+	let cartIcon = document.createElement('i');
+	cartIcon.className = 'cart fas fa-shopping-cart';
+	cartIcon.setAttribute('aria-hidden', 'true');
+
+	let liLike = document.createElement('li');
+	liLike.style = '--i:1';
+
+	let aLike = document.createElement('a');
+
+	let likeIcon = document.createElement('i');
+	likeIcon.className = 'fas fa-heart';
+	likeIcon.setAttribute('aria-hidden', 'true');
+
+	// Agregar los elementos al árbol DOM
+	aCart.appendChild(cartIcon);
+	liCart.appendChild(aCart);
+
+	aLike.appendChild(likeIcon);
+	liLike.appendChild(aLike);
+
+	ul.appendChild(liCart);
+	ul.appendChild(liLike);
+
+	imgBx.appendChild(gameImg);
+
+	contentBx.appendChild(gameName);
+
+	contentGameCard.appendChild(imgBx);
+	contentGameCard.appendChild(contentBx);
+
+	gameCard.appendChild(contentGameCard);
+	gameCard.appendChild(ul);
+
+	catalogo.appendChild(gameCard);
+});
+
+
+
 // Funcionalidad del Like
 const like = document.querySelectorAll('.like');
-like.forEach (like => {
+like.forEach(like => {
 	like.addEventListener("click", () => {
-		like.firstElementChild.classList.toggle('fas')
 		like.classList.toggle('liked');
 	});
 });
 
 // Funcionalidad del carrito 
 const carts = document.querySelectorAll('.cart')
-carts.forEach (cart => {
+carts.forEach(cart => {
 	cart.addEventListener('click', () => {
 		cart.classList.toggle('cart-added');
 	});
+});
+
+// Funcionalidad del efecto de los botones
+let buttons = document.querySelectorAll('.magic-btn a, .magic-btn2 a');
+const sensitivity = 0.7; // Factor de sensibilidad (ajusta este valor según tus preferencias)
+
+buttons.forEach(function (btn) {
+	let x = 0;
+
+	btn.addEventListener('mousemove', function (e) {
+		let rect = e.target.getBoundingClientRect();
+		x = (e.clientX - rect.left) / rect.width * sensitivity;
+		requestAnimationFrame(animateButton);
+	});
+
+	function animateButton() {
+		btn.style.setProperty('--x', `${x * 360}deg`);
+	}
 });
