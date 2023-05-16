@@ -63,7 +63,7 @@ if (document.body.classList.contains("light-theme")) {
 
 // ------------------- Mostrar juegos desde local storage ------------------- //
 
-// Obtener la cadena JSON de juegos desde el localStorage
+//  Obtener la cadena JSON de juegos desde el localStorage
 let juegosString = localStorage.getItem('tablaJuegoStorage');
 
 // Convertir la cadena en un objeto
@@ -79,51 +79,70 @@ juegos.forEach(function (juego) {
 	let gameCard = document.createElement('div');
 	gameCard.className = 'game-card';
 
+	let contentGameCard = document.createElement('div');
+	contentGameCard.className = 'content-game-card';
+
+	let imgBx = document.createElement('div');
+	imgBx.className = 'imgBx';
+
 	let gameImg = document.createElement('img');
-	gameImg.className = 'game-img';
 	gameImg.src = juego.url;
 
-	let overlay = document.createElement('div');
-	overlay.className = 'overlay';
-
-	let category = document.createElement('p');
-	category.className = 'category';
-	category.textContent = juego.genero;
+	let contentBx = document.createElement('div');
+	contentBx.className = 'contentBx';
 
 	let gameName = document.createElement('h3');
-	gameName.className = 'game-name';
-	gameName.textContent = juego.nombre;
+	gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span>`;
 
-	let cartButton = document.createElement('button');
-	cartButton.className = 'cart';
-	cartButton.innerHTML = '<i class="fas fa-shopping-cart"></i>';
+	let ul = document.createElement('ul');
+	ul.className = 'sci';
 
-	let likeButton = document.createElement('button');
-	likeButton.className = 'like';
-	likeButton.innerHTML = '<i class="far fa-heart"></i>';
+	let liCart = document.createElement('li');
+	liCart.style = '--i:1';
 
-	let price = document.createElement('h3');
-	price.className = 'price';
-	price.textContent = '$' + juego.precio;
+	let aCart = document.createElement('a');
 
-	// Agregar los elementos al catálogo
-	overlay.appendChild(category);
-	overlay.appendChild(gameName);
-	overlay.appendChild(cartButton);
-	overlay.appendChild(likeButton);
-	overlay.appendChild(price);
+	let cartIcon = document.createElement('i');
+	cartIcon.className = 'cart fas fa-shopping-cart';
+	cartIcon.setAttribute('aria-hidden', 'true');
 
-	gameCard.appendChild(gameImg);
-	gameCard.appendChild(overlay);
+	let liLike = document.createElement('li');
+	liLike.style = '--i:1';
+
+	let aLike = document.createElement('a');
+
+	let likeIcon = document.createElement('i');
+	likeIcon.className = 'fas fa-heart';
+	likeIcon.setAttribute('aria-hidden', 'true');
+
+	// Agregar los elementos al árbol DOM
+	aCart.appendChild(cartIcon);
+	liCart.appendChild(aCart);
+
+	aLike.appendChild(likeIcon);
+	liLike.appendChild(aLike);
+
+	ul.appendChild(liCart);
+	ul.appendChild(liLike);
+
+	imgBx.appendChild(gameImg);
+
+	contentBx.appendChild(gameName);
+
+	contentGameCard.appendChild(imgBx);
+	contentGameCard.appendChild(contentBx);
+
+	gameCard.appendChild(contentGameCard);
+	gameCard.appendChild(ul);
 
 	catalogo.appendChild(gameCard);
 });
+
 
 // Funcionalidad del Like
 const like = document.querySelectorAll('.like');
 like.forEach(like => {
 	like.addEventListener("click", () => {
-		like.firstElementChild.classList.toggle('fas')
 		like.classList.toggle('liked');
 	});
 });
@@ -138,7 +157,7 @@ carts.forEach(cart => {
 
 // Funcionalidad del efecto de los botones
 let buttons = document.querySelectorAll('.magic-btn a, .magic-btn2 a');
-const sensitivity = 0.5; // Factor de sensibilidad (ajusta este valor según tus preferencias)
+const sensitivity = 0.7; // Factor de sensibilidad (ajusta este valor según tus preferencias)
 
 buttons.forEach(function (btn) {
 	let x = 0;
