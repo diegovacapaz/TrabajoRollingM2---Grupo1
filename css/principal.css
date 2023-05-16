@@ -117,6 +117,10 @@ body {
 	justify-content: space-between;
 }
 
+.navbar {
+	z-index: 10;
+}
+
 .menu .navbar ul li {
 	position: relative;
 	float: left;
