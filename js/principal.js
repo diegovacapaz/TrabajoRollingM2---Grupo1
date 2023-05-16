@@ -139,7 +139,7 @@ carts.forEach(cart => {
 });
 
 // Funcionalidad del efecto de los botones
-let buttons = document.querySelectorAll('.magic-btn a');
+let buttons = document.querySelectorAll('.magic-btn a, .magic-btn2 a');
 const sensitivity = 0.5; // Factor de sensibilidad (ajusta este valor según tus preferencias)
 
 buttons.forEach(function (btn) {
