@@ -14,6 +14,7 @@
 	--btn-color: #393D63;
 	--logo-color: #5B5BD7;
 	--icon-color: invert(34%) sepia(97%) saturate(6894%) hue-rotate(260deg) brightness(106%) contrast(103%)
+	--x: 45deg;
 }
 
 .light-theme {
@@ -157,7 +158,7 @@ body {
 	width: 50%;
 }
 
-.header-txt span {
+.header-txt .span-txt {
 	font-size: 15px;
 	color: var(--text-span-color);
 	text-transform: capitalize;
@@ -169,6 +170,58 @@ body {
 	line-height: 70px;
 	color: #FFFFFF;
 	margin-bottom: 50px;
+}
+
+.magic-btn a{
+	position: relative;
+	width: 200px;
+	height: 60px;
+	display: inline-block;
+	border-radius: 5px;
+}
+
+.magic-btn a i {
+	position: absolute;
+	inset: -2px;
+	display: block;
+	border-radius: 5px;
+}
+
+.magic-btn a i,.magic-btn a i:nth-child(2) {
+	background: linear-gradient(var(--x), #00ccff, #0e1538, #0e1538, #d400d4);
+}
+
+.magic-btn a i,.magic-btn a i:nth-child(2) {
+	filter: blur(10px);
+}
+
+.magic-btn a span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	letter-spacing: 2px;
+	border: 1px solid #040a29;
+	background: rgba(14, 21, 56, 0.65);
+	border-radius: 3px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.magic-btn a span::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -50%;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.075);
+	transform: skew(25deg);
 }
 
 .btn-1 {
@@ -451,9 +504,13 @@ body {
 }
 
 .news-right p {
-	font-size: 16px;
+	font-size: 14px;
 	color: var(--text-color);
 	margin-bottom: 20px;
+}
+
+.news-right img {
+	object-fit: contain;
 }
 
 .btn-3 {
@@ -649,6 +706,14 @@ hr {
 		flex-direction: column;
 	}
 
+	.about-1 h3 {
+		font-size: 14px;
+	}
+
+	.about-2 h3 {
+		font-size: 12px;
+	}
+	
 	.about-1 {
 		width: 100%;
 		margin-bottom: 10px;

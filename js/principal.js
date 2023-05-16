@@ -61,9 +61,69 @@ if (document.body.classList.contains("light-theme")) {
 	header.style.backgroundImage = "url(./img/bg-dark.jpg)";
 }
 
+// ------------------- Mostrar juegos desde local storage ------------------- //
+
+// Obtener la cadena JSON de juegos desde el localStorage
+let juegosString = localStorage.getItem('tablaJuegoStorage');
+
+// Convertir la cadena en un objeto
+let juegos = JSON.parse(juegosString);
+
+// Obtener el elemento contenedor del catálogo
+let catalogo = document.getElementById('catalogue');
+
+// Recorrer el array de juegos
+juegos.forEach(function (juego) {
+	juego = JSON.parse(juego);
+	// Crear los elementos HTML necesarios
+	let gameCard = document.createElement('div');
+	gameCard.className = 'game-card';
+
+	let cardContentTop = document.createElement('div');
+	cardContentTop.className = 'card-content-top';
+
+	let likeButton = document.createElement('button');
+	likeButton.className = 'like';
+	likeButton.innerHTML = '<i class="far fa-heart"></i>';
+
+	let price = document.createElement('h3');
+	price.className = 'price';
+	price.textContent = '$' + juego.precio;
+
+	let gameImg = document.createElement('img');
+	gameImg.className = 'game-img';
+	gameImg.src = juego.url;
+
+	let gameCardContent = document.createElement('div');
+	gameCardContent.className = 'game-card-content';
+
+	let category = document.createElement('p');
+	category.className = 'category';
+	category.textContent = juego.genero;
+
+	let gameName = document.createElement('h3');
+	gameName.className = 'game-name';
+	gameName.textContent = juego.nombre;
+
+	let cartButton = document.createElement('button');
+	cartButton.className = 'cart';
+	cartButton.innerHTML = '<i class="fas fa-shopping-cart"></i>';
+
+	// Agregar los elementos al catálogo
+	cardContentTop.appendChild(likeButton);
+	cardContentTop.appendChild(price);
+	gameCard.appendChild(cardContentTop);
+	gameCard.appendChild(gameImg);
+	gameCardContent.appendChild(category);
+	gameCardContent.appendChild(gameName);
+	gameCardContent.appendChild(cartButton);
+	gameCard.appendChild(gameCardContent);
+	catalogo.appendChild(gameCard);
+});
+
 // Funcionalidad del Like
 const like = document.querySelectorAll('.like');
-like.forEach (like => {
+like.forEach(like => {
 	like.addEventListener("click", () => {
 		like.firstElementChild.classList.toggle('fas')
 		like.classList.toggle('liked');
@@ -72,8 +132,26 @@ like.forEach (like => {
 
 // Funcionalidad del carrito 
 const carts = document.querySelectorAll('.cart')
-carts.forEach (cart => {
+carts.forEach(cart => {
 	cart.addEventListener('click', () => {
 		cart.classList.toggle('cart-added');
 	});
+});
+
+// Funcionalidad del efecto de los botones
+let buttons = document.querySelectorAll('.magic-btn a');
+const sensitivity = 0.5; // Factor de sensibilidad (ajusta este valor según tus preferencias)
+
+buttons.forEach(function (btn) {
+	let x = 0;
+
+	btn.addEventListener('mousemove', function (e) {
+		let rect = e.target.getBoundingClientRect();
+		x = (e.clientX - rect.left) / rect.width * sensitivity;
+		requestAnimationFrame(animateButton);
+	});
+
+	function animateButton() {
+		btn.style.setProperty('--x', `${x * 360}deg`);
+	}
 });
