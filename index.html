@@ -8,7 +8,8 @@
     <meta name="author" content="Grupo1 - comision46i">
     <meta name="description" content="Proyecto de marketplace">
     <meta name="keywords" content="Productos, venta">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -30,8 +31,8 @@
                 <ul>
                     <li><a href="./index.html">Inicio</a></li>
                     <li><a href="./pages/error404.html">Tienda</a></li>
-                    <li><a href="./pages/error404.html">Soporte</a></li>
                     <li><a href="./pages/error404.html">Productos</a></li>
+                    <li id="linkAdmin"><a href="./pages/administracion.html">Administracion</a></li>
                     <li><a href="./pages/LoginRegistro.html">Ingresar</a></li>
                     <li><img src="./img/moon.png" id="icon" class="themeChanger"></li>
                 </ul>
@@ -203,8 +204,153 @@
         </div>
     </section>
 
-    <section class="about container">
-        <h3>Aquí irían los juegos/items añadidos desde JS</h3>
+    <section class="catalogue container">
+        <div class="txt">
+            <h2>Catalogo de Juegos</h2>
+        </div>
+        <div class="games-cards">
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+            <div class="game-card">
+                <div class="card-content-top">
+                    <button class="like">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <h3 class="price">$60</h3>
+                </div>
+                <img src="img/g1.jpg" class="game-img">
+                <div class="game-card-content">
+                    <p class="category">Accion</p>
+                    <h3 class="game-name">PUBG: BATTLEGROUNDS</h3>
+                    <button class="cart"><i class="fas fa-shopping-cart"></i></button>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <section class="news container">
@@ -289,9 +435,12 @@
             <li><a href="./pages/error404.html">lorem</a></li>
         </ul>
     </footer>
-
+    <script src="./js/adminLinkMostrar.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <script src="./js/principal.js"></script>
 </body>
+
 </html>

@@ -32,8 +32,8 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	text-decoration: none;
-	list-style: none;
+	text-decoration: none !important;
+	list-style: none !important;
 }
 
 body {
@@ -328,7 +328,7 @@ body {
 }
 
 .about {
-	padding: 100px 0;
+	padding: 50px 0;
 }
 
 .about-content {
@@ -848,4 +848,72 @@ hr {
 	.news-1 h3 {
 		margin-top: 7px;
 	}
+}
+
+.games-cards {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5em;
+	padding: 2em;
+	flex-wrap: wrap;
+	color: #FFFFFF;
+}
+
+.game-card {
+	width: 280px;
+	height: auto;
+	background-color: #393D63;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+	position: relative;
+	text-align: center;
+}
+
+.game-img {
+	width: 280px;
+	height: 300px;
+	object-fit: contain;
+}
+
+.game-card-content {
+	padding: 1.3em;
+}
+
+.category {
+	margin-bottom: 0.7em;
+	color: #A0A3C4;
+}
+
+.game-name {
+	margin-bottom: 0.7em;
+	font-size: 1.2em;
+}
+
+.card-content-top {
+	padding: 1em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.like, .cart {
+	background: none;
+	color: #A0A3C4;
+	border: none;
+	font-size: 1.5em;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.liked {
+	color: #ff2424;
+}
+
+.cart-added {
+	color: #7d53cd;
 }

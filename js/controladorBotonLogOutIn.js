@@ -1,5 +1,5 @@
 //IMPORTACIÓN DEL MODELO
-import {cuentas, cuentaActiva, registro, buscarCuentaCorreo, buscarCuentaUsuario, iniciarSesion, eliminarCuenta, cerrarSesion} from "./modeloUsuariosCRUD.js";
+import {cuentaActiva, cerrarSesion} from "./modeloUsuariosCRUD.js";
 
 //Parametros globales
 const contenedorLog = document.getElementById("contenedorLog");

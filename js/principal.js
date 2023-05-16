@@ -60,3 +60,20 @@ if (document.body.classList.contains("light-theme")) {
 } else {
 	header.style.backgroundImage = "url(./img/bg-dark.jpg)";
 }
+
+// Funcionalidad del Like
+const like = document.querySelectorAll('.like');
+like.forEach (like => {
+	like.addEventListener("click", () => {
+		like.firstElementChild.classList.toggle('fas')
+		like.classList.toggle('liked');
+	});
+});
+
+// Funcionalidad del carrito 
+const carts = document.querySelectorAll('.cart')
+carts.forEach (cart => {
+	cart.addEventListener('click', () => {
+		cart.classList.toggle('cart-added');
+	});
+});
