@@ -1,5 +1,6 @@
 /*Configuracion General*/
 * {
+    /*No borrar colores de paleta vieja*/
     --negro: #000000;
     --azulOscuro: #0B2447;
     --azul: #19376D;
@@ -41,6 +42,23 @@
     --bs-gradient:none
 }
 
+.btn-outline-rosa {
+    --bs-btn-color:var(--violet);
+    --bs-btn-border-color:var(--violet);
+    --bs-btn-hover-color:#fff;
+    --bs-btn-hover-bg:var(--violet);
+    --bs-btn-hover-border-color:var(--violet);
+    --bs-btn-focus-shadow-rgb:33,37,41;
+    --bs-btn-active-color:#fff;
+    --bs-btn-active-bg:var(--violet);
+    --bs-btn-active-border-color:var(--violet);
+    --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color:var(--violet);
+    --bs-btn-disabled-bg:transparent;
+    --bs-btn-disabled-border-color:var(--violet);
+    --bs-gradient:none
+}
+
 .table-azulOscuro{--bs-table-color:#fff;
     --bs-table-bg:#0B2447;
     --bs-table-border-color:#0B2447;
@@ -49,6 +67,19 @@
     --bs-table-active-bg:#0B2447;
     --bs-table-active-color:#fff;
     --bs-table-hover-bg:#0B2447;
+    --bs-table-hover-color:#fff;
+    color:var(--bs-table-color);
+    border-color:var(--bs-table-border-color)
+}
+
+.table-rosa{--bs-table-color:#fff;
+    --bs-table-bg:var(--violet);
+    --bs-table-border-color:var(--violet);
+    --bs-table-striped-bg:var(--violet);
+    --bs-table-striped-color:#fff;
+    --bs-table-active-bg:var(--violet);
+    --bs-table-active-color:#fff;
+    --bs-table-hover-bg:var(--violet);
     --bs-table-hover-color:#fff;
     color:var(--bs-table-color);
     border-color:var(--bs-table-border-color)
@@ -63,22 +94,22 @@
 }
 
 .btn-borrar, .btn-borrarJuego{
-    color: rgb(151, 15, 0);
-}
-
-.btn-borrar:hover, .btn-borrarJuego:hover{
     color: rgb(255, 25, 0);
 }
 
+.btn-borrar:hover, .btn-borrarJuego:hover{
+    color: rgb(151, 15, 0);
+}
+
 .btn-ver, .btn-editar{
-    color: var(--azulOscuro);
+    color: var(--violet);
 }
 
 .btn-ver:hover, .btn-editar:hover{
-    color: var(--azulClaro);
+    color: var(--pink);
 }
 
-.fondoNavbar{
+.fondoMorado{
     background-color: var(--primary-color);
 }
 
