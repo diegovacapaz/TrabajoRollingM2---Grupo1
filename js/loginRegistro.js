@@ -49,14 +49,12 @@ const validarCampo = (expresion, input, campo)=>{
     document.getElementById(`grupo-${campo}`).classList.add('formulario-grupo-correcto')
     document.querySelector(`#grupo-${campo} i`).classList.add('bi-check')
     document.querySelector(`#grupo-${campo} i`).classList.remove('bi-x-circle')
-    document.querySelector(`#grupo-${campo} .formulario-input-error`).classList.remove('formulario-input-error-activo')
     campos[campo] = true
   }else{
     document.getElementById(`grupo-${campo}`).classList.add('formulario-grupo-incorrecto')
     document.querySelector(`#grupo-${campo} i`).classList.add('bi-x-circle')
     document.querySelector(`#grupo-${campo} i`).classList.remove('bi-check')
     document.getElementById(`grupo-${campo}`).classList.remove('formulario-grupo-correcto')
-    document.querySelector(`#grupo-${campo} .formulario-input-error`).classList.add('formulario-input-error-activo')
     campos[campo] = false
   }
 }
@@ -69,14 +67,12 @@ const validarContrasenia = ()=>{
     document.querySelector(`#grupo-contrasenia2 i`).classList.add('bi-x-circle')
     document.querySelector(`#grupo-contrasenia2 i`).classList.remove('bi-check')
     document.getElementById(`grupo-contrasenia2`).classList.remove('formulario-grupo-correcto')
-    document.querySelector(`#grupo-contrasenia2 .formulario-input-error`).classList.add('formulario-input-error-activo')
     campos['contrasenia'] = false
   }else{
     document.getElementById(`grupo-contrasenia2`).classList.remove('formulario-grupo-incorrecto')
     document.querySelector(`#grupo-contrasenia2 i`).classList.remove('bi-x-circle')
     document.querySelector(`#grupo-contrasenia2 i`).classList.add('bi-check')
     document.getElementById(`grupo-contrasenia2`).classList.add('formulario-grupo-correcto')
-    document.querySelector(`#grupo-contrasenia2 .formulario-input-error`).classList.remove('formulario-input-error-activo')
     campos['contrasenia'] = true
   }
 }

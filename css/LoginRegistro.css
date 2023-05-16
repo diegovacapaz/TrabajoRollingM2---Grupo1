@@ -75,18 +75,6 @@ button:hover{
 .formulario-grupo-input{
 	position: relative;
 }
-.formulario-input-error{
-	display: none;
-	font-size: 12px;
-	margin-bottom: 0;
-}
-.formulario-input-error-activo{
-	display: block;
-	color: #fff;
-	text-align: center;
-	margin-top: 0px;
-	font-size: 11px;
-}
 .formulario-validacion-estado{
 	position: absolute;
 	right: 18px;
@@ -118,7 +106,7 @@ button:hover{
 	opacity: 1;
 }
 .formulario-grupo-incorrecto .formulario-input{
-	border: 3px solid #bb2929;
+	border: 1px solid #bb2929;
 }
 
 .ingresar{
