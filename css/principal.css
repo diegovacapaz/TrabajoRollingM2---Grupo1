@@ -455,7 +455,7 @@ body {
 .about-1 {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.2),
 			rgba(0, 0, 0, 0.2)),
-		url(/img/bg-2.jpg);
+		url(../img/bg-2.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -483,7 +483,7 @@ body {
 .about-in1 {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.2),
 			rgba(0, 0, 0, 0.2)),
-		url(/img/bg-3.jpg);
+		url(../img/bg-3.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -507,7 +507,7 @@ body {
 .about-in2 {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.2),
 			rgba(0, 0, 0, 0.2)),
-		url(/img/bg-4.jpg);
+		url(../img/bg-4.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
