@@ -79,23 +79,12 @@ juegos.forEach(function (juego) {
 	let gameCard = document.createElement('div');
 	gameCard.className = 'game-card';
 
-	let cardContentTop = document.createElement('div');
-	cardContentTop.className = 'card-content-top';
-
-	let likeButton = document.createElement('button');
-	likeButton.className = 'like';
-	likeButton.innerHTML = '<i class="far fa-heart"></i>';
-
-	let price = document.createElement('h3');
-	price.className = 'price';
-	price.textContent = '$' + juego.precio;
-
 	let gameImg = document.createElement('img');
 	gameImg.className = 'game-img';
 	gameImg.src = juego.url;
 
-	let gameCardContent = document.createElement('div');
-	gameCardContent.className = 'game-card-content';
+	let overlay = document.createElement('div');
+	overlay.className = 'overlay';
 
 	let category = document.createElement('p');
 	category.className = 'category';
@@ -109,15 +98,24 @@ juegos.forEach(function (juego) {
 	cartButton.className = 'cart';
 	cartButton.innerHTML = '<i class="fas fa-shopping-cart"></i>';
 
+	let likeButton = document.createElement('button');
+	likeButton.className = 'like';
+	likeButton.innerHTML = '<i class="far fa-heart"></i>';
+
+	let price = document.createElement('h3');
+	price.className = 'price';
+	price.textContent = '$' + juego.precio;
+
 	// Agregar los elementos al catálogo
-	cardContentTop.appendChild(likeButton);
-	cardContentTop.appendChild(price);
-	gameCard.appendChild(cardContentTop);
+	overlay.appendChild(category);
+	overlay.appendChild(gameName);
+	overlay.appendChild(cartButton);
+	overlay.appendChild(likeButton);
+	overlay.appendChild(price);
+
 	gameCard.appendChild(gameImg);
-	gameCardContent.appendChild(category);
-	gameCardContent.appendChild(gameName);
-	gameCardContent.appendChild(cartButton);
-	gameCard.appendChild(gameCardContent);
+	gameCard.appendChild(overlay);
+
 	catalogo.appendChild(gameCard);
 });
 
@@ -155,3 +153,4 @@ buttons.forEach(function (btn) {
 		btn.style.setProperty('--x', `${x * 360}deg`);
 	}
 });
+
