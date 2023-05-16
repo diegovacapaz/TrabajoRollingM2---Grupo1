@@ -1,5 +1,5 @@
 //IMPORTACIÓN DEL MODELO
-import {cuentas, cuentaActiva, registro, buscarCuentaCorreo, buscarCuentaUsuario, iniciarSesion, eliminarCuenta, cerrarSesion} from "./modeloUsuariosCRUD.js";
+import {cuentaActiva, cerrarSesion} from "./modeloUsuariosCRUD.js";
 
 //Parametros globales
 const contenedorLog = document.getElementById("contenedorLog");
@@ -12,7 +12,7 @@ const actualizarCuentaActiva = ()=>{
         botonLogDivTexto.innerHTML = cuentaActiva.usuario;
         let iconLogout = document.createElement("button");
         iconLogout.innerHTML = '<i class="bi bi-x-circle"></i>';
-        iconLogout.className ="btn btn-dark crucetaLogout";
+        iconLogout.className ="btn btn-outline-light crucetaLogout";
         iconLogout.addEventListener("click",()=>{
             cerrarSesion();
             window.location.reload();
