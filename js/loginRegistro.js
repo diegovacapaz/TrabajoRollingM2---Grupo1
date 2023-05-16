@@ -59,6 +59,15 @@ const validarCampo = (expresion, input, campo)=>{
   }
 }
 
+const validarCampoVacio = (campo)=>{
+  if (validarCampo === undefined){
+    document.getElementById(`grupo-${campo}`).classList.remove('formulario-grupo-incorrecto')
+    document.getElementById(`grupo-${campo}`).classList.remove('formulario-grupo-correcto')
+    document.querySelector(`#grupo-${campo} i`).classList.remove('bi-check')
+    document.querySelector(`#grupo-${campo} i`).classList.remove('bi-x-circle')
+  }
+}
+
 //validacion de ambas contraseñas
 const validarContrasenia = ()=>{
   const contraseniaRegistro2 = document.getElementById('contraseniaRegistro2')
@@ -82,9 +91,6 @@ inputs.forEach((input)=>{
   input.addEventListener('keyup', validarFormulario)
   input.addEventListener('blur', validarFormulario)
 })
-
-
-
 
 //boton enviar registro
 formReg.addEventListener('submit', (e) =>{
@@ -122,6 +128,18 @@ formReg.addEventListener('submit', (e) =>{
 const formIng = document.getElementById('formIng')
 const mailIngresar = document.getElementById('mailIngresar')
 const contraseniaIngresar = document.getElementById('contraseniaIngresar')
+const labelIngresar = document.querySelector('#formIng label')
+
+
+//borramos iconos de los inputs de formulario registrar
+labelIngresar.addEventListener('click',()=>{
+  document.querySelectorAll('.formulario-grupo-correcto').forEach((icono)=>{
+    icono.classList.remove('formulario-grupo-correcto')
+  })
+  document.querySelectorAll('.formulario-grupo-incorrecto').forEach((icono)=>{
+    icono.classList.remove('formulario-grupo-incorrecto')
+  })
+})
 
 formIng.addEventListener('submit', (e)=>{
   e.preventDefault()
