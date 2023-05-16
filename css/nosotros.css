@@ -47,7 +47,6 @@ header{
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	white-space: nowrap;
-	font-size: 30px;
 	font-weight: 700;
 }
 
@@ -76,5 +75,11 @@ header{
 @media all and (min-width: 992px) {
 	.pagos-icons{
 		width: 25%;
+	}
+}
+
+@media all and (max-width: 300px) {
+	.logo{
+		display: none;
 	}
 }

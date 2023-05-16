@@ -60,7 +60,7 @@ body {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	white-space: nowrap;
-	font-size: 30px;
+	/* font-size: 20px; */
 	font-weight: 700;
 }
 
@@ -133,6 +133,10 @@ body {
 	display: block;
 	font-weight: 600;
 	transition: .3s ease-in-out;
+}
+
+.menu .navbar ul li article {
+	margin: 18px;
 }
 
 .menu .navbar ul li a:hover {
@@ -635,6 +639,10 @@ hr {
 	color: #FFFFFF;
 }
 
+.link-activo{
+	color: #FFFFFF !important
+}
+
 @keyframes background-pan {
 	from {
 		background-position: 0% center;
@@ -1107,5 +1115,10 @@ hr {
 @media all and (min-width: 992px) {
 	.pagos-icons{
 		width: 25%;
+	}
+}
+@media all and (max-width: 300px) {
+	.logo{
+		display: none;
 	}
 }
