@@ -63,16 +63,16 @@ if (document.body.classList.contains("light-theme")) {
 
 // ------------------- Mostrar juegos desde local storage ------------------- //
 
-//   Obtener la cadena JSON de juegos desde el localStorage
+//  Obtener la cadena JSON de juegos desde el localStorage
 let juegosString = localStorage.getItem('tablaJuegoStorage');
 
-//  Convertir la cadena en un objeto
+// Convertir la cadena en un objeto
 let juegos = JSON.parse(juegosString);
 
-//  Obtener el elemento contenedor del catálogo
+// Obtener el elemento contenedor del catálogo
 let catalogo = document.getElementById('catalogue');
 
-//  Recorrer el array de juegos
+// Recorrer el array de juegos
 juegos.forEach(function (juego) {
 	juego = JSON.parse(juego);
 	// Crear los elementos HTML necesarios
@@ -92,7 +92,7 @@ juegos.forEach(function (juego) {
 	contentBx.className = 'contentBx';
 
 	let gameName = document.createElement('h3');
-	gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span>`;
+	gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>$${juego.precio}`;
 
 	let ul = document.createElement('ul');
 	ul.className = 'sci';
@@ -112,10 +112,10 @@ juegos.forEach(function (juego) {
 	let aLike = document.createElement('a');
 
 	let likeIcon = document.createElement('i');
-	likeIcon.className = 'fas fa-heart like';
+	likeIcon.className = 'fas fa-heart';
 	likeIcon.setAttribute('aria-hidden', 'true');
 
- 	// Agregar los elementos al árbol DOM
+	// Agregar los elementos al árbol DOM
 	aCart.appendChild(cartIcon);
 	liCart.appendChild(aCart);
 
@@ -137,6 +137,7 @@ juegos.forEach(function (juego) {
 
 	catalogo.appendChild(gameCard);
 });
+
 
 
 // Funcionalidad del Like
