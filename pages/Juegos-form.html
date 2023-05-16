@@ -46,38 +46,44 @@
     </header>
     
     <main class="container">
-        <section class="card m-3">
-            <div class="card-header fs-4 fw-bold">
+        <section class="card m-3 bordeRosa fondoMorado text-light">
+            <div class="card-header fs-4 fw-bold bordeRosa">
                 Formulario Juego
             </div>
             <div class="card-body">
                 <form id="frmJuego">
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="txtIdJuego">IDJuego:</label>
-                        <input type="text" class="form-control" id="txtIdJuego"
-                            value="" readonly />
+                        <div class="d-flex">
+                            <input type="text" class="form-control inputOscuro" id="txtIdJuego"
+                                value="" readonly />
+                            <button type="button" class="btn btn-outline-chicle text-light w-50 ms-2" onclick="generarID()">
+                                Generar ID
+                            </button>
+                        </div>
                     </div>
-                    <button type="button" class="btn btn-success" onclick="generarID()">
-                        Generar ID
-                    </button>
-                    <div class="form-group">
-                        <label for="txtNombre">Nombre:</label>
-                        <input type="text" class="form-control" id="txtNombre" maxlength="40"/>
+                    <div class="d-lg-flex gap-2">
+                        <div class="form-group mb-2 w-lg-50">
+                            <label for="txtNombre">Nombre:</label>
+                            <input type="text" class="form-control inputOscuro" id="txtNombre" maxlength="40"/>
+                        </div>
+                        <div class="form-group mb-2 w-lg-50">
+                            <label for="txtPrecio">Precio</label>
+                            <input type="number" maxlength="10"  class="form-control inputOscuro" id="txtPrecio" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+                        </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="cboGenero">Género:</label>
-                        <select class="form-control" id="cboGenero">
-                        </select>
+                        <div class="d-flex">
+                            <select class="form-control inputOscuro" id="cboGenero">
+                            </select>
+                            <button type="button" class="btn btn-outline-success bordeChicle text-light w-25 mx-2" data-bs-toggle="modal" data-bs-target="#modalCategoriasNueva">Nuevo</button>
+                            <button type="button" class="btn btn-outline-danger bordeChicle text-light w-25" data-bs-toggle="modal" data-bs-target="#modalCategoriasBorrar">Borrar</button>
+                        </div>
                     </div>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCategoriasNueva">Nueva</button>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCategoriasBorrar">Borrar</button>
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="txtDescripción">Descripción:</label>
-                        <textarea class="form-control descripcionTextArea" id="txtDescripcion" rows="4" maxlength="200"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtPrecio">Precio</label>
-                        <input type="number" maxlength="10"  class="form-control" id="txtPrecio" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+                        <textarea class="form-control descripcionTextArea inputOscuro" id="txtDescripcion" rows="4" maxlength="200"></textarea>
                     </div>
                     <!-- <div class="mb-3">
                         <label for="url" class="form-label">URL</label>
@@ -85,16 +91,16 @@
                     </div> -->
                     <div class="mb-3">
                         <label for="url" class="form-label">URL:</label>
-                        <input type="text" class="form-control" id="txtUrl" placeholder="https://http2.EJEMPLO.jpg"/>
+                        <input type="text" class="form-control inputOscuro" id="txtUrl" placeholder="https://http2.EJEMPLO.jpg"/>
                         <img id="imgMiniatura" src="#" alt="Miniatura" style="display: none; max-width: 200px; max-height: 200px;"/>
                         </div>
                 </form>
             </div>
-            <div class="card-footer">
-                <button type="button" class="btn btn-success" onclick="guardar()">
-                    GUARDAR
+            <div class="card-footer bordeRosa">
+                <button type="button" class="btn btn-outline-success me-2 px-3" onclick="guardar()">
+                    Guardar
                 </button>
-                <a href="./administracion.html" class="btn btn-danger">CANCELAR</a>
+                <a href="./administracion.html" class="btn btn-outline-danger px-3">Cancelar</a>
             </div>
         </section>
     </main>
