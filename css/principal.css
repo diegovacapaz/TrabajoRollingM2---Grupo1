@@ -1121,4 +1121,11 @@ hr {
 	.logo{
 		display: none;
 	}
+	.textoChico{
+		font-size: 15px;
+	}
+	.txt {
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
 }
