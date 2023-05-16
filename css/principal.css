@@ -1094,3 +1094,18 @@ hr {
 .cart-added {
 	color: #7d53cd;
 }
+
+.text-footer{
+	color: var(--pink);
+	font-weight: 600;
+}
+
+.pagos-icons{
+	width: 10%;
+}
+
+@media all and (min-width: 992px) {
+	.pagos-icons{
+		width: 25%;
+	}
+}
