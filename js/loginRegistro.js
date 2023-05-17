@@ -163,6 +163,7 @@ formIng.addEventListener('submit', (e)=>{
   
   const esAdmin = cuentas.find(admin=> admin.correo === mailIngresar.value && admin.admin === true)
   if(esAdmin){
+    iniciarSesion(mailIngresar.value, contraseniaIngresar.value)
     window.location.href = '../pages/administracion.html'
   }else{
     iniciarSesion(mailIngresar.value, contraseniaIngresar.value)
