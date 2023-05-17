@@ -1,7 +1,7 @@
 
 import {cuentas, cuentaActiva, registro, buscarCuentaCorreo, buscarCuentaUsuario, iniciarSesion, cerrarSesion} from "./modeloUsuariosCRUD.js"
 
-
+console.log(cuentaActiva);
 //REGISTRO
 const formReg = document.getElementById('formReg')
 const inputs = document.querySelectorAll('#formReg input')
@@ -112,7 +112,15 @@ formReg.addEventListener('submit', (e) =>{
       icono.classList.remove('formulario-grupo-correcto')
     })
     registro(nombreRegistro.value, mailRegistro.value, contraseniaRegistro.value)
-    formReg.reset()
+    if(cuentaActiva===null){
+      iniciarSesion(mailRegistro.value,contraseniaRegistro.value)
+      formReg.reset()
+      window.location.href = '../index.html'
+    }
+    else{
+      formReg.reset()
+      return alert("Su cuenta se registró con éxito, pero hay otra sesión abierta.");
+    }
     //agregar mensaje de usuario registrado correctamente
   }else{
     document.getElementById('formulario-mensaje').classList.add('formulario-mensaje-activo')
