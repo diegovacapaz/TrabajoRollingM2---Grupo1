@@ -60,7 +60,7 @@ body {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	white-space: nowrap;
-	font-size: 30px;
+	/* font-size: 20px; */
 	font-weight: 700;
 }
 
@@ -133,6 +133,10 @@ body {
 	display: block;
 	font-weight: 600;
 	transition: .3s ease-in-out;
+}
+
+.menu .navbar ul li article {
+	margin: 18px;
 }
 
 .menu .navbar ul li a:hover {
@@ -635,6 +639,15 @@ hr {
 	color: #FFFFFF;
 }
 
+.link-activo{
+	color: #FFFFFF !important
+}
+
+.aboutDescripcion-fold{
+	display: none;
+}
+
+
 @keyframes background-pan {
 	from {
 		background-position: 0% center;
@@ -673,9 +686,9 @@ hr {
 	}
 
 	.themeChanger {
-		top: -8px;
-		height: 30px;
-		left: 170px;
+		top:0;
+		left:10px;
+		margin-bottom: 5px;
 	}
 
 	.menu {
@@ -692,7 +705,7 @@ hr {
 		top: 100%;
 		left: 0;
 		right: 0;
-		background-color: #1F1F1F;
+		background-color: var(--primary-color);
 		display: none;
 	}
 
@@ -831,9 +844,9 @@ hr {
 	}
 
 	.themeChanger {
-		top: -8px;
-		height: 30px;
-		left: 501px;
+		top:0;
+		left:10px;
+		margin-bottom: 5px;
 	}
 
 	.menu label {
@@ -846,7 +859,7 @@ hr {
 		top: 100%;
 		left: 0;
 		right: 0;
-		background-color: #1F1F1F;
+		background-color: var(--primary-color);
 		display: none;
 	}
 
@@ -1093,4 +1106,49 @@ hr {
 
 .cart-added {
 	color: #7d53cd;
+}
+
+.text-footer{
+	color: var(--pink);
+	font-weight: 600;
+}
+
+.pagos-icons{
+	width: 10%;
+}
+
+@media all and (min-width: 992px) {
+	.pagos-icons{
+		width: 25%;
+	}
+}
+@media all and (max-width: 300px) {
+	.logo{
+		display: none;
+	}
+	.textoChico{
+		font-size: 15px;
+	}
+	.txt {
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
+	.txt h2 {
+		text-align: center;
+	}
+	.aboutDescripcion{
+		display: none;
+	}
+	.aboutDescripcion-fold{
+		display: inline-block;
+	}
+	.about-1{
+		height: 245px;
+	}
+	.games-cards .game-card{
+		margin: 20px 0;
+	}
+	.header-txt h1{
+		font-size: 2.6rem;
+	}
 }

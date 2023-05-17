@@ -8,6 +8,9 @@
     <meta name="author" content="Grupo1 - comision46i">
     <meta name="description" content="Proyecto de marketplace">
     <meta name="keywords" content="Productos, venta">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
@@ -15,6 +18,7 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/principal.css">
+    <link rel="stylesheet" href="./css/botonLogout.css">
     <title>RollinGGames | Diversion asegurada</title>
 </head>
 
@@ -22,7 +26,7 @@
     <header class="header">
         <div class="menu container">
             <a href="./index.html" class="logo"><img src="img/logo.svg" alt=""></a>
-            <p class="nombrePagina">RollinGGames</p>
+            <p class="nombrePagina fs-3 mb-0">RollinGGames</p>
             <input type="checkbox" id="menu">
             <label for="menu">
                 <img src="img/menu.png" class="menu-icono" alt="">
@@ -33,7 +37,15 @@
                     <li><a href="./pages/error404.html">Tienda</a></li>
                     <li><a href="./pages/error404.html">Productos</a></li>
                     <li id="linkAdmin"><a href="./pages/administracion.html">Administracion</a></li>
-                    <li><a href="./pages/LoginRegistro.html">Ingresar</a></li>
+                    <li>
+                        <article id="contenedorLog" class="d-flex text-light gap-2 align-items-center ms-lg-3">
+                            <button class="btn btn-outline-light d-flex flex-lg-row-reverse gap-2 align-items-center" id="botonLog">
+                                <i class="bi bi-person-circle"></i>
+                                <div id="botonLogTexto">
+                                </div>
+                            </button>
+                        </article>
+                    </li>
                     <li><img src="./img/moon.png" id="icon" class="themeChanger"></li>
                 </ul>
             </nav>
@@ -75,7 +87,7 @@
                     <path
                         d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
                 </svg>
-            </span><span class="magic-text">Los juegos mas vendidos</span>
+            </span><span class="magic-text textoChico">Los juegos mas vendidos</span>
         </h2>
         <div class="swiper miSwiper">
             <div class="swiper-wrapper">
@@ -192,32 +204,42 @@
         <div class="about-content">
             <div class="about-1">
                 <img src="img/b1.jpg" alt="">
-                <h3>
+                <h3 class="aboutDescripcion">
                     ¡Sumérgete en la acción trepidante de Valorant y demuestra tus habilidades tácticas! Forma parte de
                     un
                     equipo estratégico y desafía a tus oponentes en emocionantes combates. ¡Con gráficos impresionantes
                     y
                     una jugabilidad adictiva, Valorant te mantendrá al borde de tu asiento!
                 </h3>
+                <h3 class="aboutDescripcion-fold">
+                    ¡Sumérgete en la acción trepidante de Valorant y demuestra tus habilidades tácticas!
+                </h3>
             </div>
             <div class="about-2">
                 <div class="about-in1">
                     <img src="img/b2.jpg" alt="">
-                    <h3>
+                    <h3 class="aboutDescripcion">
                         ¡Embárcate en una aventura épica en Fortnite, donde la creatividad y la competencia se unen!
                         Construye fortalezas, lucha contra monstruos y enfréntate a otros jugadores en un campo de
                         batalla
                         vibrante. ¡Con constantes actualizaciones y eventos emocionantes, Fortnite te garantiza horas de
                         diversión sin fin!
                     </h3>
+                    <h3 class="aboutDescripcion-fold">
+                        ¡Embárcate en una aventura épica en Fortnite, donde la creatividad y la competencia se unen!
+                    </h3>
                 </div>
                 <div class="about-in2">
                     <img src="img/b3.jpg" alt="">
-                    <h3>
+                    <h3 class="aboutDescripcion">
                         ¡Explora un mundo posapocalíptico en Tom Clancy's The Division 2 y lucha por la supervivencia en
                         Washington D.C.! Forma equipo con otros agentes, mejora tus habilidades y enfréntate a facciones
                         enemigas en un vasto mundo abierto. ¡Con un modo de juego cooperativo y una historia envolvente,
                         The Division 2 te llevará a la acción intensa!
+                    </h3>
+                    <h3 class="aboutDescripcion-fold">
+                        ¡Explora un mundo posapocalíptico en Tom Clancy's The Division 2 y lucha por la supervivencia en
+                        Washington D.C.!
                     </h3>
                 </div>
             </div>
@@ -349,7 +371,7 @@
 
     <hr>
 
-    <footer class="footer container">
+    <!-- <footer class="footer container">
         <h3>Menu</h3>
         <ul>
             <li><a href="./pages/nosotros.html">Nosotros</a></li>
@@ -357,7 +379,89 @@
             <li><a href="./pages/error404.html">lorem</a></li>
             <li><a href="./pages/error404.html">lorem</a></li>
         </ul>
+
+    </footer> -->
+    <footer class="text-white pb-4 ">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md left">
+                <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-footer"> RollinGGames</h5>
+                    <a href="./index.html">
+                        <img src="./img/logo.svg" style="width: 100px;" alt="">
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-footer">Pagos</h5>
+                    <div class="d-flex flex-lg-column align-items-center justify-content-center">
+                        <img class="pagos-icons" src="./img/Pagos/master-logo.png" alt="Mastercard logo">
+                        <img class="pagos-icons mx-3 mx-lg-0 my-lg-3" src="./img/Pagos/Visa_Logo.png" alt="Visa logo">
+                        <img class="pagos-icons" src="./img/Pagos/Mercado-Pago-Logo.png" alt="MercadoPago logo">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 col-xl-2 mx-auto mt-3" >
+                    <h5 class="text-uppercase mb-4 text-footer">Navegación</h5>
+                    <p>
+                        <a href="./pages/nosotros.html" class="text-decoration-none text-white">Nosotros</a>
+                    </p>
+                    <p>
+                        <a href="./pages/error404.html" class="text-decoration-none text-white">Soporte</a>
+                    </p>
+                    <p>
+                        <a href="./pages/error404.html" class="text-decoration-none text-white">Contactenos</a>
+                    </p>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 text-footer">Contactos</h5>
+                    <p>
+                        Argentina, Tucumán
+                    </p>
+                    <p>
+                        Rollingcode@gmail.com
+                    </p>
+                    <p>
+                        +54 3812581948
+                    </p>
+                </div>
+                <hr class="mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-7 col-lg-8">
+                        <p>
+                            Copyright ©2023 <strong class="text-footer">RollinGGames</strong>
+                        </p>
+                    </div>
+                    <div class="col-md-5 col-lg-4">
+                        <div class="text-center text-md right">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item">
+                                    <a href="./pages/error404.html" class="btn-floating btn-sm text-white">
+                                        <i class="bi bi-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="./pages/error404.html" class="btn-floating btn-sm text-white">
+                                        <i class="bi bi-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="./pages/error404.html" class="btn-floating btn-sm text-white">
+                                        <i class="bi bi-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="./pages/error404.html" class="btn-floating btn-sm text-white">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="./js/controladorBotonLogOutInIndex.js" type="module"></script>
     <script src="./js/adminLinkMostrar.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
