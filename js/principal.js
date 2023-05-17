@@ -112,7 +112,7 @@ juegos.forEach(function (juego) {
 	let aLike = document.createElement('a');
 
 	let likeIcon = document.createElement('i');
-	likeIcon.className = 'fas fa-heart';
+	likeIcon.className = 'fas fa-heart like';
 	likeIcon.setAttribute('aria-hidden', 'true');
 
 	// Agregar los elementos al árbol DOM
