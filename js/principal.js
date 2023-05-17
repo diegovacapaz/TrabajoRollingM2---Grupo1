@@ -237,6 +237,30 @@ generosUnicos.forEach(genero => {
 	filterByGender.appendChild(groupTypeContainer);
 });
 
+// Obtener el elemento de búsqueda y el botón de búsqueda
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+
+// Agregar evento de input al campo de búsqueda
+searchInput.addEventListener('input', function () {
+	const searchTerm = searchInput.value.toLowerCase(); // Obtener el término de búsqueda en minúsculas
+
+	// Filtrar los juegos por el término de búsqueda en el nombre del juego
+	const juegosFiltrados = juegos.filter(function (juego) {
+		juego = JSON.parse(juego);
+		const nombre = juego.nombre.toLowerCase();
+		return nombre.includes(searchTerm);
+	});
+
+	// Mostrar los juegos filtrados en el catálogo
+	mostrarJuegos(juegosFiltrados);
+});
+
+// Agregar evento de submit al formulario de búsqueda
+searchButton.addEventListener('click', function (event) {
+	event.preventDefault(); // Evitar que el formulario se envíe
+});
+
 
 // Funcionalidad del efecto de los botones
 let buttons = document.querySelectorAll('.magic-btn a, .magic-btn2 a');
