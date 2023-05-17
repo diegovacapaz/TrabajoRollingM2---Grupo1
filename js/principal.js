@@ -92,7 +92,7 @@ juegos.forEach(function (juego) {
 	contentBx.className = 'contentBx';
 
 	let gameName = document.createElement('h3');
-	gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>$${juego.precio}`;
+	gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero.toUpperCase()}</span><br>$${juego.precio}`;
 
 	let ul = document.createElement('ul');
 	ul.className = 'sci';
