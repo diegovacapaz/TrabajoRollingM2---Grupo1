@@ -243,7 +243,7 @@ const searchButton = document.getElementById('search-button');
 
 // Agregar evento de input al campo de búsqueda
 searchInput.addEventListener('input', function () {
-	const searchTerm = searchInput.value.toLowerCase(); // Obtener el término de búsqueda en minúsculas
+	const searchTerm = searchInput.value.toLowerCase();
 
 	// Filtrar los juegos por el término de búsqueda en el nombre del juego
 	const juegosFiltrados = juegos.filter(function (juego) {
