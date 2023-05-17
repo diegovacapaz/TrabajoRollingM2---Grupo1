@@ -78,7 +78,7 @@ btnCloseFilter.addEventListener('click', () => {
 
 // ------------------- Mostrar juegos desde local storage ------------------- //
 
-//  Obtener la cadena JSON de juegos desde el localStorage
+// Obtener la cadena JSON de juegos desde el localStorage
 let juegosString = localStorage.getItem('tablaJuegoStorage');
 
 // Convertir la cadena en un objeto
@@ -87,73 +87,104 @@ let juegos = JSON.parse(juegosString);
 // Obtener el elemento contenedor del catálogo
 let catalogo = document.getElementById('catalogue');
 
-// Recorrer el array de juegos
-juegos.forEach(function (juego) {
-	juego = JSON.parse(juego);
-	// Crear los elementos HTML necesarios
-	let gameCard = document.createElement('div');
-	gameCard.className = 'game-card';
+// Función para mostrar los juegos en el catálogo
+function mostrarJuegos(juegos) {
+	// Limpiar el catálogo
+	catalogo.innerHTML = '';
 
-	let contentGameCard = document.createElement('div');
-	contentGameCard.className = 'content-game-card';
+	// Recorrer los juegos y crear las cards correspondientes
+	juegos.forEach(function (juego) {
+		juego = JSON.parse(juego);
 
-	let imgBx = document.createElement('div');
-	imgBx.className = 'imgBx';
+		// Crear los elementos HTML necesarios
+		let gameCard = document.createElement('div');
+		gameCard.className = 'game-card';
 
-	let gameImg = document.createElement('img');
-	gameImg.src = juego.url;
+		let contentGameCard = document.createElement('div');
+		contentGameCard.className = 'content-game-card';
 
-	let contentBx = document.createElement('div');
-	contentBx.className = 'contentBx';
+		let imgBx = document.createElement('div');
+		imgBx.className = 'imgBx';
 
-	let gameName = document.createElement('h3');
-	gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>$${juego.precio}`;
+		let gameImg = document.createElement('img');
+		gameImg.src = juego.url;
 
-	let ul = document.createElement('ul');
-	ul.className = 'sci';
+		let contentBx = document.createElement('div');
+		contentBx.className = 'contentBx';
 
-	let liCart = document.createElement('li');
-	liCart.style = '--i:1';
+		let gameName = document.createElement('h3');
+		gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>$${juego.precio}`;
 
-	let aCart = document.createElement('a');
+		let ul = document.createElement('ul');
+		ul.className = 'sci';
 
-	let cartIcon = document.createElement('i');
-	cartIcon.className = 'cart fas fa-shopping-cart';
-	cartIcon.setAttribute('aria-hidden', 'true');
+		let liCart = document.createElement('li');
+		liCart.style = '--i:1';
 
-	let liLike = document.createElement('li');
-	liLike.style = '--i:1';
+		let aCart = document.createElement('a');
 
-	let aLike = document.createElement('a');
+		let cartIcon = document.createElement('i');
+		cartIcon.className = 'cart fas fa-shopping-cart';
+		cartIcon.setAttribute('aria-hidden', 'true');
 
-	let likeIcon = document.createElement('i');
-	likeIcon.className = 'fas fa-heart like';
-	likeIcon.setAttribute('aria-hidden', 'true');
+		let liLike = document.createElement('li');
+		liLike.style = '--i:1';
 
-	// Agregar los elementos al árbol DOM
-	aCart.appendChild(cartIcon);
-	liCart.appendChild(aCart);
+		let aLike = document.createElement('a');
 
-	aLike.appendChild(likeIcon);
-	liLike.appendChild(aLike);
+		let likeIcon = document.createElement('i');
+		likeIcon.className = 'fas fa-heart like';
+		likeIcon.setAttribute('aria-hidden', 'true');
 
-	ul.appendChild(liCart);
-	ul.appendChild(liLike);
+		// Agregar los elementos al árbol DOM
+		aCart.appendChild(cartIcon);
+		liCart.appendChild(aCart);
 
-	imgBx.appendChild(gameImg);
+		aLike.appendChild(likeIcon);
+		liLike.appendChild(aLike);
 
-	contentBx.appendChild(gameName);
+		ul.appendChild(liCart);
+		ul.appendChild(liLike);
 
-	contentGameCard.appendChild(imgBx);
-	contentGameCard.appendChild(contentBx);
+		imgBx.appendChild(gameImg);
 
-	gameCard.appendChild(contentGameCard);
-	gameCard.appendChild(ul);
+		// Capitalizar la primera letra del género
+		const generoCapitalizado = juego.genero.charAt(0).toUpperCase() + juego.genero.slice(1);
 
-	catalogo.appendChild(gameCard);
-});
+		contentBx.appendChild(gameName);
 
-//Funcion del filtrado de genero
+		gameName.innerHTML = `${juego.nombre}<br><span>${generoCapitalizado}</span><br>$${juego.precio}`;
+
+		contentGameCard.appendChild(imgBx);
+		contentGameCard.appendChild(contentBx);
+
+		gameCard.appendChild(contentGameCard);
+		gameCard.appendChild(ul);
+
+		catalogo.appendChild(gameCard);
+	});
+
+	// Funcionalidad del Like
+	const like = document.querySelectorAll('.like');
+	like.forEach(like => {
+		like.addEventListener("click", () => {
+			like.classList.toggle('liked');
+		});
+	});
+
+	// Funcionalidad del carrito 
+	const carts = document.querySelectorAll('.cart')
+	carts.forEach(cart => {
+		cart.addEventListener('click', () => {
+			cart.classList.toggle('cart-added');
+		});
+	});
+}
+
+// Mostrar todos los juegos en el catálogo
+mostrarJuegos(juegos);
+
+// Funcion del filtrado de genero
 function obtenerGenerosUnicos(juegos) {
 	const generos = [];
 	juegos.forEach(function (juego) {
@@ -179,32 +210,33 @@ generosUnicos.forEach(genero => {
 
 	const label = document.createElement('label');
 	label.htmlFor = genero;
-	label.textContent = genero;
+
+	// Capitalizar la primera letra del género
+	const generoCapitalizado = genero.charAt(0).toUpperCase() + genero.slice(1);
+	label.textContent = generoCapitalizado;
+
 	groupTypeContainer.appendChild(label);
+
+	// Agregar el evento de click al checkbox para filtrar los juegos
+	input.addEventListener('click', function () {
+		// Obtener los juegos filtrados por categoría
+		const juegosFiltrados = juegos.filter(function (juego) {
+			juego = JSON.parse(juego);
+			return juego.genero === genero;
+		});
+
+		// Si el checkbox está desmarcado, mostrar todos los juegos
+		if (!input.checked) {
+			mostrarJuegos(juegos);
+		} else {
+			// Mostrar los juegos filtrados en el catálogo
+			mostrarJuegos(juegosFiltrados);
+		}
+	});
 
 	filterByGender.appendChild(groupTypeContainer);
 });
 
-
-
-
-
-
-// Funcionalidad del Like
-const like = document.querySelectorAll('.like');
-like.forEach(like => {
-	like.addEventListener("click", () => {
-		like.classList.toggle('liked');
-	});
-});
-
-// Funcionalidad del carrito 
-const carts = document.querySelectorAll('.cart')
-carts.forEach(cart => {
-	cart.addEventListener('click', () => {
-		cart.classList.toggle('cart-added');
-	});
-});
 
 // Funcionalidad del efecto de los botones
 let buttons = document.querySelectorAll('.magic-btn a, .magic-btn2 a');
