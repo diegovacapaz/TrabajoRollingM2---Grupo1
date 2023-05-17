@@ -61,6 +61,21 @@ if (document.body.classList.contains("light-theme")) {
 	header.style.backgroundImage = "url(./img/bg-dark.jpg)";
 }
 
+// Boton de filtro de generos
+const btnFilter = document.querySelector('.icon-filter');
+btnFilter.addEventListener('click', () => {
+	const containerFilter = document.querySelector('.container-filters')
+
+	containerFilter.classList.toggle('active')
+})
+
+// Botón para cerrar el filtro
+const btnCloseFilter = document.querySelector('.close-filter');
+btnCloseFilter.addEventListener('click', () => {
+	const containerFilter = document.querySelector('.container-filters');
+	containerFilter.classList.remove('active');
+});
+
 // ------------------- Mostrar juegos desde local storage ------------------- //
 
 //  Obtener la cadena JSON de juegos desde el localStorage
@@ -137,6 +152,41 @@ juegos.forEach(function (juego) {
 
 	catalogo.appendChild(gameCard);
 });
+
+//Funcion del filtrado de genero
+function obtenerGenerosUnicos(juegos) {
+	const generos = [];
+	juegos.forEach(function (juego) {
+		juego = JSON.parse(juego); // Convertir la cadena JSON en un objeto JavaScript
+		generos.push(juego.genero);
+	});
+	const generosUnicos = [...new Set(generos)];
+	return generosUnicos;
+}
+
+const generosUnicos = obtenerGenerosUnicos(juegos);
+const filterByGender = document.querySelector('.filter-by-gender');
+
+generosUnicos.forEach(genero => {
+	const groupTypeContainer = document.createElement('div');
+	groupTypeContainer.className = 'group-type';
+
+	const input = document.createElement('input');
+	input.type = 'checkbox';
+	input.id = genero;
+	input.name = 'genero';
+	groupTypeContainer.appendChild(input);
+
+	const label = document.createElement('label');
+	label.htmlFor = genero;
+	label.textContent = genero;
+	groupTypeContainer.appendChild(label);
+
+	filterByGender.appendChild(groupTypeContainer);
+});
+
+
+
 
 
 
