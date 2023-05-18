@@ -14,7 +14,7 @@ cargarPagina();
 
 function generarID() {
     let id = Math.floor(Math.random() * 90000) + 10000;
-    while (tablaJuego.find(juego => juego.idJuego === id)) {
+    while (tablaJuego.find(juego => juego.IdJuego === id)) {
         id = Math.floor(Math.random() * 90000) + 10000;
     }
     document.getElementById("txtIdJuego").value = id;
