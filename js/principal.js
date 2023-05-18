@@ -289,7 +289,9 @@ generosUnicos.forEach(genero => {
 			VanillaTilt.init(document.querySelectorAll(".game-card"), {
 				max: 25,
 				speed: 400
-	});
+			});
+		}
+	});	
 	filterByGender.appendChild(groupTypeContainer);
 });
 
