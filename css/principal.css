@@ -1078,7 +1078,11 @@ hr {
 	transition: 0.5s;
 	opacity: 0;
 	transition-delay: calc(0.1s * var(--i));
+	display: flex;
+	align-items: center;
 }
+
+
 
 .games-cards .game-card:hover .sci li {
 	transform: translateY(20px);
