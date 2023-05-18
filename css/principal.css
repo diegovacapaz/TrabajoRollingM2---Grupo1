@@ -1127,7 +1127,9 @@ hr {
 .games-cards .game-card .sci {
 	position: absolute;
 	bottom: 50px;
-	display: flex;
+	left: 45px;
+	display:flex;
+	justify-content: center;
 }
 
 .games-cards .game-card .sci li {
