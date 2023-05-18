@@ -14,17 +14,6 @@ let swiper = new Swiper(".miSwiper", {
 	loop: true,
 });
 
-//Animacion del seguimiento del mouse
-const blob = document.getElementById("blob");
-document.body.onpointermove = event => {
-	const { clientX, clientY } = event;
-	blob.animate({
-		left: `${clientX}px`,
-		top: `${clientY}px`
-	}, { duration: 1000, fill:"forwards"});
-};
-
-
 //Animacion de las estrellas de la pagina principal
 let index = 0,
 	interval = 1000;
@@ -229,6 +218,14 @@ generosUnicos.forEach(genero => {
 
 	// Agregar el evento de click al checkbox para filtrar los juegos
 	input.addEventListener('click', function () {
+		// Desmarcar todos los checkboxes excepto el actual
+		const checkboxes = document.querySelectorAll('.group-type input[type="checkbox"]');
+		checkboxes.forEach(function (checkbox) {
+			if (checkbox !== input) {
+				checkbox.checked = false;
+			}
+		});
+
 		// Obtener los juegos filtrados por categoría
 		const juegosFiltrados = juegos.filter(function (juego) {
 			juego = JSON.parse(juego);
@@ -253,11 +250,8 @@ generosUnicos.forEach(genero => {
 
 		}
 	});
-
 	filterByGender.appendChild(groupTypeContainer);
-
 });
-
 
 
 // Obtener el elemento de búsqueda y el botón de búsqueda
