@@ -163,6 +163,10 @@ input[type=number] {
     width: 100%;
 }
 
+.btn-close{
+    color: white;
+}
+
 @media all and (max-width: 300px) {
     .navbar-brand{
         display: none;
