@@ -70,3 +70,6 @@ header{
   border-radius: 4px;
   position: relative;
 }
+.btn-contacto:hover{
+  background-color: var(--purple);
+}
