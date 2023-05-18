@@ -59,7 +59,7 @@
 
 				<!-- BOTON ENVIAR -->
 				<div class="formulario-grupo formulario-grupo-btn-enviar">
-					<button class="formulario-btn botreg" id="btnRegistro" type="submit">Registrarse</button>
+					<button class="button formulario-btn botreg" id="btnRegistro" type="submit">Registrarse</button>
 				</div>
 			</form>
 		</div>
@@ -68,11 +68,12 @@
 				<label for="chk" aria-hidden="true">Ingresar</label>
 				<input id="mailIngresar" type="email" name="email" placeholder="Correo Electrónico" required pattern="^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$" maxlength="50">
 				<input id="contraseniaIngresar" type="password" name="pswd" placeholder="Contraseña" required minlength="4" maxlength="16">
-				<button id="btnIngresar" type="submit" class="boting">Ingresar</button>
+				<button id="btnIngresar" type="submit" class="button boting">Ingresar</button>
 			</form>
 		</div>
 	</main>
-<script src="../js/loginRegistro.js" type="module"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../js/loginRegistro.js" type="module"></script>
 </body>
 
 </html>
