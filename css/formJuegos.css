@@ -153,6 +153,10 @@ input[type=number] {
     width: 100%;
 }
 
+.botonCat-ancho{
+    width: 100%;
+}
+
 @media all and (min-width: 992px) {
 	.pagos-icons{
 		width: 25%;
@@ -166,6 +170,9 @@ input[type=number] {
 @media all and (min-width: 768px) {
 	.botonId-ancho{
         width: 50%;
+    }
+    .botonCat-ancho{
+        width: 25%;
     }
 }
 
