@@ -33,6 +33,7 @@ function guardar() {
         Swal.fire('ERROR','Debe completar todos los campos', 'error');
         return;
     }
+    
     if (!validarURL(url)) {
         Swal.fire('ERROR', 'La URL debe ser de una imagen JPG o PNG', 'error');
         return;
