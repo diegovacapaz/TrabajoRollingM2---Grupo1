@@ -139,6 +139,7 @@ juegos.forEach(function (juego) {
 	}
 	else{
 		likeIcon.className = 'bi bi-heartbreak-fill like';
+		likeIcon.setAttribute('title', 'Inicia Sesion para añadir este juego a favoritos');
 	}
 	likeIcon.setAttribute('aria-hidden', 'true');
 	likeIcon.dataset.idLike = `${juego.IdJuego}`;
