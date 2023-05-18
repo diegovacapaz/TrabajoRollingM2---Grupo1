@@ -14,6 +14,16 @@ let swiper = new Swiper(".miSwiper", {
 	loop: true,
 });
 
+//Animacion del seguimiento del mouse
+const blob = document.getElementById("blob");
+document.body.onpointermove = event => {
+	const { clientX, clientY } = event;
+	blob.animate({
+		left: `${clientX}px`,
+		top: `${clientY}px`
+	}, { duration: 1000, fill:"forwards"});
+};
+
 
 //Animacion de las estrellas de la pagina principal
 let index = 0,
@@ -296,4 +306,23 @@ buttons.forEach(function (btn) {
 	function animateButton() {
 		btn.style.setProperty('--x', `${x * 360}deg`);
 	}
+});
+
+//Funcion de sweetalert para input de suscripcion 
+const form = document.getElementById('suscribe-form');
+form.addEventListener('submit', function (event) {
+	event.preventDefault(); // Evitar el envío del formulario
+
+	// Mostrar la alerta SweetAlert
+	Swal.fire({
+		title: '¡Gracias por suscribirte a nuestras noticias!',
+		text: 'Recibirás las últimas novedades en juegos, DLC, actualizaciones y más.',
+		icon: 'success',
+		confirmButtonText: 'Aceptar'
+	});
+
+	// Restablecer el formulario
+	form.reset();
+
+	return false; // Evitar redirección automática
 });

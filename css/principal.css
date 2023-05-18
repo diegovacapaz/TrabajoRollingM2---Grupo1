@@ -69,6 +69,7 @@ body {
 	cursor: pointer;
 }
 
+
 .themeChanger {
 	position: relative;
 	top: 19px;
@@ -387,6 +388,15 @@ body {
 .games {
 	padding: 0 0 50px 0;
 	position: relative;
+}
+
+.game {
+	margin: 5px 2px;
+	transition: transform 0.3s ease;
+}
+
+.game:hover {
+	transform: scale(1.1);
 }
 
 .ba {
@@ -861,6 +871,7 @@ hr {
 		width: 100%;
 		padding-top: 80px;
 	}
+
 	.container-filters.active {
 		z-index: 100;
 	}
