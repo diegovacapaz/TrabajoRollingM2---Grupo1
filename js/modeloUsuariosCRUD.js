@@ -28,31 +28,28 @@ class Cuenta{
     // set clave(clave){
     //     this._clave = clave;
     // }
-    toString(){
-        return `Usuario: ${this.usuario}, Correo: ${this.correo}, Clave: ${this.clave}, Admin: ${this.admin}`;
-    }
-    añadirFavorito(juego){
-        if(!juego){
-            return "Error, no ingresó ningun juego";
-        }
-        if(!this.favoritos.find(juegoFav => juegoFav.IdJuego === juego.IdJuego)){
-            this.favoritos.push(juego);
-            return "Juego añadido a favoritos correctamente";
-        }
-        return "El juego ya estaba como favorito";
-    }
+    // añadirFavorito(juego){
+    //     if(!juego){
+    //         return "Error, no ingresó ningun juego";
+    //     }
+    //     if(!this.favoritos.find(juegoFav => juegoFav.IdJuego === juego.IdJuego)){
+    //         this.favoritos.push(juego);
+    //         return "Juego añadido a favoritos correctamente";
+    //     }
+    //     return "El juego ya estaba como favorito";
+    // }
 
-    borrarFavorito(juego){
-        if(!juego){
-            return "Error, no ingresó ningun juego";
-        }
-        const juegoFav = this.favoritos.find(juegoFav => juegoFav.IdJuego === juego.IdJuego);
-        if(juegoFav){
-            this.favoritos.splice(this.favoritos.findIndex(juegoFav => juegoFav.IdJuego === juego.IdJuego),1);
-            return "Juego borrado con éxito";
-        }
-        return "El juego no estaba como favorito";
-    }
+    // borrarFavorito(juego){
+    //     if(!juego){
+    //         return "Error, no ingresó ningun juego";
+    //     }
+    //     const juegoFav = this.favoritos.find(juegoFav => juegoFav.IdJuego === juego.IdJuego);
+    //     if(juegoFav){
+    //         this.favoritos.splice(this.favoritos.findIndex(juegoFav => juegoFav.IdJuego === juego.IdJuego),1);
+    //         return "Juego borrado con éxito";
+    //     }
+    //     return "El juego no estaba como favorito";
+    // }
 }
 
 // DECLARACIÓN DE VARIABLES GLOBALES
