@@ -94,6 +94,18 @@ button:hover{
 .formulario-mensaje-activo{
 	display: block;
 }
+.btn-logo-volver{
+	padding: 5px;
+	background-color: #5b5bd785;
+	
+	border-radius: 20px;
+	position: absolute;
+	top: 37px;
+	left: 90px;
+}
+.btn-logo-volver:hover{
+	border: 1px solid #5B5BD7
+}
 
 /*Estilos para validaciones*/
 
