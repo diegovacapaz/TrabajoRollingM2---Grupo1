@@ -149,12 +149,22 @@ input[type=number] {
     border-color:var(--bs-table-border-color)
 }
 
+.botonId-ancho{
+    width: 100%;
+}
+
 @media all and (min-width: 992px) {
 	.pagos-icons{
 		width: 25%;
 	}
 
     .w-lg-50{
+        width: 50%;
+    }
+}
+
+@media all and (min-width: 768px) {
+	.botonId-ancho{
         width: 50%;
     }
 }
