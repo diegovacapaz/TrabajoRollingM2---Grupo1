@@ -47,7 +47,6 @@ header{
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	white-space: nowrap;
-	font-size: 30px;
 	font-weight: 700;
 }
 
@@ -78,6 +77,7 @@ header{
 		width: 25%;
 	}
 }
+
 @media all and (max-width: 300px) {
     .navbar-brand{
         display: none;
@@ -85,4 +85,11 @@ header{
     .name-brand{
         font-size: 1.5rem;;
     }
+}
+
+@media all and (max-width: 300px) {
+	.logo{
+		display: none;
+	}
+
 }
