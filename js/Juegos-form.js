@@ -43,6 +43,11 @@ function guardar() {
         });
         return;
     }
+    
+    if (!validarURL(url)) {
+        Swal.fire('ERROR', 'La URL debe ser de una imagen JPG o PNG', 'error');
+        return;
+    }
 
     Swal.fire({
         title: 'GUARDAR',
@@ -143,7 +148,7 @@ const inputUrl = document.getElementById("txtUrl");
 inputUrl.addEventListener("input", () => {
   const url = inputUrl.value.toLowerCase();
   // Verificar si la URL termina con ".jpg" o ".png"
-  if (url.endsWith(".jpg") || url.endsWith(".png")) {
+  if (validarURL(url)) {
     // Mostrar la imagen miniatura
     document.getElementById("imgMiniatura").src = url;
     document.getElementById("imgMiniatura").style.display = "block";
@@ -160,3 +165,21 @@ inputUrl.addEventListener("input", () => {
   document.getElementById("imgMiniatura").src = inputUrl.value;
   document.getElementById("imgMiniatura").style.display = "block";
 });
+
+//Validación de la URL 
+function validarURL(miurl) {
+    try {
+   
+      path = new URL(miurl);
+      path = path.pathname.toLowerCase();
+      if(path.endsWith(".jpg")||path.endsWith(".jpg/")||path.endsWith(".png")||path.endsWith(".png/")) {
+        return true;
+      }
+      return  false;
+   
+    } catch (err) {
+   
+      return false;
+   
+    }
+  }
