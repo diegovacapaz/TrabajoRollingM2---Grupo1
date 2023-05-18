@@ -39,11 +39,13 @@ const actualizarTabla = () => {
 const crearBotonBorrar = () => {
     let borrar = document.createElement("i");
     borrar.setAttribute("class","bi bi-x-circle-fill btn-borrar");
+    borrar.setAttribute("title","Eliminar Cuenta");
     return borrar;
 }
 const crearBotonVer = () => {
     let ver = document.createElement("i");
     ver.setAttribute("class","bi bi-eye-fill btn-ver");
+    ver.setAttribute("title","Revelar Contraseña");
     return ver;
 }
 const ocultarClave = (clave) => {
