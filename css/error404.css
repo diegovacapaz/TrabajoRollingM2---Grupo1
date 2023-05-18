@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/*Configuracion General*/
 * {
     --negro: #000000;
     --azulOscuro: #0B2447;
@@ -25,7 +24,6 @@
 	--icon-color: invert(34%) sepia(97%) saturate(6894%) hue-rotate(260deg) brightness(106%) contrast(103%);
 }
 
-/*Página error404*/
 .bg-error404 {
     background-image: url(../img/error404.png);
     background-size:cover;

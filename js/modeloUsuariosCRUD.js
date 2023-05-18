@@ -1,4 +1,4 @@
-//DECLARACIÓN DE CLASE
+
 class Cuenta{
     constructor(usuario,correo,clave,admin){
         this.usuario = usuario;
@@ -10,7 +10,7 @@ class Cuenta{
    
 }
 
-// DECLARACIÓN DE VARIABLES GLOBALES
+
 const lsCuentasId = "cuentas";
 const lsActivaId = "cuentaActiva";
 let cuentas = localStorage.getItem(lsCuentasId);
@@ -28,7 +28,7 @@ if(cuentaActiva !== null){
     cuentaActiva = JSON.parse(cuentaActiva);
 }
 
-// ALTA USUARIOS
+
 const registro = (usuario,correo,clave) => {
     if(usuario === null || usuario === undefined || clave === null || clave === undefined || correo === null || correo === undefined){
         return null;
@@ -60,7 +60,7 @@ const registro = (usuario,correo,clave) => {
     return "Se ha registrado con éxito";
 }
 
-// BUSCAR USUARIOS
+
 const buscarCuentaCorreo = (correo) => {
     correo = correo.toLowerCase();
     for(let i = 0; i < cuentas.length; i++){
@@ -80,7 +80,7 @@ const buscarCuentaUsuario = (usuario) => {
     return null;
 }
 
-// LOGUEARSE
+
 const iniciarSesion = (correo, clave) => {
     if(correo === null || correo === undefined || clave === null || clave === undefined){
         return null;
@@ -104,7 +104,7 @@ const iniciarSesion = (correo, clave) => {
     }
 }
 
-// ELIMINAR USUARIOS
+
 const eliminarCuenta = (cuenta) => {
     if(cuenta===null||cuenta===undefined){
         return "Ha ocurrido un error";
@@ -119,12 +119,12 @@ const eliminarCuenta = (cuenta) => {
             return "La cuenta se eliminó correctamente";
         }
     }
-    return "La cuenta seleccionada no existe"; //No entra nunca
+    return "La cuenta seleccionada no existe"; 
 }
 
-// MODIFICAR LISTA
 
-// CERRAR SESION
+
+
 const cerrarSesion = () => {
     if(cuentaActiva===null){
         return "Error, no había ninguna sesión activa";
@@ -135,5 +135,5 @@ const cerrarSesion = () => {
 }
 
 
-//EXPORTACIÓN
+
 export {cuentas, cuentaActiva, registro, buscarCuentaCorreo, buscarCuentaUsuario, iniciarSesion, eliminarCuenta, cerrarSesion};

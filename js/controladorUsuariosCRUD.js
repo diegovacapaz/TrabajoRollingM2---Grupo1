@@ -1,12 +1,12 @@
-//IMPORTACIÓN DEL MODELO
+
 import {cuentas,eliminarCuenta} from "./modeloUsuariosCRUD.js";
 
-//DECLARACION DE VARIABLES GLOBALES
+
 const tablaUsuarios = document.getElementById("tablaUsuarios");
 let botonesBorrar = document.getElementsByClassName("btn-borrar");
 let botonesVer = document.getElementsByClassName("btn-ver");
 
-//FUNCIONES INTERMEDIAS
+
 const actualizarTabla = () => {
     tablaUsuarios.tBodies[0].innerHTML = "";
     let trUsuario;
@@ -56,7 +56,7 @@ const ocultarClave = (clave) => {
     return claveOculta;
 }
 
-//CONTROLADORES DE EVENTOS
+
 const asignarListenersBorrar = () => {
     for(let i = 0; i < botonesBorrar.length; i++){
         botonesBorrar[i].addEventListener("click", () => {
@@ -108,5 +108,5 @@ const asignarListenersVer = () => {
     }
 }
 
-//PRIMERA ACTUALIZACION
+
 actualizarTabla();

@@ -2,28 +2,28 @@
 import {cuentas, cuentaActiva, registro, buscarCuentaCorreo, buscarCuentaUsuario, iniciarSesion, cerrarSesion} from "./modeloUsuariosCRUD.js"
 
 console.log(cuentaActiva);
-//REGISTRO
+
 const formReg = document.getElementById('formReg')
 const inputs = document.querySelectorAll('#formReg input')
 const nombreRegistro = document.getElementById('nombreRegistro')
 const mailRegistro = document.getElementById('mailRegistro')
 const contraseniaRegistro = document.getElementById('contraseniaRegistro')
 
-//expresiones regulares
+
 const expresiones = {
   nombre : /^[a-zA-Z0-9ñ]{3,30}$/,
   email: /^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$/,
   contrasenia: /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_+-])[a-zA-Z0-9ñ!@#$%^&*_+-]{4,16}$/
 }
 
-//objeto para validar campos
+
 const campos = {
   nombre : false,
   email: false,
   contrasenia: false
 }
 
-//funcion para validar formulario
+
 const validarFormulario = (e)=>{
   switch (e.target.name){
     case "nombre":
@@ -42,7 +42,7 @@ const validarFormulario = (e)=>{
   }
 }
 
-//funcion para validar cada campo del formulario
+
 const validarCampo = (expresion, input, campo)=>{
   if(expresion.test(input.value)){
     document.getElementById(`grupo-${campo}`).classList.remove('formulario-grupo-incorrecto')
@@ -60,7 +60,7 @@ const validarCampo = (expresion, input, campo)=>{
 }
 
 
-//validacion de ambas contraseñas
+
 const validarContrasenia = ()=>{
   const contraseniaRegistro2 = document.getElementById('contraseniaRegistro2')
   if(contraseniaRegistro.value !== contraseniaRegistro2.value){
@@ -78,20 +78,20 @@ const validarContrasenia = ()=>{
   }
 }
 
-//agregamos un evento a todos los inputs
+
 inputs.forEach((input)=>{
   input.addEventListener('keyup', validarFormulario)
   input.addEventListener('blur', validarFormulario)
 })
 
-//boton enviar registro
+
 formReg.addEventListener('submit', (e) =>{
   e.preventDefault()
 
   const nombreRegistrado = cuentas.find(usuario=> usuario.usuario === nombreRegistro.value)
   const correoRegistrado = cuentas.find(usuario => usuario.correo === mailRegistro.value)
   if(correoRegistrado){
-      // return alert('Ya existe una cuenta registrada con este mail')
+      
       return Swal.fire({
         text: "Ya existe una cuenta registrada con este mail",
         background: "#000000",
@@ -103,7 +103,7 @@ formReg.addEventListener('submit', (e) =>{
         confirmButtonColor: 'rgb(103, 58, 183)',
       });
     }else if (nombreRegistrado){
-      // return alert('El nombre de usuario que elegiste ya esta en uso')
+      
       return Swal.fire({
         text: "El nombre de usuario que elegiste ya esta en uso",
         background: "#000000",
@@ -116,10 +116,10 @@ formReg.addEventListener('submit', (e) =>{
       });
     }
   
-  // verificacion si todos los campos son correctos
+  
   if(campos.nombre && campos.contrasenia && campos.email){
-    // formReg.reset()
-    //Reseteamos o borramos los iconos de tilde en los campos
+    
+    
     document.querySelectorAll('.formulario-grupo-correcto').forEach((icono)=>{
       icono.classList.remove('formulario-grupo-correcto')
     })
@@ -131,7 +131,7 @@ formReg.addEventListener('submit', (e) =>{
     }
     else{
       formReg.reset()
-      // return alert("Su cuenta se registró con éxito, pero hay otra sesión abierta.");
+      
       return Swal.fire({
         text: "Su cuenta se registró con éxito, pero hay otra sesión abierta.",
         background: "#000000",
@@ -143,7 +143,7 @@ formReg.addEventListener('submit', (e) =>{
         confirmButtonColor: 'rgb(103, 58, 183)',
       });
     }
-    //agregar mensaje de usuario registrado correctamente
+    
   }else{
     document.getElementById('formulario-mensaje').classList.add('formulario-mensaje-activo')
     setTimeout(()=>{
@@ -154,14 +154,14 @@ formReg.addEventListener('submit', (e) =>{
   })
 
 
-  //LOGIN
+  
 const formIng = document.getElementById('formIng')
 const mailIngresar = document.getElementById('mailIngresar')
 const contraseniaIngresar = document.getElementById('contraseniaIngresar')
 const labelIngresar = document.querySelector('#formIng label')
 
 
-//borramos iconos de los inputs de formulario registrar
+
 labelIngresar.addEventListener('click',()=>{
   document.querySelectorAll('.formulario-grupo-correcto').forEach((icono)=>{
     icono.classList.remove('formulario-grupo-correcto')
@@ -176,7 +176,7 @@ formIng.addEventListener('submit', (e)=>{
 
   const validarUsuario = cuentas.find(usuario=> usuario.clave === contraseniaIngresar.value && usuario.correo === mailIngresar.value) 
   if(!validarUsuario){
-    // return alert('La contraseña o usuario son incorrectos')
+    
     return Swal.fire({
       text: "La contraseña o usuario son incorrectos.",
       background: "#000000",
@@ -190,7 +190,7 @@ formIng.addEventListener('submit', (e)=>{
   }
 
   if(cuentaActiva){
-    // return alert('Ya hay una sesion abierta, cierrela para iniciar sesion con otra cuenta')
+    
     return Swal.fire({
       text: "Ya hay una sesion abierta, cierrela para iniciar sesion con otra cuenta.",
       background: "#000000",

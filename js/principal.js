@@ -1,4 +1,4 @@
-//Animacion del slider/carrousel de la pagina principal
+//
 let swiper = new Swiper(".miSwiper", {
 	effect: "coverflow",
 	grabCursor: true,
@@ -14,7 +14,7 @@ let swiper = new Swiper(".miSwiper", {
 	loop: true,
 });
 
-//Animacion de las estrellas de la pagina principal
+
 let index = 0,
 	interval = 1000;
 
@@ -38,7 +38,7 @@ for (const star of document.getElementsByClassName("magic-star")) {
 	}, index++ * (interval / 3))
 }
 
-// funcion para cambiar el tema de la pagina
+
 const icon = document.getElementById("icon");
 const header = document.querySelector(".header");
 
@@ -53,14 +53,14 @@ icon.onclick = function () {
 	}
 }
 
-// Establece la imagen de fondo inicial dependiendo del tema
+
 if (document.body.classList.contains("light-theme")) {
 	header.style.backgroundImage = "url(./img/bg-light.png)";
 } else {
 	header.style.backgroundImage = "url(./img/bg-dark.jpg)";
 }
 
-// Boton de filtro de generos
+
 const btnFilter = document.querySelector('.icon-filter');
 btnFilter.addEventListener('click', () => {
 	const containerFilter = document.querySelector('.container-filters')
@@ -68,22 +68,22 @@ btnFilter.addEventListener('click', () => {
 	containerFilter.classList.toggle('active')
 })
 
-// Botón para cerrar el filtro
+
 const btnCloseFilter = document.querySelector('.close-filter');
 btnCloseFilter.addEventListener('click', () => {
 	const containerFilter = document.querySelector('.container-filters');
 	containerFilter.classList.remove('active');
 });
 
-// ------------------- Mostrar juegos desde local storage ------------------- //
 
-//Obtener cuenta activa
+
+
 let cuentaActiva = localStorage.getItem("cuentaActiva");
 if (cuentaActiva !== null) {
 	cuentaActiva = JSON.parse(cuentaActiva);
 }
 
-//Obtener cuentas
+
 let cuentas = localStorage.getItem("cuentas");
 if (cuentas === null) {
 	cuentas = [];
@@ -96,26 +96,26 @@ else {
 }
 
 
-//  Obtener la cadena JSON de juegos desde el localStorage
+
 
 let juegosString = localStorage.getItem('tablaJuegoStorage');
 
-// Convertir la cadena en un objeto
+
 let juegos = JSON.parse(juegosString);
 
-// Obtener el elemento contenedor del catálogo
+
 let catalogo = document.getElementById('catalogue');
 
-// Función para mostrar los juegos en el catálogo
+
 function mostrarJuegos(juegos) {
-	// Limpiar el catálogo
+	
 	catalogo.innerHTML = '';
 
-	// Recorrer los juegos y crear las cards correspondientes
+	
 	juegos.forEach(function (juego) {
 		juego = JSON.parse(juego);
 
-		// Crear los elementos HTML necesarios
+		
 		let gameCard = document.createElement('div');
 		gameCard.className = 'game-card';
 
@@ -168,7 +168,7 @@ function mostrarJuegos(juegos) {
 
 		let aLike = document.createElement('a');
 
-		// Agregar los elementos al árbol DOM
+		
 		aCart.appendChild(cartIcon);
 		liCart.appendChild(aCart);
 
@@ -180,7 +180,7 @@ function mostrarJuegos(juegos) {
 
 		imgBx.appendChild(gameImg);
 
-		// Capitalizar la primera letra del género
+		
 		const generoCapitalizado = juego.genero.charAt(0).toUpperCase() + juego.genero.slice(1);
 
 		contentBx.appendChild(gameName);
@@ -196,7 +196,7 @@ function mostrarJuegos(juegos) {
 		catalogo.appendChild(gameCard);
 	});
 
-	// Funcionalidad del Like
+	
 	const like = document.querySelectorAll('.like');
 	like.forEach(like => {
 		like.addEventListener("click", () => {
@@ -217,7 +217,7 @@ function mostrarJuegos(juegos) {
 		});
 	});
 
-	// Funcionalidad del carrito 
+	
 	const carts = document.querySelectorAll('.cart')
 	carts.forEach(cart => {
 		cart.addEventListener('click', () => {
@@ -226,22 +226,22 @@ function mostrarJuegos(juegos) {
 	});
 }
 
-// Mostrar todos los juegos en el catálogo
+
 mostrarJuegos(juegos);
 
-// Funcion para obtener los géneros únicos de los juegos
+
 function obtenerGenerosUnicos(juegos) {
 	const generos = [];
 	juegos.forEach(function (juego) {
 		juego = JSON.parse(juego);
 		generos.push(juego.genero);
 	});
-	generos.push("Deseados"); // Añadir el nuevo género "Deseados"
+	generos.push("Deseados"); 
 	const generosUnicos = [...new Set(generos)];
 	return generosUnicos;
 }
 
-// Obtener los géneros únicos
+
 const generosUnicos = obtenerGenerosUnicos(juegos);
 const filterByGender = document.querySelector('.filter-by-gender');
 
@@ -258,15 +258,15 @@ generosUnicos.forEach(genero => {
 	const label = document.createElement('label');
 	label.htmlFor = genero;
 
-	// Capitalizar la primera letra del género
+	
 	const generoCapitalizado = genero.charAt(0).toUpperCase() + genero.slice(1);
 	label.textContent = generoCapitalizado;
 
 	groupTypeContainer.appendChild(label);
 
-	// Agregar el evento de click al checkbox para filtrar los juegos
+	
 	input.addEventListener('click', function () {
-		// Desmarcar todos los checkboxes excepto el actual
+		
 		const checkboxes = document.querySelectorAll('.group-type input[type="checkbox"]');
 		checkboxes.forEach(function (checkbox) {
 			if (checkbox !== input) {
@@ -274,7 +274,7 @@ generosUnicos.forEach(genero => {
 			}
 		});
 
-		// Obtener los juegos filtrados por categoría
+		
 		let juegosFiltrados;
 		if (genero === "Deseados") {
 			juegosFiltrados = juegos.filter(function (juego) {
@@ -291,7 +291,7 @@ generosUnicos.forEach(genero => {
 			});
 		}
 
-		// Si el checkbox está desmarcado, mostrar todos los juegos
+		
 		if (!input.checked) {
 			mostrarJuegos(juegos);
 			VanillaTilt.init(document.querySelectorAll(".game-card"), {
@@ -300,7 +300,7 @@ generosUnicos.forEach(genero => {
 			});
 
 		} else {
-			// Mostrar los juegos filtrados en el catálogo
+			
 			mostrarJuegos(juegosFiltrados);
 			VanillaTilt.init(document.querySelectorAll(".game-card"), {
 				max: 25,
@@ -312,46 +312,46 @@ generosUnicos.forEach(genero => {
 	filterByGender.appendChild(groupTypeContainer);
 });
 
-// Obtener el elemento de búsqueda y el botón de búsqueda
+
 const searchInput = document.getElementById('search-input');
 const searchButton = document.getElementById('search-button');
 
-// Agregar evento de input al campo de búsqueda
+
 searchInput.addEventListener('input', function () {
 	const searchTerm = searchInput.value.toLowerCase();
 
-	// Desmarcar todos los checkboxes de género
+	
 	const checkboxes = document.querySelectorAll('.group-type input[type="checkbox"]');
 	checkboxes.forEach(function (checkbox) {
 		checkbox.checked = false;
 	});
 
-	// Filtrar los juegos por el término de búsqueda en el nombre del juego
+	
 	const juegosFiltrados = juegos.filter(function (juego) {
 		juego = JSON.parse(juego);
 		const nombre = juego.nombre.toLowerCase();
 		return nombre.includes(searchTerm);
 	});
 
-	// Mostrar los juegos filtrados en el catálogo
+	
 	mostrarJuegos(juegosFiltrados);
 
-	// Inicializar VanillaTilt en las tarjetas de juegos filtrados
+	
 	VanillaTilt.init(document.querySelectorAll(".game-card"), {
 		max: 25,
 		speed: 400
 	});
 });
 
-// Agregar evento de submit al formulario de búsqueda
+
 searchButton.addEventListener('click', function (event) {
-	event.preventDefault(); // Evitar que el formulario se envíe
+	event.preventDefault(); 
 });
 
 
-// Funcionalidad del efecto de los botones
+
 let buttons = document.querySelectorAll('.magic-btn a, .magic-btn2 a');
-const sensitivity = 0.7; // Factor de sensibilidad (ajusta este valor según tus preferencias)
+const sensitivity = 0.7; 
 
 buttons.forEach(function (btn) {
 	let x = 0;
@@ -367,12 +367,12 @@ buttons.forEach(function (btn) {
 	}
 });
 
-//Funcion de sweetalert para input de suscripcion 
+
 const form = document.getElementById('suscribe-form');
 form.addEventListener('submit', function (event) {
-	event.preventDefault(); // Evitar el envío del formulario
+	event.preventDefault(); 
 
-	// Mostrar la alerta SweetAlert
+	
 	Swal.fire({
 		title: '¡Gracias por suscribirte a nuestras noticias!',
 		text: 'Recibirás las últimas novedades en juegos, DLC, actualizaciones y más.',
@@ -380,8 +380,8 @@ form.addEventListener('submit', function (event) {
 		confirmButtonText: 'Aceptar'
 	});
 
-	// Restablecer el formulario
+	
 	form.reset();
 
-	return false; // Evitar redirección automática
+	return false; 
 });

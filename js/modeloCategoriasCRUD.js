@@ -1,4 +1,4 @@
-//Crud categorias
+//
 const lsCategoriasId = "categorias";
 
 let categorias;
@@ -11,7 +11,7 @@ else{
     categorias = JSON.parse(categorias);
 }
 
-//Crear categorias
+
 const crearCategoria = (categoria) => {
     categoria = categoria.toLowerCase().trim();
     if(!categorias.includes(categoria)){
@@ -21,7 +21,7 @@ const crearCategoria = (categoria) => {
     }
     return "La categoría ya existe";
 }
-//Eliminar categorias
+
 const borrarCategoria = (categoria) => {
     categoria = categoria.toLowerCase().trim();
     if(categorias.includes(categoria)){
@@ -32,5 +32,5 @@ const borrarCategoria = (categoria) => {
     return "La categoría no existe";
 }
 
-//EXPORTACIÓN
+
 export {categorias, crearCategoria, borrarCategoria};

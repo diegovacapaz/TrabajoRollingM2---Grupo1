@@ -80,7 +80,7 @@ function guardar() {
                 $('#imgMiniatura').attr('src', url).show();
 
                 console.log(objJuego);
-                //EDITAR
+                
                 if (idForm > 0) {
                     for (const i in tablaJuego) {
                         let letJuego = JSON.parse(tablaJuego[i]);
@@ -92,7 +92,7 @@ function guardar() {
                     }
 
                 } else {
-                    // NUEVOS Juegos
+                    
                     tablaJuego.push(objJuego);
                 }
 
@@ -124,7 +124,7 @@ function guardar() {
 
 function cargarPagina() {
     if (idForm > 0) {
-        // SACAR DATOS DE LA FILA DE LA TABLA Y PONERLO EN EL FORMULARIO
+        
         for (const i in tablaJuego) {
             let letJuego = JSON.parse(tablaJuego[i]);
             if (letJuego.IdJuego == idForm) {
@@ -144,16 +144,16 @@ function cargarPagina() {
 
 const inputUrl = document.getElementById("txtUrl");
 
-// Agregar un evento al cambiar el valor del input URL
+
 inputUrl.addEventListener("input", () => {
   const url = inputUrl.value.toLowerCase();
-  // Verificar si la URL termina con ".jpg" o ".png"
+  
   if (validarURL(url)) {
-    // Mostrar la imagen miniatura
+    
     document.getElementById("imgMiniatura").src = url;
     document.getElementById("imgMiniatura").style.display = "block";
   } else {
-    // Ocultar la imagen miniatura y mostrar un mensaje de error
+    
     document.getElementById("imgMiniatura").style.display = "none";
     swal.fire({
       icon: "error",
@@ -166,7 +166,7 @@ inputUrl.addEventListener("input", () => {
   document.getElementById("imgMiniatura").style.display = "block";
 });
 
-//Validación de la URL 
+
 function validarURL(miurl) {
     try {
    
