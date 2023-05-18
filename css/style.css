@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-/*Configuracion General*/
 * {
-    /*No borrar colores de paleta vieja*/
     --negro: #000000;
     --azulOscuro: #0B2447;
     --azul: #19376D;
@@ -25,7 +23,7 @@
 	--icon-color: invert(34%) sepia(97%) saturate(6894%) hue-rotate(260deg) brightness(106%) contrast(103%);
 }
 
-/*Página administracion*/
+
 .btn-outline-azulOscuro {
     --bs-btn-color:#0B2447;
     --bs-btn-border-color:#0B2447;
@@ -152,7 +150,7 @@
 	width: 10%;
 }
 
-/*Responsive*/
+
 @media all and (max-width: 300px) {
     .navbar-brand{
         display: none;

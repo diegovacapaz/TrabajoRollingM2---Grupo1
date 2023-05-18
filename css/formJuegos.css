@@ -85,7 +85,6 @@
     color: #ffffff;
 }
 
-/*Elimina los botoncitos del type number, comprobar que anda en otros navegadores*/
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;

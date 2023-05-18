@@ -1,12 +1,12 @@
-//IMPORTACIÓN DEL MODELO
+
 import {cuentaActiva, cerrarSesion} from "./modeloUsuariosCRUD.js";
 
-//Parametros globales
+
 const contenedorLog = document.getElementById("contenedorLog");
 const botonLog = document.getElementById("botonLog");
 const botonLogDivTexto = document.getElementById("botonLogTexto");
 
-//Funciones
+
 const actualizarCuentaActiva = ()=>{
     if(cuentaActiva !== null){
         botonLogDivTexto.innerHTML = cuentaActiva.usuario;
@@ -29,16 +29,16 @@ const actualizarCuentaActiva = ()=>{
 const añadirEventoClickBotonLog = ()=>{
     if(cuentaActiva !== null){
         botonLog.addEventListener("click",()=>{
-            window.location.href = "../pages/error404.html"; //Revisar la ruta en todos los html
+            window.location.href = "../pages/error404.html"; 
         });
     }
     else{
         botonLog.addEventListener("click",()=>{
-            window.location.href = "../pages/LoginRegistro.html"; //Revisar la ruta en todos los html
+            window.location.href = "../pages/LoginRegistro.html"; 
         });
     }
 }
 
-//Inicialización
+
 actualizarCuentaActiva();
 
