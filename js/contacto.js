@@ -14,8 +14,9 @@ formContacto.addEventListener('submit', (e)=>{
     if (result.isConfirmed) {
       Swal.fire(
         'Has enviado tu consulta a nuestro soporte',
+        formContacto.reset()
       )
     }
   })
-  formContacto.reset()
+  
 })

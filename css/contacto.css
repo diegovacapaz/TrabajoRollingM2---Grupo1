@@ -32,7 +32,7 @@ header{
   text-align: center;
 }
 .form-contacto{
-  width: 400px;
+  width: auto;
   height: 500px;
   padding: 10px;
   background-color: var(--primary-color);
@@ -41,6 +41,7 @@ header{
   border-radius: 4px;
   color: white;
   box-shadow: 7px 13px 37px #14112E;
+
 }
 .form-contacto h1{
   margin-bottom: 22px;
@@ -73,18 +74,12 @@ header{
 .btn-contacto:hover{
   background-color: var(--purple);
 }
-.btn-logo-volver{
-	padding: 5px;
-	background-color: #5b5bd785;
-	
-	border-radius: 20px;
-	position :absolute;
-	top :20px;
-	left :20px;
 
-}
-.btn-logo-volverhover{
-	border: 1px solid #5B5BD7
+.bi-arrow-left-square{
+  position: absolute;
+  color: white;
+  width: 30px;
+  height: 30px;
 }
 
 @media screen and (max-width: 867px){
