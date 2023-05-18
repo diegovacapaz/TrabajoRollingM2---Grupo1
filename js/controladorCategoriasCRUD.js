@@ -24,8 +24,12 @@ btnNuevaCat.addEventListener("click", (e) => {
     if(nombreCat){
         mensajeCat.innerText = crearCategoria(nombreCat);
         nuevaCategoria.value = "";
+        if(!(mensajeCat.innerText == "La categoría ya existe")){
+            setTimeout(() => {
+                $('#modalCategoriasNueva').modal('hide');
+              }, 1000);
+        }
         actualizarTablaCat();
-        defaulOption();
     }
 });
 
