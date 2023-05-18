@@ -62,11 +62,15 @@ const asignarListenersBorrar = () => {
                 title: 'Seguro?',
                 text: "Confirma para eliminar la cuenta",
                 icon: 'warning',
+                iconColor: "red",
                 backdrop: true,
+                background: "#000000",
+                color: "#ffffff",
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
+                confirmButtonColor: 'rgb(103, 58, 183)',
+                cancelButtonColor: '#14112E',
                 confirmButtonText: 'Confirmar',
+                cancelButtonText: "Volver",
                 allowOutsideClick: false,
             }).then((result) => {
                 if (result.isConfirmed) {
