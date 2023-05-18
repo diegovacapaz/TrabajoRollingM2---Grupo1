@@ -79,20 +79,20 @@ btnCloseFilter.addEventListener('click', () => {
 
 //Obtener cuenta activa
 let cuentaActiva = localStorage.getItem("cuentaActiva");
-if(cuentaActiva !== null){
-    cuentaActiva = JSON.parse(cuentaActiva);
+if (cuentaActiva !== null) {
+	cuentaActiva = JSON.parse(cuentaActiva);
 }
 
 //Obtener cuentas
 let cuentas = localStorage.getItem("cuentas");
-if(cuentas === null){
-    cuentas = [];
-    const cuentaAdmin = new Cuenta("admin","admin@admin.com","1234",true);
-    cuentas.push(cuentaAdmin);
-    localStorage.setItem("cuentas",JSON.stringify(cuentas));
+if (cuentas === null) {
+	cuentas = [];
+	const cuentaAdmin = new Cuenta("admin", "admin@admin.com", "1234", true);
+	cuentas.push(cuentaAdmin);
+	localStorage.setItem("cuentas", JSON.stringify(cuentas));
 }
-else{
-    cuentas = JSON.parse(cuentas);
+else {
+	cuentas = JSON.parse(cuentas);
 }
 
 
@@ -146,20 +146,20 @@ function mostrarJuegos(juegos) {
 		cartIcon.className = 'cart fas fa-shopping-cart';
 		cartIcon.setAttribute('aria-hidden', 'true');
 
-	let likeIcon = document.createElement('i');
-	if(cuentaActiva && cuentaActiva.favoritos.find(juegoFav => JSON.parse(juegoFav).IdJuego === juego.IdJuego)){
-		likeIcon.className = 'fas fa-heart like liked';
-	}
-	else if(cuentaActiva){
-		likeIcon.className = 'fas fa-heart like';
-	}
-	else{
-		likeIcon.className = 'bi bi-heartbreak-fill like';
-		likeIcon.setAttribute('title', 'Inicia Sesion para añadir este juego a favoritos');
-	}
-	likeIcon.setAttribute('aria-hidden', 'true');
-	likeIcon.dataset.idLike = `${juego.IdJuego}`;
-    
+		let likeIcon = document.createElement('i');
+		if (cuentaActiva && cuentaActiva.favoritos.find(juegoFav => JSON.parse(juegoFav).IdJuego === juego.IdJuego)) {
+			likeIcon.className = 'fas fa-heart like liked';
+		}
+		else if (cuentaActiva) {
+			likeIcon.className = 'fas fa-heart like';
+		}
+		else {
+			likeIcon.className = 'bi bi-heartbreak-fill like';
+			likeIcon.setAttribute('title', 'Inicia Sesion para añadir este juego a favoritos');
+		}
+		likeIcon.setAttribute('aria-hidden', 'true');
+		likeIcon.dataset.idLike = `${juego.IdJuego}`;
+
 		let liLike = document.createElement('li');
 		liLike.style = '--i:1';
 
@@ -195,24 +195,24 @@ function mostrarJuegos(juegos) {
 
 	// Funcionalidad del Like
 	const like = document.querySelectorAll('.like');
-like.forEach(like => {
-	like.addEventListener("click", () => {
-		if(cuentaActiva){
-			let id = like.dataset.idLike;
-			let juego = juegos.find(juego => JSON.parse(juego).IdJuego === id);
-			if(like.classList.contains("liked")){
-				cuentaActiva.favoritos.splice(cuentaActiva.favoritos.findIndex(juego => juego.IdJuego === id),1);
+	like.forEach(like => {
+		like.addEventListener("click", () => {
+			if (cuentaActiva) {
+				let id = like.dataset.idLike;
+				let juego = juegos.find(juego => JSON.parse(juego).IdJuego === id);
+				if (like.classList.contains("liked")) {
+					cuentaActiva.favoritos.splice(cuentaActiva.favoritos.findIndex(juego => juego.IdJuego === id), 1);
+				}
+				else {
+					cuentaActiva.favoritos.push(juego);
+				}
+				localStorage.setItem("cuentaActiva", JSON.stringify(cuentaActiva));
+				cuentas.splice(cuentas.findIndex(cuenta => cuenta.usuario === cuentaActiva.usuario), 1, cuentaActiva);
+				localStorage.setItem("cuentas", JSON.stringify(cuentas));
+				like.classList.toggle('liked');
 			}
-			else{
-				cuentaActiva.favoritos.push(juego);
-			}
-			localStorage.setItem("cuentaActiva",JSON.stringify(cuentaActiva));
-			cuentas.splice(cuentas.findIndex(cuenta => cuenta.usuario === cuentaActiva.usuario),1,cuentaActiva);
-			localStorage.setItem("cuentas",JSON.stringify(cuentas));
-			like.classList.toggle('liked');
-    }
-  });
-});
+		});
+	});
 
 	// Funcionalidad del carrito 
 	const carts = document.querySelectorAll('.cart')
@@ -291,7 +291,7 @@ generosUnicos.forEach(genero => {
 				speed: 400
 			});
 		}
-	});	
+	});
 	filterByGender.appendChild(groupTypeContainer);
 });
 
