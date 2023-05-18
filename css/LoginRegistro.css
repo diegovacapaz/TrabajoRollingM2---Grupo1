@@ -12,6 +12,7 @@ body{
 	background-size: cover;
 	background-repeat: no-repeat;
 	animation: rotate 6s infinite alternate linear;
+	position: relative;
 }
 .principal{
 	width: 350px;
@@ -52,7 +53,7 @@ input{
 	outline: none;
 	border-radius: 5px;
 }
-button{
+.button{
 	width: 60%;
 	height: 40px;
 	margin: 10px auto;
@@ -69,7 +70,7 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-button:hover{
+.button:hover{
 	background: #6d44b8;
 }
 .formulario-grupo-input{
@@ -93,6 +94,15 @@ button:hover{
 }
 .formulario-mensaje-activo{
 	display: block;
+}
+.btn-logo-volver{
+	margin-top: 15px;
+	margin-left: 10px;
+	position: absolute;
+	
+}
+.icono-volver{
+	color: #fff;
 }
 
 /*Estilos para validaciones*/

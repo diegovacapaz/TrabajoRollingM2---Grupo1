@@ -15,7 +15,7 @@ const actualizarTabla = () => {
         trUsuario = tablaUsuarios.tBodies[0].insertRow();
         tdUsuario = trUsuario.insertCell();
         tdUsuario.innerText = `${i+1}`;
-        for(let j = 0; j < Object.values(cuentas[i]).length - 1; j++){
+        for(let j = 0; j < Object.values(cuentas[i]).length - 2; j++){
             tdUsuario = trUsuario.insertCell();
             if(j!=2){
                 tdUsuario.innerText = Object.values(cuentas[i])[j];
@@ -39,11 +39,13 @@ const actualizarTabla = () => {
 const crearBotonBorrar = () => {
     let borrar = document.createElement("i");
     borrar.setAttribute("class","bi bi-x-circle-fill btn-borrar");
+    borrar.setAttribute("title","Eliminar Cuenta");
     return borrar;
 }
 const crearBotonVer = () => {
     let ver = document.createElement("i");
     ver.setAttribute("class","bi bi-eye-fill btn-ver");
+    ver.setAttribute("title","Revelar Contraseña");
     return ver;
 }
 const ocultarClave = (clave) => {
@@ -58,8 +60,37 @@ const ocultarClave = (clave) => {
 const asignarListenersBorrar = () => {
     for(let i = 0; i < botonesBorrar.length; i++){
         botonesBorrar[i].addEventListener("click", () => {
-            eliminarCuenta(cuentas[i+1]);
-            actualizarTabla();
+            Swal.fire({
+                title: 'Seguro?',
+                text: "Confirma para eliminar la cuenta",
+                icon: 'warning',
+                iconColor: "red",
+                backdrop: true,
+                background: "#000000",
+                color: "#ffffff",
+                showCancelButton: true,
+                confirmButtonColor: 'rgb(103, 58, 183)',
+                cancelButtonColor: '#14112E',
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: "Volver",
+                allowOutsideClick: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarCuenta(cuentas[i+1]);
+                    actualizarTabla();
+                    Swal.fire({
+                        title: 'Éxito!',
+                        text: "Cuenta eliminada",
+                        backdrop: true,
+                        icon: 'success',
+                        iconColor: "green",
+                        background: "#000000",
+                        color: "#ffffff",
+                        confirmButtonText: 'Confirmar',
+                        confirmButtonColor: 'rgb(103, 58, 183)',
+                    })
+                }
+            })
         });
     }
 }

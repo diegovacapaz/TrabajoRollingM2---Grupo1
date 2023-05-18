@@ -24,8 +24,12 @@ btnNuevaCat.addEventListener("click", (e) => {
     if(nombreCat){
         mensajeCat.innerText = crearCategoria(nombreCat);
         nuevaCategoria.value = "";
+        if(!(mensajeCat.innerText == "La categoría ya existe")){
+            setTimeout(() => {
+                $('#modalCategoriasNueva').modal('hide');
+              }, 1000);
+        }
         actualizarTablaCat();
-        defaulOption();
     }
 });
 
@@ -48,8 +52,37 @@ const actualizarTablaCat = () => {
 const asignarListenersBorrar = () => {
     for(let i = 0; i < botonesBorrarCat.length; i++){
         botonesBorrarCat[i].addEventListener("click", () => {
-            borrarCategoria(categorias[i]);
-            actualizarTablaCat();
+            Swal.fire({
+                title: 'Seguro?',
+                text: "Confirma para eliminar el género",
+                icon: 'warning',
+                iconColor: "red",
+                backdrop: true,
+                background: "#000000",
+                color: "#ffffff",
+                showCancelButton: true,
+                confirmButtonColor: 'rgb(103, 58, 183)',
+                cancelButtonColor: '#14112E',
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: "Volver",
+                allowOutsideClick: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    borrarCategoria(categorias[i]);
+                    actualizarTablaCat();
+                    Swal.fire({
+                        title: 'Éxito!',
+                        text: "Género eliminado",
+                        backdrop: true,
+                        icon: 'success',
+                        iconColor: "green",
+                        background: "#000000",
+                        color: "#ffffff",
+                        confirmButtonText: 'Confirmar',
+                        confirmButtonColor: 'rgb(103, 58, 183)',
+                    })
+                }
+            })
         });
     }
 }
