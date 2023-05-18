@@ -13,6 +13,7 @@ const actualizarCuentaActiva = ()=>{
         let iconLogout = document.createElement("button");
         iconLogout.innerHTML = '<i class="bi bi-x-circle"></i>';
         iconLogout.className ="btn btn-outline-light crucetaLogout";
+        iconLogout.setAttribute("title","Cerrar Sesión");
         iconLogout.addEventListener("click",()=>{
             cerrarSesion();
             window.location.reload();

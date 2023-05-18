@@ -30,7 +30,17 @@ function guardar() {
     let url = document.getElementById("txtUrl").value;
 
     if (!nombre || !genero || !descripcion || !precio || !url || !IdJuego) {
-        Swal.fire('ERROR','Debe completar todos los campos', 'error');
+        Swal.fire({
+            title: 'ERROR',
+            text: 'Debe completar todos los campos',
+            icon: 'error',
+            iconColor: "red",
+            backdrop: true,
+            background: "#000000",
+            color: "#ffffff",
+            confirmButtonText: 'Confirmar',
+            confirmButtonColor: 'rgb(103, 58, 183)',
+        });
         return;
     }
 
@@ -38,7 +48,12 @@ function guardar() {
         title: 'GUARDAR',
         html: 'DESEA GUARDAR LOS CAMBIOS?',
         showDenyButton: true,
+        backdrop: true,
+        background: "#000000",
+        color: "#ffffff",
         confirmButtonText: 'SI',
+        confirmButtonColor: 'rgb(103, 58, 183)',
+        denyButtonColor: '#14112E',
         denyButtonText: 'NO'
     }).then(
         (result) => {
@@ -78,7 +93,17 @@ function guardar() {
 
                 localStorage.setItem("tablaJuegoStorage", JSON.stringify(tablaJuego));
 
-                Swal.fire('CAMBIOS  GUARDADOS','','success').then(
+                Swal.fire({
+                    title: 'Éxito!',
+                    text: 'Cambios guardados correctamente',
+                    icon: 'success',
+                    iconColor: "green",
+                    backdrop: true,
+                    background: "#000000",
+                    color: "#ffffff",
+                    confirmButtonText: 'Confirmar',
+                    confirmButtonColor: 'rgb(103, 58, 183)',
+                }).then(
                     (result)=>{
                         window.location.replace("./administracion.html");
                     }
@@ -104,6 +129,8 @@ function cargarPagina() {
                 document.getElementById("txtDescripcion").value = letJuego.descripcion;
                 document.getElementById("txtPrecio").value = letJuego.precio;
                 document.getElementById("txtUrl").value = letJuego.url;
+                document.getElementById("imgMiniatura").src = letJuego.url;
+                document.getElementById("imgMiniatura").style.display = "block";
                 break;
             }
         }
@@ -130,4 +157,6 @@ inputUrl.addEventListener("input", () => {
       confirmButtonText: "Aceptar",
     });
   }
+  document.getElementById("imgMiniatura").src = inputUrl.value;
+  document.getElementById("imgMiniatura").style.display = "block";
 });

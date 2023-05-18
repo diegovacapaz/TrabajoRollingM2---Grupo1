@@ -47,12 +47,41 @@ function abrirForm(idForm){
 }
 
 function eliminarItem(idItem){
-    for(const i in tablaJuego){
-        let letJuego = JSON.parse(tablaJuego[i]);
-        if(letJuego.IdJuego == idItem){
-            tablaJuego.splice(i,1);
-            localStorage.setItem("tablaJuegoStorage", JSON.stringify(tablaJuego));
+    Swal.fire({
+        title: 'Seguro?',
+        text: "Confirma para eliminar el juego",
+        icon: 'warning',
+        iconColor: "red",
+        backdrop: true,
+        background: "#000000",
+        color: "#ffffff",
+        showCancelButton: true,
+        confirmButtonColor: 'rgb(103, 58, 183)',
+        cancelButtonColor: '#14112E',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: "Volver",
+        allowOutsideClick: false,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            for(const i in tablaJuego){
+                let letJuego = JSON.parse(tablaJuego[i]);
+                if(letJuego.IdJuego == idItem){
+                    tablaJuego.splice(i,1);
+                    localStorage.setItem("tablaJuegoStorage", JSON.stringify(tablaJuego));
+                }
+            }
+            Swal.fire({
+                title: 'Éxito!',
+                text: "Juego eliminado",
+                backdrop: true,
+                icon: 'success',
+                iconColor: "green",
+                background: "#000000",
+                color: "#ffffff",
+                confirmButtonText: 'Confirmar',
+                confirmButtonColor: 'rgb(103, 58, 183)',
+            })
+            listar()
         }
-    }
-    listar()
+    })
 }
