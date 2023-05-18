@@ -141,8 +141,12 @@ inputUrl.addEventListener("input", () => {
 function validarURL(miurl) {
     try {
    
-      new URL(miurl);
-      return true;
+      path = new URL(miurl);
+      path = path.pathname.toLowerCase();
+      if(path.endsWith(".jpg")||path.endsWith(".jpg/")||path.endsWith(".png")||path.endsWith(".png/")) {
+        return true;
+      }
+      return  false;
    
     } catch (err) {
    
