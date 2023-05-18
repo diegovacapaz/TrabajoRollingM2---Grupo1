@@ -165,3 +165,11 @@
 		width: 25%;
 	}
 }
+@media all and (max-width: 300px) {
+    .navbar-brand{
+        display: none;
+    }
+    .name-brand{
+        font-size: 1.5rem;;
+    }
+}
