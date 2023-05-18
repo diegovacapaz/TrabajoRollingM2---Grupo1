@@ -15,7 +15,7 @@ const actualizarTabla = () => {
         trUsuario = tablaUsuarios.tBodies[0].insertRow();
         tdUsuario = trUsuario.insertCell();
         tdUsuario.innerText = `${i+1}`;
-        for(let j = 0; j < Object.values(cuentas[i]).length - 1; j++){
+        for(let j = 0; j < Object.values(cuentas[i]).length - 2; j++){
             tdUsuario = trUsuario.insertCell();
             if(j!=2){
                 tdUsuario.innerText = Object.values(cuentas[i])[j];
@@ -39,11 +39,13 @@ const actualizarTabla = () => {
 const crearBotonBorrar = () => {
     let borrar = document.createElement("i");
     borrar.setAttribute("class","bi bi-x-circle-fill btn-borrar");
+    borrar.setAttribute("title","Eliminar Cuenta");
     return borrar;
 }
 const crearBotonVer = () => {
     let ver = document.createElement("i");
     ver.setAttribute("class","bi bi-eye-fill btn-ver");
+    ver.setAttribute("title","Revelar Contraseña");
     return ver;
 }
 const ocultarClave = (clave) => {
