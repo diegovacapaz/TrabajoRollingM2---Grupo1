@@ -380,8 +380,8 @@
                     en tu correo electrónico. No te pierdas ninguna novedad. ¡Suscríbete ahora!
                 </p>
                 <form>
-                    <input type="email" placeholder="Correo" class="input-sub">
-                    <a href="./pages/error404.html" class="btn-1">Enviar</a>
+                    <input type="email" placeholder="Correo" class="input-sub" required pattern="^[\wñ]+@[a-zñ]+\.[a-zñ]{2,5}$" maxlength="50">
+                    <button href="./pages/error404.html" class="btn-1">Enviar</button>
                 </form>
             </div>
         </div>
