@@ -250,6 +250,7 @@ generosUnicos.forEach(genero => {
 
 		}
 	});
+
 	filterByGender.appendChild(groupTypeContainer);
 });
 
@@ -261,6 +262,12 @@ const searchButton = document.getElementById('search-button');
 // Agregar evento de input al campo de búsqueda
 searchInput.addEventListener('input', function () {
 	const searchTerm = searchInput.value.toLowerCase();
+
+	// Desmarcar todos los checkboxes de género
+	const checkboxes = document.querySelectorAll('.group-type input[type="checkbox"]');
+	checkboxes.forEach(function (checkbox) {
+		checkbox.checked = false;
+	});
 
 	// Filtrar los juegos por el término de búsqueda en el nombre del juego
 	const juegosFiltrados = juegos.filter(function (juego) {
@@ -283,6 +290,7 @@ searchInput.addEventListener('input', function () {
 searchButton.addEventListener('click', function (event) {
 	event.preventDefault(); // Evitar que el formulario se envíe
 });
+
 
 // Funcionalidad del efecto de los botones
 let buttons = document.querySelectorAll('.magic-btn a, .magic-btn2 a');
