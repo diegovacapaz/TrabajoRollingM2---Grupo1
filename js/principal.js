@@ -228,14 +228,27 @@ generosUnicos.forEach(genero => {
 		// Si el checkbox está desmarcado, mostrar todos los juegos
 		if (!input.checked) {
 			mostrarJuegos(juegos);
+			VanillaTilt.init(document.querySelectorAll(".game-card"), {
+				max: 25,
+				speed: 400
+			});
+
 		} else {
 			// Mostrar los juegos filtrados en el catálogo
 			mostrarJuegos(juegosFiltrados);
+			VanillaTilt.init(document.querySelectorAll(".game-card"), {
+				max: 25,
+				speed: 400
+			});
+
 		}
 	});
 
 	filterByGender.appendChild(groupTypeContainer);
+
 });
+
+
 
 // Obtener el elemento de búsqueda y el botón de búsqueda
 const searchInput = document.getElementById('search-input');
@@ -254,13 +267,18 @@ searchInput.addEventListener('input', function () {
 
 	// Mostrar los juegos filtrados en el catálogo
 	mostrarJuegos(juegosFiltrados);
+
+	// Inicializar VanillaTilt en las tarjetas de juegos filtrados
+	VanillaTilt.init(document.querySelectorAll(".game-card"), {
+		max: 25,
+		speed: 400
+	});
 });
 
 // Agregar evento de submit al formulario de búsqueda
 searchButton.addEventListener('click', function (event) {
 	event.preventDefault(); // Evitar que el formulario se envíe
 });
-
 
 // Funcionalidad del efecto de los botones
 let buttons = document.querySelectorAll('.magic-btn a, .magic-btn2 a');
