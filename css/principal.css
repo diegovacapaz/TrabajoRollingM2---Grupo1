@@ -391,7 +391,6 @@ body {
 }
 
 .game {
-	margin: 5px 2px;
 	transition: transform 0.3s ease;
 	cursor: pointer;
 }
