@@ -7,49 +7,7 @@ class Cuenta{
         this.admin = admin;
         this.favoritos = [];
     }
-    // get usuario(){
-    //     return this._usuario;
-    // }
-    // get correo(){
-    //     return this._correo;
-    // }
-    // get clave(){
-    //     return this._clave;
-    // }
-    // get admin(){
-    //     return this._admin;
-    // }
-    // set usuario(usuario){
-    //     this._usuario = usuario;
-    // }
-    // set correo(correo){
-    //     this._correo = correo;
-    // }
-    // set clave(clave){
-    //     this._clave = clave;
-    // }
-    // añadirFavorito(juego){
-    //     if(!juego){
-    //         return "Error, no ingresó ningun juego";
-    //     }
-    //     if(!this.favoritos.find(juegoFav => juegoFav.IdJuego === juego.IdJuego)){
-    //         this.favoritos.push(juego);
-    //         return "Juego añadido a favoritos correctamente";
-    //     }
-    //     return "El juego ya estaba como favorito";
-    // }
-
-    // borrarFavorito(juego){
-    //     if(!juego){
-    //         return "Error, no ingresó ningun juego";
-    //     }
-    //     const juegoFav = this.favoritos.find(juegoFav => juegoFav.IdJuego === juego.IdJuego);
-    //     if(juegoFav){
-    //         this.favoritos.splice(this.favoritos.findIndex(juegoFav => juegoFav.IdJuego === juego.IdJuego),1);
-    //         return "Juego borrado con éxito";
-    //     }
-    //     return "El juego no estaba como favorito";
-    // }
+   
 }
 
 // DECLARACIÓN DE VARIABLES GLOBALES
