@@ -391,6 +391,7 @@ body {
 }
 
 .game {
+	margin: 5px 2px;
 	transition: transform 0.3s ease;
 	cursor: pointer;
 }
@@ -955,6 +956,7 @@ hr {
 		width: calc(33.33% - 10px);
 		margin-right: 10px;
 		margin-bottom: 20px;
+		margin: 0;
 	}
 
 	.game:last-child {
