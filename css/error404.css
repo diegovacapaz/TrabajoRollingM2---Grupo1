@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 /*Configuracion General*/
 * {
     --negro: #000000;
@@ -6,7 +8,7 @@
     --azulClaro: #576CBC;
     --celeste: #A5D7E8;
     --blanco: #ffffff;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /*Página error404*/
