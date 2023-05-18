@@ -132,7 +132,8 @@ function mostrarJuegos(juegos) {
 		contentBx.className = 'contentBx';
 
 		let gameName = document.createElement('h3');
-		gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>$${juego.precio}`;
+		let free = juego.precio !== 0 ? `$${juego.precio}` : 'Gratis';
+		gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>${free}`;
 
 		let ul = document.createElement('ul');
 		ul.className = 'sci';
