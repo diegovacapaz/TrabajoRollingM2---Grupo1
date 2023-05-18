@@ -96,17 +96,13 @@ button:hover{
 	display: block;
 }
 .btn-logo-volver{
-	padding: 5px;
-	background-color: #5b5bd785;
-	
-	border-radius: 20px;
+	margin-top: 15px;
+	margin-left: 10px;
 	position: absolute;
-	top: 50px;
-	left: 150px;
-
+	
 }
-.btn-logo-volver:hover{
-	border: 1px solid #5B5BD7
+.icono-volver{
+	color: #fff;
 }
 
 /*Estilos para validaciones*/
@@ -148,29 +144,5 @@ button:hover{
 @keyframes rotate {
 	100% {
 		background-position: 15% 50%;
-	}
-}
-
-@media screen and (max-width: 867px){
-	.btn-logo-volver{
-		left: 90px;
-		top: 20px;
-	}
-}
-
-@media screen and (max-width: 753px){
-	body{
-		flex-direction: column;
-	}
-	.btn-logo-volver{
-		position:initial;
-		margin-top: 2px;
-		margin-bottom: 2px;
-	}
-}
-
-@media screen and (max-width: 280px){
-	.btn-logo-volver{
-		margin-bottom: 5px;
 	}
 }
