@@ -132,8 +132,10 @@ function mostrarJuegos(juegos) {
 		contentBx.className = 'contentBx';
 
 		let gameName = document.createElement('h3');
-		let free = juego.precio !== 0 ? `$${juego.precio}` : 'Gratis';
+		let precioNumerico = parseInt(juego.precio);
+		let free = precioNumerico !== 0 ? `$${precioNumerico}` : 'Gratis';
 		gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>${free}`;
+
 
 		let ul = document.createElement('ul');
 		ul.className = 'sci';
@@ -183,7 +185,7 @@ function mostrarJuegos(juegos) {
 
 		contentBx.appendChild(gameName);
 
-		gameName.innerHTML = `${juego.nombre}<br><span>${generoCapitalizado}</span><br>$${juego.precio}`;
+		gameName.innerHTML = `${juego.nombre}<br><span>${generoCapitalizado}</span><br>${free !== 'Gratis' ? '$' + free : free}`;
 
 		contentGameCard.appendChild(imgBx);
 		contentGameCard.appendChild(contentBx);
