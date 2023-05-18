@@ -15,7 +15,7 @@ const actualizarTabla = () => {
         trUsuario = tablaUsuarios.tBodies[0].insertRow();
         tdUsuario = trUsuario.insertCell();
         tdUsuario.innerText = `${i+1}`;
-        for(let j = 0; j < Object.values(cuentas[i]).length - 1; j++){
+        for(let j = 0; j < Object.values(cuentas[i]).length - 2; j++){
             tdUsuario = trUsuario.insertCell();
             if(j!=2){
                 tdUsuario.innerText = Object.values(cuentas[i])[j];
