@@ -59,14 +59,6 @@ const validarCampo = (expresion, input, campo)=>{
   }
 }
 
-const validarCampoVacio = (campo)=>{
-  if (validarCampo === undefined){
-    document.getElementById(`grupo-${campo}`).classList.remove('formulario-grupo-incorrecto')
-    document.getElementById(`grupo-${campo}`).classList.remove('formulario-grupo-correcto')
-    document.querySelector(`#grupo-${campo} i`).classList.remove('bi-check')
-    document.querySelector(`#grupo-${campo} i`).classList.remove('bi-x-circle')
-  }
-}
 
 //validacion de ambas contraseñas
 const validarContrasenia = ()=>{
