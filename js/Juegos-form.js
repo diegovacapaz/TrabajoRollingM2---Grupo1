@@ -116,7 +116,7 @@ const inputUrl = document.getElementById("txtUrl");
 inputUrl.addEventListener("input", () => {
   const url = inputUrl.value.toLowerCase();
   // Verificar si la URL termina con ".jpg" o ".png"
-  if (url.endsWith(".jpg") || url.endsWith(".png")) {
+  if (validarURL(url)) {
     // Mostrar la imagen miniatura
     document.getElementById("imgMiniatura").src = url;
     document.getElementById("imgMiniatura").style.display = "block";
@@ -131,3 +131,17 @@ inputUrl.addEventListener("input", () => {
     });
   }
 });
+
+//Validación de la URL 
+function validarURL(miurl) {
+    try {
+   
+      new URL(miurl);
+      return true;
+   
+    } catch (err) {
+   
+      return false;
+   
+    }
+  }
