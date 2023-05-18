@@ -226,17 +226,19 @@ function mostrarJuegos(juegos) {
 // Mostrar todos los juegos en el catálogo
 mostrarJuegos(juegos);
 
-// Funcion del filtrado de genero
+// Funcion para obtener los géneros únicos de los juegos
 function obtenerGenerosUnicos(juegos) {
 	const generos = [];
 	juegos.forEach(function (juego) {
-		juego = JSON.parse(juego); // Convertir la cadena JSON en un objeto JavaScript
+		juego = JSON.parse(juego);
 		generos.push(juego.genero);
 	});
+	generos.push("Deseados"); // Añadir el nuevo género "Deseados"
 	const generosUnicos = [...new Set(generos)];
 	return generosUnicos;
 }
 
+// Obtener los géneros únicos
 const generosUnicos = obtenerGenerosUnicos(juegos);
 const filterByGender = document.querySelector('.filter-by-gender');
 
@@ -270,10 +272,21 @@ generosUnicos.forEach(genero => {
 		});
 
 		// Obtener los juegos filtrados por categoría
-		const juegosFiltrados = juegos.filter(function (juego) {
-			juego = JSON.parse(juego);
-			return juego.genero === genero;
-		});
+		let juegosFiltrados;
+		if (genero === "Deseados") {
+			juegosFiltrados = juegos.filter(function (juego) {
+				juego = JSON.parse(juego);
+				if (cuentaActiva && cuentaActiva.favoritos) {
+					return cuentaActiva.favoritos.find(juegoFav => JSON.parse(juegoFav).IdJuego === juego.IdJuego);
+				}
+				return false;
+			});
+		} else {
+			juegosFiltrados = juegos.filter(function (juego) {
+				juego = JSON.parse(juego);
+				return juego.genero === genero;
+			});
+		}
 
 		// Si el checkbox está desmarcado, mostrar todos los juegos
 		if (!input.checked) {
@@ -292,9 +305,9 @@ generosUnicos.forEach(genero => {
 			});
 		}
 	});
+
 	filterByGender.appendChild(groupTypeContainer);
 });
-
 
 // Obtener el elemento de búsqueda y el botón de búsqueda
 const searchInput = document.getElementById('search-input');
