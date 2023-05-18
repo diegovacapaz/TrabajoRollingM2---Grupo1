@@ -99,9 +99,29 @@ formReg.addEventListener('submit', (e) =>{
   const nombreRegistrado = cuentas.find(usuario=> usuario.usuario === nombreRegistro.value)
   const correoRegistrado = cuentas.find(usuario => usuario.correo === mailRegistro.value)
   if(correoRegistrado){
-      return alert('Ya existe una cuenta registrada con este mail')
+      // return alert('Ya existe una cuenta registrada con este mail')
+      return Swal.fire({
+        text: "Ya existe una cuenta registrada con este mail",
+        background: "#000000",
+        color: "#ffffff",
+        position: "top",
+        backdop: true,
+        showConfirmButton: true,
+        confirmButtonText: 'Confirmar',
+        confirmButtonColor: 'rgb(103, 58, 183)',
+      });
     }else if (nombreRegistrado){
-      return alert('El nombre de usuario que elegiste ya esta en uso')
+      // return alert('El nombre de usuario que elegiste ya esta en uso')
+      return Swal.fire({
+        text: "El nombre de usuario que elegiste ya esta en uso",
+        background: "#000000",
+        color: "#ffffff",
+        position: "top",
+        backdop: true,
+        showConfirmButton: true,
+        confirmButtonText: 'Confirmar',
+        confirmButtonColor: 'rgb(103, 58, 183)',
+      });
     }
   
   // verificacion si todos los campos son correctos
@@ -119,7 +139,17 @@ formReg.addEventListener('submit', (e) =>{
     }
     else{
       formReg.reset()
-      return alert("Su cuenta se registró con éxito, pero hay otra sesión abierta.");
+      // return alert("Su cuenta se registró con éxito, pero hay otra sesión abierta.");
+      return Swal.fire({
+        text: "Su cuenta se registró con éxito, pero hay otra sesión abierta.",
+        background: "#000000",
+        color: "#ffffff",
+        position: "top",
+        backdop: true,
+        showConfirmButton: true,
+        confirmButtonText: 'Confirmar',
+        confirmButtonColor: 'rgb(103, 58, 183)',
+      });
     }
     //agregar mensaje de usuario registrado correctamente
   }else{
@@ -154,11 +184,31 @@ formIng.addEventListener('submit', (e)=>{
 
   const validarUsuario = cuentas.find(usuario=> usuario.clave === contraseniaIngresar.value && usuario.correo === mailIngresar.value) 
   if(!validarUsuario){
-    return alert('La contraseña o usuario son incorrectos')
+    // return alert('La contraseña o usuario son incorrectos')
+    return Swal.fire({
+      text: "La contraseña o usuario son incorrectos.",
+      background: "#000000",
+      color: "#ffffff",
+      position: "top",
+      backdop: true,
+      showConfirmButton: true,
+      confirmButtonText: 'Confirmar',
+      confirmButtonColor: 'rgb(103, 58, 183)',
+    });
   }
 
   if(cuentaActiva){
-    return alert('Ya hay una sesion abierta, cierrela para iniciar sesion con otra cuenta')
+    // return alert('Ya hay una sesion abierta, cierrela para iniciar sesion con otra cuenta')
+    return Swal.fire({
+      text: "Ya hay una sesion abierta, cierrela para iniciar sesion con otra cuenta.",
+      background: "#000000",
+      color: "#ffffff",
+      position: "top",
+      backdop: true,
+      showConfirmButton: true,
+      confirmButtonText: 'Confirmar',
+      confirmButtonColor: 'rgb(103, 58, 183)',
+    });
   }
   
   const esAdmin = cuentas.find(admin=> admin.correo === mailIngresar.value && admin.admin === true)

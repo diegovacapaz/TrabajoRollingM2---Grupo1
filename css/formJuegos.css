@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
     --purple: rgb(123, 31, 162);
 	--violet: rgb(103, 58, 183);
@@ -12,7 +14,7 @@
 	--btn-color: #393D63;
 	--logo-color: #5B5BD7;
 	--icon-color: invert(34%) sepia(97%) saturate(6894%) hue-rotate(260deg) brightness(106%) contrast(103%);
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn-borrarCat{

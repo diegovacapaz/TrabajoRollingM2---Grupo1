@@ -60,8 +60,37 @@ const ocultarClave = (clave) => {
 const asignarListenersBorrar = () => {
     for(let i = 0; i < botonesBorrar.length; i++){
         botonesBorrar[i].addEventListener("click", () => {
-            eliminarCuenta(cuentas[i+1]);
-            actualizarTabla();
+            Swal.fire({
+                title: 'Seguro?',
+                text: "Confirma para eliminar la cuenta",
+                icon: 'warning',
+                iconColor: "red",
+                backdrop: true,
+                background: "#000000",
+                color: "#ffffff",
+                showCancelButton: true,
+                confirmButtonColor: 'rgb(103, 58, 183)',
+                cancelButtonColor: '#14112E',
+                confirmButtonText: 'Confirmar',
+                cancelButtonText: "Volver",
+                allowOutsideClick: false,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    eliminarCuenta(cuentas[i+1]);
+                    actualizarTabla();
+                    Swal.fire({
+                        title: 'Éxito!',
+                        text: "Cuenta eliminada",
+                        backdrop: true,
+                        icon: 'success',
+                        iconColor: "green",
+                        background: "#000000",
+                        color: "#ffffff",
+                        confirmButtonText: 'Confirmar',
+                        confirmButtonColor: 'rgb(103, 58, 183)',
+                    })
+                }
+            })
         });
     }
 }
