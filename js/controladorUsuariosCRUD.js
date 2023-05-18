@@ -76,11 +76,16 @@ const asignarListenersBorrar = () => {
                 if (result.isConfirmed) {
                     eliminarCuenta(cuentas[i+1]);
                     actualizarTabla();
-                    Swal.fire(
-                    'Eliminada!',
-                    'La cuenta fue eliminada.',
-                    'success'
-                    )
+                    Swal.fire({
+                        title: 'Éxito!',
+                        text: "Cuenta eliminada",
+                        backdrop: true,
+                        icon: 'success',
+                        iconColor: "green",
+                        background: "#000000",
+                        color: "#ffffff",
+                        confirmButtonText: 'Confirmar',
+                    })
                 }
             })
         });

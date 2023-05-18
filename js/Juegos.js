@@ -76,11 +76,16 @@ function eliminarItem(idItem){
                     localStorage.setItem("tablaJuegoStorage", JSON.stringify(tablaJuego));
                 }
             }
-            Swal.fire(
-                'Eliminada!',
-                'La cuenta fue eliminada.',
-                'success'
-                )
+            Swal.fire({
+                title: 'Éxito!',
+                text: "Juego eliminado",
+                backdrop: true,
+                icon: 'success',
+                iconColor: "green",
+                background: "#000000",
+                color: "#ffffff",
+                confirmButtonText: 'Confirmar',
+            })
             listar()
         }
     })
