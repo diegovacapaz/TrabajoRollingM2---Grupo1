@@ -85,6 +85,7 @@ function eliminarItem(idItem){
                 background: "#000000",
                 color: "#ffffff",
                 confirmButtonText: 'Confirmar',
+                confirmButtonColor: 'rgb(103, 58, 183)',
             })
             listar()
         }
