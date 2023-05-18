@@ -1236,6 +1236,7 @@ hr {
 
 .container-filter {
 	display: flex;
+	z-index: 100;
 }
 
 .icon-filter {
@@ -1366,3 +1367,4 @@ hr {
 		font-size: 2.6rem;
 	}
 }
+
