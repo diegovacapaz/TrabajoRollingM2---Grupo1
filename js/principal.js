@@ -133,7 +133,7 @@ function mostrarJuegos(juegos) {
 
 		let gameName = document.createElement('h3');
 		let precioNumerico = parseInt(juego.precio);
-		let free = precioNumerico !== 0 ? `$${precioNumerico}` : 'Gratis';
+		let free = precioNumerico !== 0 ? `${precioNumerico}` : 'Gratis';
 		gameName.innerHTML = `${juego.nombre}<br><span>${juego.genero}</span><br>${free}`;
 
 
