@@ -1,13 +1,13 @@
-# INFORMACION SOBRE EL REPOSITORIO
+# TrabajoRollingM2---Grupo1
 Integrantes: 
 
--> [Aguilera Castro, Leonardo](https://github.com/LeoAc92)
--> [Conticello, Walter](https://github.com/walterconticello)
--> [Galindo, Braian Martin Alexis](https://github.com/alexisg259)
--> [Jose, Mauro Simon](https://github.com/MauroSJ)
--> [Vaca Paz, Diego](https://github.com/diegovacapaz)
+-> Aguilera Castro, Leonardo
+-> Conticello, Walter
+-> Galindo, Braian Martin Alexis
+-> Jose, Mauro Simon
+-> Vaca Paz, Diego
 
-# Proyecto RollinGGames:
+Proyecto RollinGGames:
 
  Este proyecto consiste en una página de ventas de videojuegos de distintos tipos de generos, para los amantes de los juegos.
  En la página web se puede apreciar el index, el cual contiene la imagen principal donde te tiene la opción de llevarte al catalogo de juegos de nuestra página, seguido a esto tenemos el carrusel de los juegos más populares de nuestra plataforma, también cuenta con otras secciones como la de "Juegos recomendados", "Noticias sobre videojuegos" y la principal siendo esta "Catalogo de Juegos".
@@ -18,9 +18,9 @@ Integrantes:
 
 Link del repositorio:
 
--> [Haga click aquí.](https://github.com/diegovacapaz/TrabajoRollingM2---Grupo1/pull/33)
+-> https://github.com/diegovacapaz/TrabajoRollingM2---Grupo1/pull/33
 
-# Tecnologias y librerias usadas:
+Tecnologias y librerias usadas:
 
 -> Lenguaje HTML
 -> Lenguaje CSS
@@ -28,8 +28,6 @@ Link del repositorio:
 -> Lenguaje JavaScript
 -> sweetalert2
 
-# Puedes clonar nuestro repositorio con el siguiente comando: 
+Puedes clonar nuestro repositorio con el siguiente comando: 
 
 -> git clone https://github.com/diegovacapaz/TrabajoRollingM2---Grupo1.git
-
-# Link del deploy
