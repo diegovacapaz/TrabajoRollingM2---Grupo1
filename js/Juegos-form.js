@@ -104,6 +104,8 @@ function cargarPagina() {
                 document.getElementById("txtDescripcion").value = letJuego.descripcion;
                 document.getElementById("txtPrecio").value = letJuego.precio;
                 document.getElementById("txtUrl").value = letJuego.url;
+                document.getElementById("imgMiniatura").src = letJuego.url;
+                document.getElementById("imgMiniatura").style.display = "block";
                 break;
             }
         }
@@ -130,4 +132,6 @@ inputUrl.addEventListener("input", () => {
       confirmButtonText: "Aceptar",
     });
   }
+  document.getElementById("imgMiniatura").src = inputUrl.value;
+  document.getElementById("imgMiniatura").style.display = "block";
 });
